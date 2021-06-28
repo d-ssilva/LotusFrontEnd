@@ -23,9 +23,11 @@ ul.social-midias li {
     padding: 5px;
 }
 
-/* .social-midias i {
-    
-} */
+ul.texto-rodape li a {
+
+    text-decoration:none;
+    color: bisque;
+}
 
 .fa {
     font-size: 35pt;
