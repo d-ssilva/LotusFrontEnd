@@ -27,13 +27,13 @@ ul.social-midias li {
 } */
 
 .fa {
-    font-size: 35pt;
-    color: bisque;
+    color: black;
     padding: 10px;
+    
 }
 
 .fa-facebook:hover{
-    color: #1197F5;
+    color: #1197F5;    
 }
 
 .fa-instagram:hover{
@@ -46,8 +46,11 @@ ul.social-midias li {
 color:#0A66C2
 }
 
+.fa-github{
+    color: black;
+}
 .fa-github:hover {
-    color:white
+    color: gray;
 }
 
 .cortext {
