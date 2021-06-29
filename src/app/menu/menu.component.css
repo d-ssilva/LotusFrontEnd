@@ -1,0 +1,24 @@
+.fs-16 {
+    font-size: 16pt;
+}
+
+a {
+    cursor: pointer;
+}
+
+.logo-menu img{
+    height: 4rem;
+}
+
+.fundo {
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+}
+
+.cortext {
+    color: bisque;
+  }
+
+  .cortext a {
+    color: bisque;
+  }
+
