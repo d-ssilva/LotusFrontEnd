@@ -1,0 +1,36 @@
+.BG{
+    background: rgb(255,228,196);
+    background: linear-gradient(90deg, rgba(255,228,196,1) 0%, rgba(255,239,220,1) 2%, rgba(255,251,246,1) 15%, rgba(255,255,255,1) 29%, rgba(167,167,167,1) 56%, rgba(0,0,0,1) 100%);
+    }
+    
+    #img-bg{
+        /* background-image: url('https://images-na.ssl-images-amazon.com/images/I/91EnYfRk7GL.jpg'); */
+        min-height: 695px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
+    .button{
+        margin-top: 10px;
+    }
+    .sair{
+        position: flex;
+        left: 30em;
+    }
+    .enter{
+        position: relative;
+        left: 20em;
+        
+    }
+    
+    .py-diferenciado{
+        padding-top: 15%;
+        padding-bottom: 15%;
+    }
+    
+    .borda-formulario{
+        border-style: solid;
+        border-right: 1pt;    
+        border-color: black;   
+    }
