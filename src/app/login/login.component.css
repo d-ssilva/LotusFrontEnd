@@ -1,0 +1,20 @@
+#img-bg{
+    /*background-image: url('https://images-na.ssl-images-amazon.com/images/I/91EnYfRk7GL.jpg');*/
+    min-height: 695px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+button{
+    margin-top: 10px;
+}
+.sair{
+    position: flex;
+    left: 30em;
+}
+.enter{
+    position: relative;
+    left: 20em;
+    
+}
