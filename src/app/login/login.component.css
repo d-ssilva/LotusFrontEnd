@@ -2,15 +2,16 @@
 .button{
     margin-top: 10px;
 }
+
 .sair{
     position: flex;
     left: 30em;
 }
+
 .enter{
     position: relative;
     left: 20em;
 }
-
 
 .borda-formulario{
     border-style: solid;
