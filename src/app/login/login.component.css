@@ -1,0 +1,29 @@
+
+.button{
+    margin-top: 10px;
+}
+
+.sair{
+    position: flex;
+    left: 30em;
+}
+
+.enter{
+    position: relative;
+    left: 20em;
+}
+
+.borda-formulario{
+    border-style: solid;
+    border-right: 1pt;    
+    border-color: black;   
+}
+
+.mev {
+    height: 100vh;
+}
+
+.fundo-menu {
+    background-image: url(../../assets/img/img-fundo2.jpg);
+    
+}
