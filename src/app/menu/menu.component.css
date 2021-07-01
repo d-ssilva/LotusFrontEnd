@@ -1,12 +1,32 @@
-.navbar{
-    background-color: antiquewhite;
-    
+.fs-16 {
+    font-size: 16pt;
 }
-.navbar a{
-    color: rgb(0, 0, 0);
+
+a {
+    cursor: pointer;
 }
-img{
-    max-width: 100%;
-    width: 30px;
-    height: 30px;
+
+.logo-menu img{
+    height: 4rem;
 }
+
+.fundo {
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+}
+
+.cortext {
+    color: bisque;
+  }
+
+  .cortext a {
+    color: bisque;
+  }
+
+  .fa:hover {
+      color: #F69BBC;
+  } 
+
+.corlotus {
+    color: #F69BBC;
+}
+
