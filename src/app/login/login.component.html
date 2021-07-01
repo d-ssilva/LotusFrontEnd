@@ -2,6 +2,7 @@
     <div class="row d-flex align-items-center justify-content-end">
         <div class="col-lg-7 col-md-7 d-flex justify-content-center">
             <div class="border-end border-start bg-white p-5 mev">
+
                 <!-- IMAGEM DO LOGO -->
                 <div class="container-fluid">
                     <div class="d-flex justify-content-center">
@@ -10,6 +11,7 @@
                     </div>
                 </div>
                 <!-- /FIM -->
+
                 <div class="container rounded-3">
                     <h1 class="text-center mb-3 mt-5 pb-2">Login</h1>
                 </div>
@@ -46,12 +48,68 @@
                 </div>
                 <div class="modal-body">
                     <h1 class="text-center">Cadastre-se</h1>
+
+
+                    <!-- NOME -->
                     <div class="form-group">
-                        <label for="usuario">Usuario</label>
-                        <input class="form-control" type="text" name="usuario" id="usuario"
-                            placeholder="Digite o seu usuario">
+                        <label for="nome">Nome</label>
+                        <input [(ngModel)]="user.nome" class="form-control" type="text" name="nome" id="nome"
+                            placeholder="Digite o seu nome">
                     </div>
+                    <!-- /NOME -->
+
+                    <!-- USERNAME -->
                     <div class="form-group mt-4">
+                        <label for="nomeDeUsuaria">Nome de usuária</label>
+                        <input [(ngModel)]="user.usuario" class="form-control" type="text" name="nomeDeUsuaria"
+                            id="nomeDeUsuaria" placeholder="Digite o nome de usuária">
+                    </div>
+                    <!-- /USERNAME -->
+
+                    <!-- FOTO -->
+                    <div class="form-group mt-4">
+                        <label for="foto">Foto</label>
+                        <input [(ngModel)]="user.foto" class="form-control" type="text" name="foto" id="foto"
+                            placeholder="Insira o link da sua foto">
+                    </div>
+                    <!-- /FOTO -->
+
+                    <!-- EMAIL -->
+                    <div class="form-group mt-4">
+                        <label for="email">E-mail</label>
+                        <input [(ngModel)]="user.email" class="form-control" type="text" name="email" id="email"
+                            placeholder="Digite a sua e-mail">
+                    </div>
+                    <!-- /EMAIL -->
+
+                    <!-- SENHA -->
+                    <div class="form-group mt-4">
+                        <label for="senha">Senha</label>
+                        <input (click)='confirmSenha($event)' class="form-control" type="password" name="senha"
+                            id="senha" placeholder="Digite a sua senha">
+                    </div>
+                    <!-- /SENHA -->
+
+                    <!-- CONFIRMAR SENHAR -->
+                    <div class="form-group mt-4">
+                        <label for="confirmarSenha">Confirme sua Senha</label>
+                        <input [(ngModel)]="user.senha" class="form-control" type="password" name="confirmarSenha"
+                            id="confirmarSenha" placeholder="Digite novamente sua senha">
+                    </div>
+                    <!-- /CONFIRMAR SENHA -->
+
+                    <!-- TIPO DE USUÁRIO -->
+                    <div class="form-group">
+                        <label for="tipo">Tipo de Usuário</label>
+                        <select name="tipo" id="tipo" class="form-control" (change)='tipoUser($event)'>
+                            <option>Selecione um tipo de usuário:</option>
+                            <option value="normal">Normal</option>
+                            <option value="adm"></option>
+                        </select>
+                    </div>
+                    <!-- /TIPO DE USUÁRIO -->
+
+                    <!-- <div class="form-group mt-4">
                         <label for="senha">Senha</label>
                         <input class="form-control" type="password" name="senha" id="senha"
                             placeholder="Digite a sua senha">
@@ -66,32 +124,14 @@
                         <input class="form-control" type="password" name="senha" id="senha"
                             placeholder="Digite a sua senha">
                     </div>
-                    <div class="form-group mt-4">
-                        <label for="senha">Senha</label>
-                        <input class="form-control" type="password" name="senha" id="senha"
-                            placeholder="Digite a sua senha">
+                </div> -->
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">CANCELAR</button>
+                        <button type="button" class="btn btn-success" (click)='cadastrar()'>CADASTRAR</button>
                     </div>
-                    <div class="form-group mt-4">
-                        <label for="senha">Senha</label>
-                        <input class="form-control" type="password" name="senha" id="senha"
-                            placeholder="Digite a sua senha">
-                    </div>
-                    <div class="form-group mt-4">
-                        <label for="senha">Senha</label>
-                        <input class="form-control" type="password" name="senha" id="senha"
-                            placeholder="Digite a sua senha">
-                    </div>
-                    <div class="form-group mt-4">
-                        <label for="senha">Senha</label>
-                        <input class="form-control" type="password" name="senha" id="senha"
-                            placeholder="Digite a sua senha">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">CANCELAR</button>
-                    <button type="button" class="btn btn-success">CADASTRAR</button>
                 </div>
             </div>
         </div>
     </div>
-</div>
