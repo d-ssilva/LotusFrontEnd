@@ -1,6 +1,7 @@
 
 .button{
     margin-top: 10px;
+    margin-right: 0px;
 }
 
 .sair{
@@ -20,10 +21,28 @@
 }
 
 .mev {
-    height: 100vh;
+    padding-top: 0em !important;
+    /*height: 100vh;*/
+ 
+    
 }
 
 .fundo-menu {
     background-image: url(../../assets/img/img-fundo2.jpg);
     
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: rgb(255, 255, 255);
+}
+.login{
+    height: 100vh;
+}
+h1{
+    font-size: 1.5em;
+    margin-top: 40px;
+}
+hr{
+    margin-bottom: 33px !important;
+    
+    margin-top: 33px !important;
 }
