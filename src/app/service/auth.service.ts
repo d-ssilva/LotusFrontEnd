@@ -23,12 +23,11 @@ export class AuthService {
   }
 
   logado(){
-    let ok = false
+    let logado = false
 
     if(environment.token != ''){
-      ok = true
+      logado = true
     }
-    return ok
+    return logado
   }
-
 }

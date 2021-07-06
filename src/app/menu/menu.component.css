@@ -1,32 +1,27 @@
 .fs-16 {
-    font-size: 16pt;
+  font-size: 16pt;
 }
 
 a {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.logo-menu img{
-    height: 4rem;
-}
-
-.fundo {
-    background-image: linear-gradient(to right, #434343 0%, black 100%);
+.logo-menu img {
+  height: 4rem;
 }
 
 .cortext {
-    color: bisque;
-  }
-
-  .cortext a {
-    color: bisque;
-  }
-
-  .fa:hover {
-      color: #F69BBC;
-  } 
-
-.corlotus {
-    color: #F69BBC;
+  color: bisque;
 }
 
+.cortext a {
+  color: bisque;
+}
+
+.fa:hover {
+  color: #f69bbc;
+}
+
+.corlotus {
+  color: #f69bbc;
+}
