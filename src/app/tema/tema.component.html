@@ -30,14 +30,14 @@
         <div class="col-md-6 justify-content-center">
             <div class="d-flex justify-content-center align-content-center">
                 <div class="span cortext fst-italic">Nome do tema:</div>
-                <input class="text-input rounded-1" type="text" style="text-align: center"
+                <input [(ngModel)]='tema.descricao' class="text-input rounded-1" type="text" style="text-align: center"
                     placeholder="Digite o nome do novo tema">
             </div>
             <div class="d-flex justify-content-center mt-2">
                 <div class="row">
                     <div class="col-12">
                         <!-- <button class="btn btn-outline-danger bg-dark me-3">Cancelar</button> -->
-                        <button class="btn btn-outline-success bg-dark">Próximo</button>
+                        <button class="btn btn-outline-success bg-dark" (click)='cadastrar()'>Cadastrar</button>
                     </div>
                 </div>
             </div>
