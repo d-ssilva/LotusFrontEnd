@@ -12,6 +12,7 @@ import { SobreComponent } from './sobre/sobre.component';
 import { LoginComponent } from './login/login.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TemaComponent } from './tema/tema.component';
 
 
 
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     SobreComponent,
     LoginComponent,
     InicioComponent,
+    TemaComponent,
   ],
   imports: [
     BrowserModule,
