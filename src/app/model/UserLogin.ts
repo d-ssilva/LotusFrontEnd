@@ -5,14 +5,13 @@ export class UserLogin{
     public nome: string
     public email: string
     public senha: string
-    public telefone: number
+    public telefone: string
     public usuario: string
     public foto: string
     public genero: string
-    public pessoa_fisica: boolean
-    public cpf: number
-    public cnpj: number
-    public score:number
+    public cpf: string
+    public cnpj: string
+    public score: number
     public tipo: string
     public token: string  /*TOKEN APENAS PARA MOMENTO DO LOGIN*/
     public postagem: Postagem[]

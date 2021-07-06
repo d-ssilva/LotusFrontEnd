@@ -14,18 +14,13 @@ import { AuthService } from '../service/auth.service';
 export class LoginComponent implements OnInit {
 
   userLogin: UserLogin = new UserLogin
-
-
-  // variáveis usadas para cadastro
   user: User = new User
+  
   confirmarSenha: string
   tipoUsuario: string
 
   constructor(
-    private authService: AuthService,
     private router: Router,
-
-    // contructor para login
     private auth: AuthService,
   ) { }
 
@@ -42,12 +37,12 @@ export class LoginComponent implements OnInit {
   }
 
   cadastrar(){
-    this.user.tipo = this.tipoUsuario
+    // this.user.tipo = this.tipoUsuario
 
     if(this.user.senha != this.confirmarSenha){
       alert('As senhas estão incorretas')
     } else{
-      this.authService.cadastrar(this.user).subscribe((resp: User) => {
+      this.auth.cadastrar(this.user).subscribe((resp: User) => {
         this.user = resp
         this.router.navigate(['/login'])
         alert('Usuário cadastrado com sucesso!')
@@ -62,19 +57,15 @@ export class LoginComponent implements OnInit {
 
       environment.id = this.userLogin.token
       environment.nome = this.userLogin.nome
+      environment.email = this.userLogin.email
       environment.foto = this.userLogin.foto
       environment.token = this.userLogin.token
 
-      console.log(environment.token)
-      console.log(environment.nome)
-
-      this.router.navigate(['/login'])
+      this.router.navigate(['/inicio'])
     }, erro => {
       if(erro.status == 500){
         alert('Usuário ou senha inválidos')
       }
     })
   }
-
-
 }

@@ -5,13 +5,12 @@ export class User{
     public nome: string
     public email: string
     public senha: string
-    public telefone: number
+    public telefone: string
     public usuario: string
     public foto: string
     public genero: string
-    public pessoa_fisica: boolean
-    public cpf: number
-    public cnpj: number
+    public cpf: string
+    public cnpj: string
     public score:number
     public tipo: string
     public postagem: Postagem[]
