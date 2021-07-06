@@ -1,0 +1,22 @@
+.text-input {
+    width: 500px
+}
+
+.table thead tr{    
+    text-align: center;
+    vertical-align: middle
+}
+
+.table tbody tr{
+    text-align: center;
+    vertical-align: middle
+}
+
+.table tbody tr td{
+    text-align: center;
+    vertical-align: middle
+}
+
+.pchave{
+    font-style: italic
+}
