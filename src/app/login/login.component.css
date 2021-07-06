@@ -43,6 +43,9 @@ h1{
 }
 hr{
     margin-bottom: 33px !important;
-    
+
     margin-top: 33px !important;
+}
+.border-end{
+    padding: 2em;
 }
