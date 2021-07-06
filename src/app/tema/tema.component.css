@@ -1,5 +1,6 @@
+/* TEXTBOX DE NOME DO TEMA */
 .text-input {
-    width: 500px
+    width: 400px
 }
 
 .table thead tr{    
@@ -20,3 +21,10 @@
 .pchave{
     font-style: italic
 }
+
+/* SCROLL HORIZONTAL */
+.schr{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+} 
