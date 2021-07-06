@@ -14,7 +14,7 @@
             <div class="text">Caro(a) usuário(a), <br> Esta seção lhe permite inserir temas novos para rede de
                 postagens.
                 RECOMENDAMOS para que não criem nenhum tema ja criado, para evitar problemas de
-                duplicidade
+                duplicidade.
             </div>
         </div>
         <div class="col-md-3 bg-secondary rounded-start">
@@ -48,42 +48,38 @@
 <hr class="my-4">
 
 <!-- TABELA COM TEMAS JÁ CRIADOS -->
-<div class="container border border-dark rounded-3 my-3">
-    <table class="table table-hover">
-        <thead>
+<div class="container my-3">
+
+    <table class="table rounded-3 border border-dark  table-hover">
+        <thead class="fundo cortext">
             <tr>
                 <th scope="col">Nome do Tema</th>
                 <th scope="col">Descrição</th>
                 <th scope="col">Palavras-chave</th>
+                <th scope="col">Modificação</th>
             </tr>
         </thead>
+
+
         <tbody>
-
-            <tr>
-                <th scope="row">Assédio Sexual</th>
-
-                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem iure officia, neque dolorum nulla
-                    voluptas quia ipsam debitis error veniam odio animi. Optio repellendus expedita aliquid quidem sequi
-                    eveniet officiis.</td>
-
-                <td class="pchave">ASSÉDIO, SEXUAL, SAFADO</td>
+            <tr *ngFor='let i of listaTemas'>
+                <th>{{tema.nome}}</th>
+                <td>{{tema.descricao}}</td>
+                <td class="pchave">{{tema.palavraChave}}</td>
+                <td>
+                    <button class="btn btn-outline-info fundo mr-3">Editar</button>
+                    <button class="btn btn-outline-danger fundo">Apagar</button>
+                </td>
             </tr>
-
             <tr>
                 <th scope="row">Abuso Psicológico</th>
-                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam praesentium eius qui obcaecati quod
-                    ratione exercitationem nihil accusantium. Odit eum ut aut, ducimus mollitia ullam quidem
-                    exercitationem eos sunt quo?</td>
+                <td></td>
                 <td class="pchave">XINGAMENTO, DESRESPEITO, DESMORALIZAÇÃO</td>
-            </tr>
-
-            <tr>
-                <th scope="row">Desigualdade</th>
-                <td scope="row">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, minima ipsam quas
-                    laudantium nisi soluta non voluptas aperiam blanditiis. Accusamus aliquam reiciendis quaerat
-                    voluptates nihil, nesciunt tempore illum in neque.</td>
-                <td class="pchave">SALÁRIO, CARGO, POSTURA, COMPORTAMENTO</td>
+                <td>
+                    <button class="btn btn-outline-info bg-dark me-3">Editar</button>
+                    <button class="btn btn-outline-danger bg-dark">Apagar</button>
+                </td>
+            </tr>           
         </tbody>
     </table>
-    <!-- /TABELA COM TEMAS JÁ CRIADOS -->
-</div>
+</div><!-- /TABELA COM TEMAS JÁ CRIADOS -->
