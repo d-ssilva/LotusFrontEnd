@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TemaComponent } from './tema/tema.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 
@@ -33,7 +34,10 @@ import { TemaComponent } from './tema/tema.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

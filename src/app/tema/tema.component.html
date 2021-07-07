@@ -1,57 +1,41 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-center align-content-center">TEMAS</h1>
-            <h4 class="text-center align-content-center">Crie novos temas aqui!</h4>
+            <h1 class="text-center align-content-center fw-lighter">TEMAS</h1>
+            <h4 class="text-center align-content-center fw-lighter">Crie novos temas aqui!</h4>
         </div>
     </div>
+
     <hr class="my-3">
 
-    <div class="row">
-        <div class="col-md-3 bg-secondary rounded-end">
-        </div>
-        <div class="col-md-6">
-            <div class="text">Caro(a) usuário(a), <br> Esta seção lhe permite inserir temas novos para rede de
-                postagens.
-                RECOMENDAMOS para que não criem nenhum tema ja criado, para evitar problemas de
-                duplicidade.
-            </div>
-        </div>
-        <div class="col-md-3 bg-secondary rounded-start">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-4 flex-column text-center rounded-end">
+            <h5 class="fw-lighter">Caro(a), {{nome}}</h5>
+            <h5 class="fw-lighter">Essa ação lhe permite inserir temas novos para rede de postagens. RECOMENDAMOS para
+                que não criem nenhum tema ja criado, para evitar problemas de duplicidade.</h5>
         </div>
     </div>
-</div> <!-- FECHAMENTO DO CONAINER -->
 
-<hr class="my-4">
 
-<div class="container-fluid">
-    <div class="row fundo py-2 rounded-3">
-        <div class="col-md-3"></div>
-        <div class="col-md-6 justify-content-center">
-            <div class="d-flex justify-content-center align-content-center">
-                <div class="span cortext fst-italic">Nome do tema:</div>
-                <input [(ngModel)]='tema.descricao' class="text-input rounded-1" type="text" style="text-align: center"
-                    placeholder="Digite o nome do novo tema">
-            </div>
-            <div class="d-flex justify-content-center mt-2">
-                <div class="row">
-                    <div class="col-12">
-                        <!-- <button class="btn btn-outline-danger bg-dark me-3">Cancelar</button> -->
-                        <button class="btn btn-outline-success bg-dark" (click)='cadastrar()'>Cadastrar</button>
-                    </div>
-                </div>
+    <hr class="my-3">
+
+    <div class="row fundo py-5">
+        <div class="col-lg-12 d-flex justify-content-center align-items-center text-center">
+            <p class="cortext pe-3 p-0 m-0">Nome do tema:</p>
+            <input [(ngModel)]='tema.nome' class="form-control text-input rounded-1 text-center"  type="text"
+                placeholder="Digite o nome do novo tema">
+            <div class="ms-4">
+                <button class="btn btn-secondary btn-sm" (click)='cadastrarTema()'>Cadastrar</button>
             </div>
         </div>
     </div>
-</div><!-- FECHANDO TODO CONTAINER -->
 
-<hr class="my-4">
 
-<!-- TABELA COM TEMAS JÁ CRIADOS -->
-<div class="container my-3">
+    <hr class="my-4">
 
-    <table class="table rounded-3 border border-dark  table-hover">
-        <thead class="fundo cortext">
+    <!-- TABELA COM TEMAS JÁ CRIADOS -->
+    <table class="table rounded-3 border border-dark table-hover p-0 m-0">
+        <thead class="fundo cortext">   
             <tr>
                 <th scope="col">Nome do Tema</th>
                 <th scope="col">Descrição</th>
@@ -59,27 +43,15 @@
                 <th scope="col">Modificação</th>
             </tr>
         </thead>
-
-
         <tbody>
             <tr *ngFor='let i of listaTemas'>
-                <th>{{tema.nome}}</th>
-                <td>{{tema.descricao}}</td>
-                <td class="pchave">{{tema.palavraChave}}</td>
-                <td>
-                    <button class="btn btn-outline-info fundo mr-3">Editar</button>
-                    <button class="btn btn-outline-danger fundo">Apagar</button>
+                <td>{{i.id}}</td>
+                <td>{{i.descricao}}</td>
+                <td class="d-flex justify-content-end">
+                    <button class="btn btn-info mr-3">Editar</button>
+                    <button class="btn btn-danger">Apagar</button>
                 </td>
             </tr>
-            <tr>
-                <th scope="row">Abuso Psicológico</th>
-                <td></td>
-                <td class="pchave">XINGAMENTO, DESRESPEITO, DESMORALIZAÇÃO</td>
-                <td>
-                    <button class="btn btn-outline-info bg-dark me-3">Editar</button>
-                    <button class="btn btn-outline-danger bg-dark">Apagar</button>
-                </td>
-            </tr>           
         </tbody>
     </table>
-</div><!-- /TABELA COM TEMAS JÁ CRIADOS -->
+</div> <!-- FECHAMENTO DO CONAINER -->

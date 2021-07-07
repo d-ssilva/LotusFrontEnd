@@ -55,13 +55,18 @@ export class LoginComponent implements OnInit {
     this.auth.entrar(this.userLogin).subscribe((resp: UserLogin)=>{
       this.userLogin = resp
 
-      environment.id = this.userLogin.token
+      environment.id = this.userLogin.id
       environment.nome = this.userLogin.nome
       environment.email = this.userLogin.email
       environment.foto = this.userLogin.foto
       environment.token = this.userLogin.token
 
-      this.router.navigate(['/inicio'])
+      console.log(environment.token)
+      console.log(environment.nome)
+      console.log(environment.foto)
+      console.log(environment.id)
+
+      this.router.navigate(['/tema'])
     }, erro => {
       if(erro.status == 500){
         alert('Usuário ou senha inválidos')

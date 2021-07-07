@@ -1,7 +1,5 @@
-import { HttpClient } from '@angular/common/http'; // Disponibiliza a criação de objetos que usem CRUD 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Tema } from '../model/Tema';
 import { TemaService } from '../service/tema.service';
@@ -16,34 +14,40 @@ export class TemaComponent implements OnInit {
   tema: Tema = new Tema()
   listaTemas: Tema[]
 
+  nome = environment.nome
 
-  constructor( 
-    private router: Router, 
-    private http: HttpClient, // Disponibiliza os métodos HTTP get, post, put e delete)
+
+  constructor(
+    private router: Router,
     private temaService: TemaService
-    ) { }
-  
+  ) { }
 
   ngOnInit() {
-    if(environment.token == ''){
+    if (environment.token == '') {
+      alert('Sua seção expirou, faça o login novamente')
       this.router.navigate(['/entrar'])
     }
 
     // SEMPRE QUE ENTRAR NA PÁGINA TEMA, EXECULTE ESSE MÉTODO
     this.findAllTemas()
+    this.temaService.refreshToken()
   }
 
   findAllTemas(){
-    this.temaService.getAllTema().subscribe((resp: Tema[]) =>{
+    this.temaService.getAllTema().subscribe((resp: Tema[]) => {
       this.listaTemas = resp
     })
   }
 
-  cadastrar(){
-    this.temaService.postTema(this.tema).subscribe((resp: Tema) =>
-    this.tema = resp)
-    alert('Tema cadastrado com sucesso')
-    this.findAllTemas()
-    this.tema = new Tema()
+  cadastrarTema(){
+    this.temaService.postTema(this.tema).subscribe((resp: Tema)=>{
+      this.tema = resp
+      alert('Tema cadastrado com sucesso')
+      this.tema = new Tema()
+      this.findAllTemas()
+
+      console.log(this.tema.descricao)
+      console.log(this.tema.id)
+    })
   }
 }
