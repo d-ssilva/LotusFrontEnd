@@ -25,12 +25,13 @@ export class TemaComponent implements OnInit {
   ngOnInit() {
     if (environment.token == '') {
       alert('Sua seção expirou, faça o login novamente')
-      this.router.navigate(['/entrar'])
+      this.router.navigate(['/'])
     }
 
     // SEMPRE QUE ENTRAR NA PÁGINA TEMA, EXECULTE ESSE MÉTODO
-    this.findAllTemas()
     this.temaService.refreshToken()
+    this.findAllTemas()
+  
   }
 
   findAllTemas(){
@@ -40,14 +41,11 @@ export class TemaComponent implements OnInit {
   }
 
   cadastrarTema(){
-    this.temaService.postTema(this.tema).subscribe((resp: Tema)=>{
+    this.temaService.postTema(this.tema).subscribe((resp: Tema) => {
       this.tema = resp
       alert('Tema cadastrado com sucesso')
       this.tema = new Tema()
       this.findAllTemas()
-
-      console.log(this.tema.descricao)
-      console.log(this.tema.id)
     })
   }
 }
