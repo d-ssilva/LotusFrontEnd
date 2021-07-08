@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -13,10 +14,11 @@ export class MenuComponent implements OnInit {
     private rota: Router
   ) { }
 
-  ngOnInit() {
+  ngOnInit():void {
   }
+
     sair(){
-      this.rota.navigate(['/entrar'])
+      this.rota.navigate(['/login'])
       environment.token = ''
       environment.foto = ''
       environment.nome = ''

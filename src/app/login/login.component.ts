@@ -9,13 +9,13 @@ import { AuthService } from '../service/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']  
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 
-  userLogin: UserLogin = new UserLogin
+  userLogin: UserLogin = new UserLogin()
   user: User = new User
-  
+
   confirmarSenha: string
   tipoUsuario: string
 
@@ -32,39 +32,39 @@ export class LoginComponent implements OnInit {
     this.confirmarSenha = event.target.value
   }
 
-  tipoUser(event:any){
+  tipoUser(event: any) {
     this.tipoUsuario = event.target.value
   }
 
-  cadastrar(){
-    // this.user.tipo = this.tipoUsuario
+  cadastrar() {
+    this.user.tipo = this.tipoUsuario
 
-    if(this.user.senha != this.confirmarSenha){
+    if (this.user.senha != this.confirmarSenha) {
       alert('As senhas estão incorretas')
-    } else{
+    } else {
       this.auth.cadastrar(this.user).subscribe((resp: User) => {
         this.user = resp
         this.router.navigate(['/login'])
         alert('Usuário cadastrado com sucesso!')
       })
-    }    
+    }
   }
 
-    // Funções usadas para logar
-  entrar(){
-    this.auth.entrar(this.userLogin).subscribe((resp: UserLogin)=>{
+  // Funções usadas para logar
+  entrar() {
+    this.auth.entrar(this.userLogin).subscribe((resp: UserLogin) => {
       this.userLogin = resp
 
-      environment.id = this.userLogin.id
-      environment.nome = this.userLogin.nome
-      environment.email = this.userLogin.email
-      environment.foto = this.userLogin.foto
       environment.token = this.userLogin.token
-
+      environment.nome = this.userLogin.nome
+      environment.foto = this.userLogin.foto
+      environment.id = this.userLogin.id
+    
       this.router.navigate(['/inicio'])
+
     }, erro => {
-      if(erro.status == 500){
-        alert('Usuário ou senha inválidos')
+      if (erro.status == 500) {
+        alert('Usuario ou senha incorretos!')
       }
     })
   }

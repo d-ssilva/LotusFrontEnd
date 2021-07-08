@@ -9,6 +9,7 @@ import { TemaComponent } from './tema/tema.component';
 //OBJETOS DE ROTAS
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
+  
   {path: 'login', component: LoginComponent},
   {path: 'inicio', component: InicioComponent},
   {path: 'sobre', component: SobreComponent},
