@@ -22,7 +22,7 @@ export class TemaComponent implements OnInit {
   ngOnInit() {
     if (environment.token == '') {
       alert('Sua seção expirou, faça o login novamente')
-      // this.rota.navigate(['/login'])
+      this.rota.navigate(['/login'])
     }
 
     console.log(environment.token)
