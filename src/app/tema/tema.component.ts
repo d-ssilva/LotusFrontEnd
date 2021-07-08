@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Tema } from '../model/Tema';
+import { UserLogin } from '../model/UserLogin';
 import { TemaService } from '../service/tema.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class TemaComponent implements OnInit {
 
   tema: Tema = new Tema()
   listaTemas: Tema[]
+  userLogin: UserLogin = new UserLogin
 
   nome = environment.nome
 
@@ -25,12 +27,13 @@ export class TemaComponent implements OnInit {
   ngOnInit() {
     if (environment.token == '') {
       alert('Sua seção expirou, faça o login novamente')
-      this.router.navigate(['/'])
+      this.router.navigate(['/login'])      
     }
 
     // SEMPRE QUE ENTRAR NA PÁGINA TEMA, EXECULTE ESSE MÉTODO
     this.temaService.refreshToken()
     this.findAllTemas()
+
   
   }
 
@@ -43,6 +46,7 @@ export class TemaComponent implements OnInit {
   cadastrarTema(){
     this.temaService.postTema(this.tema).subscribe((resp: Tema) => {
       this.tema = resp
+
       alert('Tema cadastrado com sucesso')
       this.tema = new Tema()
       this.findAllTemas()

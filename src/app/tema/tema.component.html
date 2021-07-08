@@ -37,15 +37,15 @@
     <table class="table rounded-3 border border-dark table-hover p-0 m-0">
         <thead class="fundo cortext">   
             <tr>
-                <th scope="col">Nome do Tema</th>
-                <th scope="col">Descrição</th>
-                <th scope="col">Palavras-chave</th>
-                <th scope="col">Modificação</th>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <!-- <th scope="col">Palavras-chave</th>
+                <th scope="col">Modificação</th> -->
             </tr>
         </thead>
         <tbody>
             <tr *ngFor='let i of listaTemas'>
-                <td>{{i.id}}</td>
+                <th>{{i.id}}</th>
                 <td>{{i.descricao}}</td>
                 <td class="d-flex justify-content-end">
                     <button class="btn btn-info mr-3">Editar</button>

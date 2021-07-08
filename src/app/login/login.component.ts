@@ -13,7 +13,7 @@ import { AuthService } from '../service/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  userLogin: UserLogin = new UserLogin
+  userLogin: UserLogin = new UserLogin()
   user: User = new User
   
   confirmarSenha: string
@@ -32,9 +32,9 @@ export class LoginComponent implements OnInit {
     this.confirmarSenha = event.target.value
   }
 
-  tipoUser(event:any){
-    this.tipoUsuario = event.target.value
-  }
+  // tipoUser(event:any){
+  //   this.tipoUsuario = event.target.value
+  // }
 
   cadastrar(){
     // this.user.tipo = this.tipoUsuario
