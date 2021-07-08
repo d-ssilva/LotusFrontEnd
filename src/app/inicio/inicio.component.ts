@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { Postagem } from '../model/Postagem';
 import { AuthService } from '../service/auth.service';
 
 
@@ -11,12 +12,13 @@ import { AuthService } from '../service/auth.service';
 })
 export class InicioComponent implements OnInit {
 
+
   foto = environment.foto
   nome = environment.nome
 
   constructor(
     private rota: Router,
-    private authService: AuthService
+    
   ) { }
 
   ngOnInit() {
@@ -27,7 +29,6 @@ export class InicioComponent implements OnInit {
     }
 
   }
-
-
+  
 
 }

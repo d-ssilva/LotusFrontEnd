@@ -20,4 +20,8 @@
 .t {
     height: 200px;
 }
+
+html {
+    scroll-behavior: smooth;
+}
   

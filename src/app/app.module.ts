@@ -12,6 +12,8 @@ import { SobreComponent } from './sobre/sobre.component';
 import { LoginComponent } from './login/login.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TemaComponent } from './tema/tema.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 
@@ -23,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     SobreComponent,
     LoginComponent,
     InicioComponent,
+    TemaComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,10 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

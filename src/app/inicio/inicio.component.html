@@ -19,91 +19,44 @@
     <div class="col-lg-6">
       <div class="card shadow-lg pt-4">
         <div class="d-flex justify-content-center align-items-center">
-          <textarea class="textb" name="postagem" id="postagem" cols="80" rows="1"
-            placeholder="O que está acontecendo?"></textarea>
+          <p>BOTAO</p>
         </div>
-        <div class="d-flex justify-content-end align-items-center mx-4 my-3">
-          <button type="button" class="btn btn-outline-secondary btn-sm m-2" data-dismiss="modal">POSTAR</button>
-          <button type="button" class="btn btn-outline-secondary btn-sm " data-dismiss="modal">CANCELAR</button>
-        </div>
-      </div>
 
-      <div class="card text-center mt-3 shadow-lg">
-        <div class="card-body">
-          <h5 class="card-title">Titulo da Postagem</h5>
-          <p class="card-text text-start">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur autem, ad
-            facilis ea est mollitia veniam aperiam ratione fugit! Tenetur temporibus error dolor harum ut vel
-            consequuntur sequi repellendus exercitationem!
-            Tempora rem, maxime deserunt dolore unde nemo nesciunt explicabo numquam minus, eaque soluta earum quas
-            magni error, labore molestiae nobis totam et cumque? Temporibus quod reprehenderit nihil corrupti nulla
-            adipisci!
-            Provident aspernatur doloribus placeat molestiae. Labore rem deleniti earum placeat vero explicabo officia,
-            omnis quasi sequi repellendus inventore magnam aperiam maiores, provident suscipit soluta delectus qui sint?
-            Vitae, adipisci veritatis. </p>
-        </div>
-        <div class="card-footer text-muted">
-          2 days ago
-        </div>
-      </div>
+        <div class="container" id="postagens">
 
-      <div class="card text-center mt-3 shadow-lg">
-        <div class="card-body">
-          <h5 class="card-title">Titulo da Postagem</h5>
-          <p class="card-text text-start">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur autem, ad
-            facilis ea est mollitia veniam aperiam ratione fugit! Tenetur temporibus error dolor harum ut vel
-            consequuntur sequi repellendus exercitationem!
-            Tempora rem, maxime deserunt dolore unde nemo nesciunt explicabo numquam minus, eaque soluta earum quas
-            magni error, labore molestiae nobis totam et cumque? Temporibus quod reprehenderit nihil corrupti nulla
-            adipisci!
-            Provident aspernatur doloribus placeat molestiae. Labore rem deleniti earum placeat vero explicabo officia,
-            omnis quasi sequi repellendus inventore magnam aperiam maiores, provident suscipit soluta delectus qui sint?
-            Vitae, adipisci veritatis. </p>
-        </div>
-        <div class="card-footer text-muted">
-          1 days ago
-        </div>
-      </div>
-      <div class="card text-center mt-3 shadow-lg">
-        <div class="card-body">
-          <h5 class="card-title">Titulo da Postagem</h5>
-          <p class="card-text text-start">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur autem, ad
-            facilis ea est mollitia veniam aperiam ratione fugit! Tenetur temporibus error dolor harum ut vel
-            consequuntur sequi repellendus exercitationem!
-            Tempora rem, maxime deserunt dolore unde nemo nesciunt explicabo numquam minus, eaque soluta earum quas
-            magni error, labore molestiae nobis totam et cumque? Temporibus quod reprehenderit nihil corrupti nulla
-            adipisci!
-            Provident aspernatur doloribus placeat molestiae. Labore rem deleniti earum placeat vero explicabo officia,
-            omnis quasi sequi repellendus inventore magnam aperiam maiores, provident suscipit soluta delectus qui sint?
-            Vitae, adipisci veritatis. </p>
-        </div>
-        <div class="card-footer text-muted">
-          1 days ago
-        </div>
-      </div>
-
-      <div class="card text-center mt-3 shadow-lg">
-        <div class="card-body">
-          <h5 class="card-title">Titulo da Postagem</h5>
-          <p class="card-text text-start">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur autem, ad
-            facilis ea est mollitia veniam aperiam ratione fugit! Tenetur temporibus error dolor harum ut vel
-            consequuntur sequi repellendus exercitationem!
-            Tempora rem, maxime deserunt dolore unde nemo nesciunt explicabo numquam minus, eaque soluta earum quas
-            magni error, labore molestiae nobis totam et cumque? Temporibus quod reprehenderit nihil corrupti nulla
-            adipisci!
-            Provident aspernatur doloribus placeat molestiae. Labore rem deleniti earum placeat vero explicabo officia,
-            omnis quasi sequi repellendus inventore magnam aperiam maiores, provident suscipit soluta delectus qui sint?
-            Vitae, adipisci veritatis.</p>
-        </div>
-        <div class="card-footer text-muted">
-          1 days ago
+          <nav>
+            <div class="nav nav-tabs d-flex justify-content-center my-5" id="nav-tab" role="tablist">
+              <a class="nav-link active text-secondary" id="nav-todasPostagens" data-toggle="tab" href="#todasPostagens"
+                role="tab" aria-controls="nav-home" aria-selected="true">Todas as postagens</a>
+              <a class="nav-link text-secondary" id="nav-minhasPostagens" data-toggle="tab" href="#minhasPostagens"
+                role="tab" aria-controls="nav-profile" aria-selected="false">Minhas postagens</a>
+              <a class="nav-link text-secondary" id="nav-postagensTema" data-toggle="tab" href="#postagensTema"
+                role="tab" aria-controls="nav-contact" aria-selected="false">Postagens por Tema</a>
+            </div>
+          </nav>
+          <div class="tab-content mb-5" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
+              aria-labelledby="nav-todasPostagens">
+              Todas Postagens
+            </div>
+            <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens">
+              Minhas Postagen
+            </div>
+            <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="nav-postagensTema">
+              Postagem por Tema
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <!--fechamento feed-->
 
+    
+
 
     <!-- abertura lateral direita -->
-    <div class="col-lg-3 card shadow-lg mev"></div>
+    <div class="col-lg-3 card shadow-lg mev">
+
+    </div>
     <!-- fechamento lateral direita -->
   </div>
-</div>

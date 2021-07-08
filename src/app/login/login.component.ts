@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit {
     this.auth.entrar(this.userLogin).subscribe((resp: UserLogin)=>{
       this.userLogin = resp
 
-      environment.id = this.userLogin.token
+      environment.id = this.userLogin.id
       environment.nome = this.userLogin.nome
       environment.email = this.userLogin.email
       environment.foto = this.userLogin.foto
