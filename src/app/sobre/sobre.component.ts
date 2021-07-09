@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-sobre',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sobre.component.css']
 })
 export class SobreComponent implements OnInit {
+
+  nome = environment.nome
 
   constructor() { }
 

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SobreComponent } from './sobre.component';
+import { PostagemEditComponent } from './postagem-edit.component';
 
-describe('SobreComponent', () => {
-  let component: SobreComponent;
-  let fixture: ComponentFixture<SobreComponent>;
+describe('PostagemEditComponent', () => {
+  let component: PostagemEditComponent;
+  let fixture: ComponentFixture<PostagemEditComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SobreComponent ]
+      declarations: [ PostagemEditComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SobreComponent);
+    fixture = TestBed.createComponent(PostagemEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
