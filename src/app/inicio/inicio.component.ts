@@ -19,7 +19,7 @@ export class InicioComponent implements OnInit {
   listaPostagens: Postagem[]
 
   tema: Tema = new Tema()
-  listaTemas: Tema[]
+  listasTemas: Tema[]
   idTema: number
 
   user: User = new User()
@@ -44,16 +44,17 @@ export class InicioComponent implements OnInit {
       this.rota.navigate(['/login'])
     }
 
-    this.findByIdUser()
-    this.getAllTema()
-    this.getAllPostagens()
     this.temaService.refreshToken()
     this.postagemService.refreshToken()
+    this.getAllTema()
+    this.getAllPostagens()
+    this.findByIdUser()
   }
 
   getAllTema() {
-    this.temaService.getAllTema()
-    .subscribe((resp: Tema[]) => {this.listaTemas = resp})
+    this.temaService.getAllTema().subscribe((resp: Tema[]) => {
+      this.listasTemas = resp
+    })
   }
 
   findByIdTema() {
@@ -80,11 +81,13 @@ export class InicioComponent implements OnInit {
     this.user.id = this.idUser
     this.postagem.usuario = this.user
     this.postagem.usuario.foto = this.foto
+
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
     this.postagem = resp
     alert('Postagem realizada com sucesso!')
     this.getAllPostagens()
     this.postagem = new Postagem()
+
     })
   }
 }
