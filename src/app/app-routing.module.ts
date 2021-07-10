@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CentralDeAjudaComponent } from './central-de-ajuda/central-de-ajuda.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'inicio', component: InicioComponent},
   {path: 'sobre', component: SobreComponent},
   {path: 'tema', component: TemaComponent},
+  {path: 'central-de-ajuda', component: CentralDeAjudaComponent},
   {path: 'tema-edit/:id', component: TemaEditComponent},
   {path: 'tema-delete/:id', component: TemaDeleteComponent},
   {path: 'postagem-delete/:id', component: PostagemDeleteComponent},

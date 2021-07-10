@@ -24,4 +24,9 @@
 html {
     scroll-behavior: smooth;
 }
+
+.bg3 {
+    /* min-height: 100vh; */
+    background-color: #f8f9fa;
+  }
   

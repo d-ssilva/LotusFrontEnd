@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 
 @Component({
-  selector: 'app-sobre',
-  templateUrl: './sobre.component.html',
-  styleUrls: ['./sobre.component.css']
+  selector: 'app-central-de-ajuda',
+  templateUrl: './central-de-ajuda.component.html',
+  styleUrls: ['./central-de-ajuda.component.css']
 })
-export class SobreComponent implements OnInit {
+export class CentralDeAjudaComponent implements OnInit {
 
   nome = environment.nome
 
@@ -15,7 +15,7 @@ export class SobreComponent implements OnInit {
     private rota: Router
   ) { }
 
-  ngOnInit() {
+  ngOnInit(){
     window.scroll(0, 0)
 
     if (environment.token == '') {
