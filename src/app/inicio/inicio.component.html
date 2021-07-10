@@ -8,21 +8,17 @@
         </div>
         <h5 class="fw-bolder">Olá, {{nome}}</h5>
         <hr>
-
         <div class="card-body ">
           <ul class="nav nav-pills d-flex flex-column justify-content-center my-5 " id="pills-tab" role="tablist">
-
             <li class="nav-item my-2" role="presentation">
               <button class="nav-link btn-dark active" id="todaspostagens" data-bs-toggle="pill"
                 data-bs-target="#t-postagens" type="button" role="tab" aria-controls="t-postagens"
                 aria-selected="true">Todas Postagens</button>
             </li>
-
             <li class="nav-item my-2" role="presentation">
               <button class="nav-link btn-dark" id="minhaspostagens" data-bs-toggle="pill" data-bs-target="#m-postagens"
                 type="button" role="tab" aria-controls="m-postagens" aria-selected="false">Minhas Postagens</button>
             </li>
-
             <li class="nav-item my-2 " role="presentation">
               <button class="nav-link btn-dark" id="postagensportema" data-bs-toggle="pill" data-bs-target="#p-tema"
                 type="button" role="tab" aria-controls="p-tema" aria-selected="false">Postagens
@@ -52,7 +48,7 @@
         <div class="tab-pane fade show active" id="t-postagens" role="tabpanel" aria-labelledby="todaspostagens">
           <div class="card h-100 my-2" *ngFor='let i of listaPostagens'>
             <div class="shadow-lg pt-4 card-body text-center">
-              <img src="{{i.usuario.foto}}" alt="imagem de perfil" width="45px" class="img-fluid rounded-circle">
+              <img src="{{i.usuario.foto}}" alt="imagem de perfil" width="35px" class="img-fluid rounded-circle">
               <p class="card-text"><small class="text-muted">Postado por: {{i.usuario.nome}}</small></p>
               <h5 class="card-title">{{i.titulo}}</h5>
               <p class="card-text"><small class="text-muted">Tema: {{i.tema.nome}}</small></p>
@@ -123,13 +119,14 @@
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
+
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">Nova Postagem</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
 
+      <div class="modal-body">
         <div class="form-group">
           <label for="titulo">Titulo</label>
           <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo"

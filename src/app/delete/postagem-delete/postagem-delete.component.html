@@ -1,1 +1,41 @@
-<p>postagem-delete works!</p>
+<div class="container mb-5 mt-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="text-center text-secondary">Apagar postagem</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h4 class="text-center text-secondary">Você tem certeza que deseja apagar essa postagem?</h4>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center mt-4">
+        <div class="card-columns d-flex justify-content-center">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <img src="{{postagem.usuario.foto}}" alt="imagem de perfil" width="45px"
+                        class="img-fluid rounded-circle">
+                    <p class="card-text"><small class="text-muted">Postado por: {{postagem.usuario.nome}}</small></p>
+                    <h5 class="card-title">{{postagem.titulo}}</h5>
+                    <p class="card-text"><small class="text-muted">Tema: {{postagem.tema.nome}}</small></p>
+                    <p class="card-text">{{postagem.mensagem}}</p>
+                    <p class="card-text m-0">
+                        <small class="text-muted">
+                            {{ postagem.data | date: "dd/MM/yyyy" }}
+                            às {{ postagem.data | date: "HH:mm" }}
+                        </small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-lg-12 d-flex justify-content-center">
+            <button class="btn btn-danger mr-4" routerLink='/inicio'>Não</button>
+            <button class="btn btn-success" (click)='apagar()'>Sim</button>
+        </div>
+    </div>
+</div>

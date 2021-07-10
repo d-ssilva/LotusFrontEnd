@@ -25,7 +25,7 @@ export class TemaComponent implements OnInit {
       this.rota.navigate(['/login'])
     }
 
-    console.log(environment.token)
+    
     this.temaService.refreshToken()
     this.findAllTemas()
   }

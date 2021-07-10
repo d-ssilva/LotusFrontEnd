@@ -44,11 +44,11 @@ export class InicioComponent implements OnInit {
       this.rota.navigate(['/login'])
     }
 
-    this.temaService.refreshToken()
-    this.postagemService.refreshToken()
+    this.findByIdUser()
     this.getAllTema()
     this.getAllPostagens()
-    this.findByIdUser()
+    this.temaService.refreshToken()
+    this.postagemService.refreshToken()
   }
 
   getAllTema() {
