@@ -2,108 +2,162 @@
   <div class="row">
     <!-- abertura lateral esquerda -->
     <div class="col-lg-3">
-
       <div class="card d-flex justify-content-center align-items-center shadow-lg bg-white rounded mx-3">
         <div class="my-3">
-          <img src="../../assets/img/Isaque.jpg" class="rounded-pill p-2 border border-secondary tamanho-img"
-            alt="imagemUsuario">
+          <img src="{{foto}}" class="rounded-pill p-2 border border-secondary tamanho-img" alt="img">
         </div>
         <h5 class="fw-bolder">Olá, {{nome}}</h5>
         <hr>
+        <div class="card-body ">
+          <ul class="nav nav-pills d-flex flex-column justify-content-center my-5 " id="pills-tab" role="tablist">
+            <li class="nav-item my-2" role="presentation">
+              <button class="nav-link btn-dark active" id="todaspostagens" data-bs-toggle="pill"
+                data-bs-target="#t-postagens" type="button" role="tab" aria-controls="t-postagens"
+                aria-selected="true">Todas Postagens</button>
+            </li>
+            <li class="nav-item my-2" role="presentation">
+              <button class="nav-link btn-dark" id="minhaspostagens" data-bs-toggle="pill" data-bs-target="#m-postagens"
+                type="button" role="tab" aria-controls="m-postagens" aria-selected="false">Minhas Postagens</button>
+            </li>
+            <li class="nav-item my-2 " role="presentation">
+              <button class="nav-link btn-dark" id="postagensportema" data-bs-toggle="pill" data-bs-target="#p-tema"
+                type="button" role="tab" aria-controls="p-tema" aria-selected="false">Postagens
+                por
+                tema</button>
+            </li>
+          </ul>
+        </div>
       </div>
-
     </div>
-    <!--fechamento lateral esquerda -->
+    <!--Close Barra lateral direita -->
 
-    <!--abertura feed-->
-    <div class="col-lg-6">
+    <!--Abertura Feed Centro-->
+    <div class="col-lg-6 mb-5">
       <div class="card shadow-lg pt-4">
         <div class="d-flex justify-content-center align-items-center">
-          <textarea class="textb" name="postagem" id="postagem" cols="80" rows="1"
-            placeholder="O que está acontecendo?"></textarea>
-        </div>
-        <div class="d-flex justify-content-end align-items-center mx-4 my-3">
-          <button type="button" class="btn btn-outline-secondary btn-sm m-2" data-dismiss="modal">POSTAR</button>
-          <button type="button" class="btn btn-outline-secondary btn-sm " data-dismiss="modal">CANCELAR</button>
-        </div>
-      </div>
-
-      <div class="card text-center mt-3 shadow-lg">
-        <div class="card-body">
-          <h5 class="card-title">Titulo da Postagem</h5>
-          <p class="card-text text-start">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur autem, ad
-            facilis ea est mollitia veniam aperiam ratione fugit! Tenetur temporibus error dolor harum ut vel
-            consequuntur sequi repellendus exercitationem!
-            Tempora rem, maxime deserunt dolore unde nemo nesciunt explicabo numquam minus, eaque soluta earum quas
-            magni error, labore molestiae nobis totam et cumque? Temporibus quod reprehenderit nihil corrupti nulla
-            adipisci!
-            Provident aspernatur doloribus placeat molestiae. Labore rem deleniti earum placeat vero explicabo officia,
-            omnis quasi sequi repellendus inventore magnam aperiam maiores, provident suscipit soluta delectus qui sint?
-            Vitae, adipisci veritatis. </p>
-        </div>
-        <div class="card-footer text-muted">
-          2 days ago
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-dark m-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              Nova Postagem
+            </button>
+          </div>
         </div>
       </div>
 
-      <div class="card text-center mt-3 shadow-lg">
-        <div class="card-body">
-          <h5 class="card-title">Titulo da Postagem</h5>
-          <p class="card-text text-start">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur autem, ad
-            facilis ea est mollitia veniam aperiam ratione fugit! Tenetur temporibus error dolor harum ut vel
-            consequuntur sequi repellendus exercitationem!
-            Tempora rem, maxime deserunt dolore unde nemo nesciunt explicabo numquam minus, eaque soluta earum quas
-            magni error, labore molestiae nobis totam et cumque? Temporibus quod reprehenderit nihil corrupti nulla
-            adipisci!
-            Provident aspernatur doloribus placeat molestiae. Labore rem deleniti earum placeat vero explicabo officia,
-            omnis quasi sequi repellendus inventore magnam aperiam maiores, provident suscipit soluta delectus qui sint?
-            Vitae, adipisci veritatis. </p>
+      <!-- Todas Postagens -->
+      <div class="tab-content my-5" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="t-postagens" role="tabpanel" aria-labelledby="todaspostagens">
+          <div class="card h-100 my-2" *ngFor='let i of listaPostagens'>
+            <div class="shadow-lg pt-4 card-body text-center">
+              <img src="{{i.usuario.foto}}" alt="imagem de perfil" width="35px" class="img-fluid rounded-circle">
+              <p class="card-text"><small class="text-muted">Postado por: {{i.usuario.nome}}</small></p>
+              <h5 class="card-title">{{i.titulo}}</h5>
+              <p class="card-text"><small class="text-muted">Tema: {{i.tema.nome}}</small></p>
+              <p class="card-text">{{i.mensagem}}</p>
+              <p class="card-text m-0">
+                <small class="text-muted">
+                  {{ i.data | date: "dd/MM/yyyy" }}
+                  às {{ i.data | date: "HH:mm" }}
+                </small>
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="card-footer text-muted">
-          1 days ago
-        </div>
-      </div>
-      <div class="card text-center mt-3 shadow-lg">
-        <div class="card-body">
-          <h5 class="card-title">Titulo da Postagem</h5>
-          <p class="card-text text-start">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur autem, ad
-            facilis ea est mollitia veniam aperiam ratione fugit! Tenetur temporibus error dolor harum ut vel
-            consequuntur sequi repellendus exercitationem!
-            Tempora rem, maxime deserunt dolore unde nemo nesciunt explicabo numquam minus, eaque soluta earum quas
-            magni error, labore molestiae nobis totam et cumque? Temporibus quod reprehenderit nihil corrupti nulla
-            adipisci!
-            Provident aspernatur doloribus placeat molestiae. Labore rem deleniti earum placeat vero explicabo officia,
-            omnis quasi sequi repellendus inventore magnam aperiam maiores, provident suscipit soluta delectus qui sint?
-            Vitae, adipisci veritatis. </p>
-        </div>
-        <div class="card-footer text-muted">
-          1 days ago
-        </div>
-      </div>
 
-      <div class="card text-center mt-3 shadow-lg">
-        <div class="card-body">
-          <h5 class="card-title">Titulo da Postagem</h5>
-          <p class="card-text text-start">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur autem, ad
-            facilis ea est mollitia veniam aperiam ratione fugit! Tenetur temporibus error dolor harum ut vel
-            consequuntur sequi repellendus exercitationem!
-            Tempora rem, maxime deserunt dolore unde nemo nesciunt explicabo numquam minus, eaque soluta earum quas
-            magni error, labore molestiae nobis totam et cumque? Temporibus quod reprehenderit nihil corrupti nulla
-            adipisci!
-            Provident aspernatur doloribus placeat molestiae. Labore rem deleniti earum placeat vero explicabo officia,
-            omnis quasi sequi repellendus inventore magnam aperiam maiores, provident suscipit soluta delectus qui sint?
-            Vitae, adipisci veritatis.</p>
+        <!-- Minha Postagens -->
+        <div class="tab-pane fade" id="m-postagens" role="tabpanel" aria-labelledby="minhaspostagens">
+          <div class="card-columns">
+            <div class="card h-100 my-2" *ngFor='let i of user.postagem'>
+              <div class="shadow-lg pt-4 card-body text-center">
+                <img src="{{foto}}" alt="imagem de perfil" width="45px" class="img-fluid rounded-circle">
+                <h5 class="card-title">{{i.titulo}}</h5>
+                <p class="card-text"><small class="text-muted">Tema: {{i.tema.nome}}</small></p>
+                <p class="card-text">{{i.mensagem}}</p>
+                <p class="card-text m-0">
+                  <small class="text-muted">
+                    {{ i.data | date: "dd/MM/yyyy" }}
+                    às {{ i.data | date: "HH:mm" }}
+                  </small>
+                </p>
+                <a [routerLink]="['/postagem-edit',i.id]" class="text-info mr-3" href="">Editar</a>
+                <a [routerLink]="['/postagem-delete',i.id]" class="text-danger" href="">Apagar</a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="card-footer text-muted">
-          1 days ago
+
+        <!-- Postagens por Tema -->
+        <div class="tab-pane fade" id="p-tema" role="tabpanel" aria-labelledby="postagensportema">
+          <div class="card-columns" *ngFor='let t of listaTemas'>
+            <div class="card h-100 my-2" *ngFor='let i of t.postagem'>
+              <div class="shadow-lg pt-4 card-body text-center">
+                <img src="{{i.usuario.foto}}" alt="imagem de perfil" width="45px" class="img-fluid rounded-circle">
+                <p class="card-text"><small class="text-muted">Postado por: {{i.usuario.nome}}</small></p>
+                <h5 class="card-title">{{i.titulo}}</h5>
+                <p class="card-text">{{i.mensagem}}</p>
+                <p class="card-text m-0">
+                  <small class="text-muted">
+                    {{ i.data | date: "dd/MM/yyyy" }}
+                    às {{ i.data | date: "HH:mm" }}
+                  </small>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <!--fechamento feed-->
+    <!--Fechamento Feed Centro-->
 
-
-    <!-- abertura lateral direita -->
-    <div class="col-lg-3 card shadow-lg mev"></div>
+    <!-- Barra lateral direita -->
+    <div class="col-lg-3 card shadow-lg mev">
+    </div>
     <!-- fechamento lateral direita -->
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Nova Postagem</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="titulo">Titulo</label>
+          <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo"
+            placeholder="Digite o titulo da postagem">
+        </div>
+
+        <div class="form-group">
+          <label for="empresa">Empresa</label>
+          <input [(ngModel)]='postagem.empresa' type="text" class="form-control" id="empresa"
+            placeholder="Digite o nome da empresa">
+        </div>
+
+        <div class="form-group">
+          <label for="texto">Mensagem</label>
+          <textarea [(ngModel)]='postagem.mensagem' class="form-control" id="texto" name="texto" rows="3"
+            placeholder="Digite sua mensagem"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="texto">Escolha um tema ou <a routerLink='/tema' data-bs-dismiss="modal">Cadastre-se um
+              novo:</a></label>
+          <select class="form-control" [(ngModel)]='idTema' name="tema" id="tema">
+            <option *ngFor='let i of listaTemas' value="{{i.id}}">{{i.nome}}</option>
+          </select>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)='publicar()'>POSTAR</button>
+      </div>
+    </div>
   </div>
 </div>

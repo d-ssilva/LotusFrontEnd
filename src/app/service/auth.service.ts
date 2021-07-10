@@ -14,18 +14,22 @@ export class AuthService {
     private http: HttpClient
   ) { }
 
-  entrar(userLogin : UserLogin): Observable<UserLogin>{
+  entrar(userLogin: UserLogin): Observable<UserLogin> {
     return this.http.post<UserLogin>('https://apilotus.herokuapp.com/usuario/logar', userLogin)
   }
 
-  cadastrar(user: User): Observable<User>{
+  cadastrar(user: User): Observable<User> {
     return this.http.post<User>('https://apilotus.herokuapp.com/usuario/cadastrar', user)
   }
 
-  logado(){
+  getByIdUser(id: number): Observable<User> {
+    return this.http.get<User>(`https://apilotus.herokuapp.com/usuario/${id}`)
+  }
+
+  logado() {
     let logado = false
 
-    if(environment.token != ''){
+    if (environment.token != '') {
       logado = true
     }
     return logado
