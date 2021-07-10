@@ -1,0 +1,69 @@
+<div class="container mb-5 mt-5">
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <h1 class="text-center">Atualize suas informações!</h1>
+            <!-- NOME -->
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input [(ngModel)]="user.nome" class="form-control" type="text" name="nome" id="nome"
+                    placeholder="Digite o seu nome">
+            </div>
+            <!-- USERNAME -->
+            <div class="form-group mt-4">
+                <label for="nomeDeUsuaria">Usuario</label>
+                <input [(ngModel)]="user.usuario" class="form-control" type="text" name="nomeDeUsuaria"
+                    id="nomeDeUsuaria" placeholder="Digite o nome de usuária">
+            </div>
+            <!-- FOTO -->
+            <div class="form-group mt-4">
+                <label for="foto">Foto</label>
+                <input [(ngModel)]="user.foto" class="form-control" type="text" name="foto" id="foto"
+                    placeholder="Insira o link da sua foto">
+            </div>
+            <!-- EMAIL -->
+            <div class="form-group mt-4">
+                <label for="email">E-mail</label>
+                <input [(ngModel)]="user.email" class="form-control" type="text" name="email" id="email"
+                    placeholder="Digite a sua e-mail">
+            </div>
+            <!-- TELEFONE -->
+            <!-- <div class="form-group mt-4">
+                <label for="telefone">Telefone</label>
+                <input (click)='user.telefone' class="form-control" type="text" name="telefone" id="telefone"
+                    placeholder="Telefone">
+            </div> -->
+            <!-- SENHA -->
+            <div class="form-group mt-4">
+                <label for="senha">Senha</label>
+                <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha"
+                    placeholder="Digite a sua senha">
+            </div>
+            <!-- CONFIRMAR SENHAR -->
+            <div class="form-group mt-4">
+                <label for="confirmarSenha">Confirme sua Senha</label>
+                <input [(ngModel)]="user.senha" class="form-control" type="password" name="confirmarSenha"
+                    id="confirmarSenha" placeholder="Digite novamente sua senha">
+            </div>
+
+            <!-- TIPO DE USUÁRIO -->
+            <!-- <div class="form-group mt-4">
+                    <label for="tipo">Tipo de Conta</label>
+                    <select name="tipo" id="tipo" class="form-control" (change)='tipoUser($event)'>
+                    <option>Selecione um tipo de usuário:</option>
+                    <option value="true">Fisica</option>
+                    <option value="false">Empresarial</option>
+                    </select>
+                    </div> -->
+            
+            <!-- /CADASTRAR-CANCELAR-->
+            <div class="modal-footer mt-4">
+                <button type="button" class="btn btn-danger me-4" data-bs-dismiss="modal" routerLink='/inicio'>CANCELAR</button>
+                <button type="button" class="btn btn-success" 
+                    data-bs-dismiss="modal"(click)='atualizar()'>ATUALIZAR</button>
+
+            </div>
+        </div>
+    </div>
