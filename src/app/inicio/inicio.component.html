@@ -4,17 +4,19 @@
     <div class="col-lg-3">
       <div class="card d-flex justify-content-center align-items-center shadow-lg bg-white rounded mx-3">
         <div class="my-3">
-          <img src="{{foto}}" class="rounded-pill p-2 border border-secondary tamanho-img" alt="img">
+          <img src="{{foto}}" class="rounded-circle p-2 border border-secondary tamanho-img" alt="img">
         </div>
         <h5 class="fw-bolder">Olá, {{nome}}</h5>
         <hr>
         <div class="card-body ">
           <ul class="nav nav-pills d-flex flex-column justify-content-center my-5 " id="pills-tab" role="tablist">
-            
+
             <li class="ms-3 nav-item my-2" role="presentation">
-              <p class="text-muted"><i class="bi bi-person-lines-fill">  Alterar Cadastro</i></p>
+              <a [routerLink]="['/user-edit', idUser]"> <!-- idUser porque no inicio.ts essa variável pega o id do usuário logado -->
+                <p class="text-muted"><i class="bi bi-person-lines-fill p-1 border me-2"> Alterar Cadastro</i></p>
+              </a>
             </li>
-            
+
             <li class="nav-item my-2" role="presentation">
               <button class="nav-link btn-dark active" id="todaspostagens" data-bs-toggle="pill"
                 data-bs-target="#t-postagens" type="button" role="tab" aria-controls="t-postagens"
