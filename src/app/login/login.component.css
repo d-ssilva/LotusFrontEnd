@@ -1,25 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
 
-.button{
-    margin-top: 10px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.sair{
-    position: flex;
-    left: 30em;
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #03a9f4 !important;
+  transition: 0.5s;
+  font-family: Roboto;
 }
 
-.enter{
-    position: relative;
-    left: 20em;
+.container-fluidl {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  margin: 20px;
 }
 
-.borda-formulario{
-    border-style: solid;
-    border-right: 1pt;    
-    border-color: black;   
+.fundoazul {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  height: 420px;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.2); /*FUNDO TRANSPARENTE*/
 }
 
-.fundo-menu {
-    background-image: url(../../assets/img/img-fundo2.jpg);
+.fundoazul .box {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
+.fundoazul .box h2 {
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.fundoazul .box button {
+  cursor: pointer;
+  padding: 10px 20px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+}
+
+.formBx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25);
+  transition: 0.5s ease-in-out;
+}
+
+.formBx.active {
+  left: 50%;
+}
