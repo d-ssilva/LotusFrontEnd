@@ -4,12 +4,18 @@
     <div class="col-lg-3 ">
       <div class="card d-flex justify-content-center align-items-center rounded mx-3">
         <div class="my-3">
-          <img src="{{foto}}" class="rounded-pill p-2 border border-secondary tamanho-img" alt="img">
+          <img src="{{foto}}" class="rounded-circle p-2 border border-secondary tamanho-img" alt="img">
         </div>
         <h5 class="fw-bolder">Olá, {{nome}}</h5>
         <hr>
         <div class="card-body ">
           <ul class="nav nav-pills d-flex flex-column justify-content-center my-5 " id="pills-tab" role="tablist">
+            <li class="nav-item my-2" role="presentation">
+              <a [routerLink]="['/user-edit', idUser]">
+                <p class="text-muted"><i class="bi bi-person-lines-fill "> Alterar Cadastro</i></p>
+              </a>
+            </li>
+
             <li class="nav-item my-2" role="presentation">
               <button class="nav-link btn-dark active" id="todaspostagens" data-bs-toggle="pill"
                 data-bs-target="#t-postagens" type="button" role="tab" aria-controls="t-postagens"
@@ -87,7 +93,7 @@
 
         <!-- Postagens por Tema -->
         <div class="tab-pane fade" id="p-tema" role="tabpanel" aria-labelledby="postagensportema">
-          <div class="card-columns" *ngFor='let t of listaTemas'>
+          <div class="card-columns" *ngFor='let t of listasTemas'>
             <div class="card h-100 my-2" *ngFor='let i of t.postagem'>
               <div class=" pt-4 card-body text-center">
                 <img src="{{i.usuario.foto}}" alt="imagem de perfil" width="45px" class="img-fluid rounded-circle">
@@ -148,8 +154,11 @@
         <div class="form-group">
           <label for="texto">Escolha um tema ou <a routerLink='/tema' data-bs-dismiss="modal">Cadastre-se um
               novo:</a></label>
+
           <select class="form-control" [(ngModel)]='idTema' name="tema" id="tema">
-            <option *ngFor='let i of listaTemas' value="{{i.id}}">{{i.nome}}</option>
+            <option *ngFor='let i of listasTemas' value="{{i.id}}">
+              {{i.nome}}
+            </option>
           </select>
         </div>
 

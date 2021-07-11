@@ -22,6 +22,10 @@ export class AuthService {
     return this.http.post<User>('https://apilotus.herokuapp.com/usuario/cadastrar', user)
   }
 
+  atualizar(user: User): Observable<User> {
+    return this.http.put<User>('https://apilotus.herokuapp.com/usuario', user)
+  }
+
   getByIdUser(id: number): Observable<User> {
     return this.http.get<User>(`https://apilotus.herokuapp.com/usuario/${id}`)
   }
