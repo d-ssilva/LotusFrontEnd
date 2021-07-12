@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0)
+    this.cadastroButton();
   }
 
   confirmSenha(event: any) {
@@ -35,6 +36,18 @@ export class LoginComponent implements OnInit {
   tipoUser(event: any) {
     this.tipoUsuario = event.target.value
   }
+
+  cadastroButton(){
+
+    let loginBtn = document.querySelector('.loginBtn');
+    let cadastroBtn = document.querySelector('.cadastroBtn');
+    
+    cadastroBtn?.addEventListener('click', ()=>{
+      let formBx = document.querySelector('.formBx');
+      formBx?.classList.add('active')
+    })
+  
+    }
 
   cadastrar() {
     this.user.tipo = this.tipoUsuario
