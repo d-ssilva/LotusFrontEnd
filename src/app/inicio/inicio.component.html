@@ -8,24 +8,22 @@
         </div>
         <h5 class="fw-bolder">Olá, {{nome}}</h5>
         <hr>
-        <div class="card-body ">
-          <ul class="nav nav-pills d-flex flex-column justify-content-center my-5 " id="pills-tab" role="tablist">
+        <div class="card-body">
+          <ul class="nav nav-pills d-flex flex-column justify-content-center my-5" id="pills-tab" role="tablist">
             <li class="nav-item my-2" role="presentation">
-              <a [routerLink]="['/user-edit', idUser]">
-                <p class="text-muted"><i class="bi bi-person-lines-fill "> Alterar Cadastro</i></p>
-              </a>
+              <button [routerLink]="['/user-edit', idUser]" class="a btn btn-dark active" id="altUsuario" type="button">Alterar Cadastro</button>
             </li>
             <li class="nav-item my-2" role="presentation">
-              <button class="nav-link btn-dark active" id="todaspostagens" data-bs-toggle="pill"
+              <button class="a btn btn-dark active" id="todaspostagens" data-bs-toggle="pill"
                 data-bs-target="#t-postagens" type="button" role="tab" aria-controls="t-postagens"
                 aria-selected="true">Todas Postagens</button>
             </li>
             <li class="nav-item my-2" role="presentation">
-              <button class="nav-link btn-dark" id="minhaspostagens" data-bs-toggle="pill" data-bs-target="#m-postagens"
+              <button class="a btn btn-dark" id="minhaspostagens" data-bs-toggle="pill" data-bs-target="#m-postagens"
                 type="button" role="tab" aria-controls="m-postagens" aria-selected="false">Minhas Postagens</button>
             </li>
             <li class="nav-item my-2 " role="presentation">
-              <button class="nav-link btn-dark" id="postagensportema" data-bs-toggle="pill" data-bs-target="#p-tema"
+              <button class="a btn btn-dark" id="postagensportema" data-bs-toggle="pill" data-bs-target="#p-tema"
                 type="button" role="tab" aria-controls="p-tema" aria-selected="false">Postagens
                 por
                 tema</button>
@@ -160,7 +158,7 @@
         </div>
 
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer d-flex justify-content-center align-items-center">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)='publicar()'>POSTAR</button>
       </div>
