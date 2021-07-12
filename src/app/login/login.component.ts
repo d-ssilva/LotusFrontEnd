@@ -46,6 +46,11 @@ export class LoginComponent implements OnInit {
       let formBx = document.querySelector('.formBx');
       formBx?.classList.add('active')
     })
+
+    loginBtn?.addEventListener('click', ()=>{
+      let formBx = document.querySelector('.formBx');
+      formBx?.classList.remove('active')
+    })
   
     }
 
