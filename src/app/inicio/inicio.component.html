@@ -1,32 +1,29 @@
 <div class="container mt-3  bg3">
   <div class="row">
     <!-- abertura lateral esquerda -->
-    <div class="col-lg-3 ">
-      <div class="card d-flex justify-content-center align-items-center rounded mx-3">
+    <div class="col-lg-3">
+      <div class="card d-flex justify-content-center align-items-center bg-white rounded mx-3">
         <div class="my-3">
           <img src="{{foto}}" class="rounded-circle p-2 border border-secondary tamanho-img" alt="img">
         </div>
         <h5 class="fw-bolder">Olá, {{nome}}</h5>
         <hr>
-        <div class="card-body ">
-          <ul class="nav nav-pills d-flex flex-column justify-content-center my-5 " id="pills-tab" role="tablist">
+        <div class="card-body">
+          <ul class="nav nav-pills d-flex flex-column justify-content-center my-5" id="pills-tab" role="tablist">
             <li class="nav-item my-2" role="presentation">
-              <a [routerLink]="['/user-edit', idUser]">
-                <p class="text-muted"><i class="bi bi-person-lines-fill "> Alterar Cadastro</i></p>
-              </a>
+              <button [routerLink]="['/user-edit', idUser]" class="a btn btn-dark active" id="altUsuario" type="button">Alterar Cadastro</button>
             </li>
-
             <li class="nav-item my-2" role="presentation">
-              <button class="nav-link btn-dark active" id="todaspostagens" data-bs-toggle="pill"
+              <button class="a btn btn-dark active" id="todaspostagens" data-bs-toggle="pill"
                 data-bs-target="#t-postagens" type="button" role="tab" aria-controls="t-postagens"
                 aria-selected="true">Todas Postagens</button>
             </li>
             <li class="nav-item my-2" role="presentation">
-              <button class="nav-link btn-dark" id="minhaspostagens" data-bs-toggle="pill" data-bs-target="#m-postagens"
+              <button class="a btn btn-dark" id="minhaspostagens" data-bs-toggle="pill" data-bs-target="#m-postagens"
                 type="button" role="tab" aria-controls="m-postagens" aria-selected="false">Minhas Postagens</button>
             </li>
             <li class="nav-item my-2 " role="presentation">
-              <button class="nav-link btn-dark" id="postagensportema" data-bs-toggle="pill" data-bs-target="#p-tema"
+              <button class="a btn btn-dark" id="postagensportema" data-bs-toggle="pill" data-bs-target="#p-tema"
                 type="button" role="tab" aria-controls="p-tema" aria-selected="false">Postagens
                 por
                 tema</button>
@@ -35,11 +32,10 @@
         </div>
       </div>
     </div>
-    <!--Close Barra lateral direita -->
 
     <!--Abertura Feed Centro-->
     <div class="col-lg-6 mb-5">
-      <div class="card  pt-4">
+      <div class="card pt-4">
         <div class="d-flex justify-content-center align-items-center">
           <div class="d-grid gap-2">
             <button type="button" class="btn btn-dark m-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -52,8 +48,8 @@
       <!-- Todas Postagens -->
       <div class="tab-content my-5" id="pills-tabContent">
         <div class="tab-pane fade show active" id="t-postagens" role="tabpanel" aria-labelledby="todaspostagens">
-          <div class="card h-100 my-2" *ngFor='let i of listaPostagens'>
-            <div class=" pt-4 card-body text-center">
+          <div class="card h-100 my-2" *ngFor='let i of listaPostagens' data-aos="fade-right" data-aos-duration="1000" data-aos-delay="20">
+            <div class="pt-4 card-body text-center">
               <img src="{{i.usuario.foto}}" alt="imagem de perfil" width="35px" class="img-fluid rounded-circle">
               <p class="card-text"><small class="text-muted">Postado por: {{i.usuario.nome}}</small></p>
               <h5 class="card-title">{{i.titulo}}</h5>
@@ -73,7 +69,7 @@
         <div class="tab-pane fade" id="m-postagens" role="tabpanel" aria-labelledby="minhaspostagens">
           <div class="card-columns">
             <div class="card h-100 my-2" *ngFor='let i of user.postagem'>
-              <div class=" pt-4 card-body text-center">
+              <div class="pt-4 card-body text-center">
                 <img src="{{foto}}" alt="imagem de perfil" width="45px" class="img-fluid rounded-circle">
                 <h5 class="card-title">{{i.titulo}}</h5>
                 <p class="card-text"><small class="text-muted">Tema: {{i.tema.nome}}</small></p>
@@ -95,7 +91,7 @@
         <div class="tab-pane fade" id="p-tema" role="tabpanel" aria-labelledby="postagensportema">
           <div class="card-columns" *ngFor='let t of listasTemas'>
             <div class="card h-100 my-2" *ngFor='let i of t.postagem'>
-              <div class=" pt-4 card-body text-center">
+              <div class="pt-4 card-body text-center">
                 <img src="{{i.usuario.foto}}" alt="imagem de perfil" width="45px" class="img-fluid rounded-circle">
                 <p class="card-text"><small class="text-muted">Postado por: {{i.usuario.nome}}</small></p>
                 <h5 class="card-title">{{i.titulo}}</h5>
@@ -112,10 +108,9 @@
         </div>
       </div>
     </div>
-    <!--Fechamento Feed Centro-->
 
     <!-- Barra lateral direita -->
-    <div class="col-lg-3 card  mev">
+    <div class="col-lg-3 card mev">
     </div>
     <!-- fechamento lateral direita -->
   </div>
@@ -163,7 +158,7 @@
         </div>
 
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer d-flex justify-content-center align-items-center">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)='publicar()'>POSTAR</button>
       </div>
