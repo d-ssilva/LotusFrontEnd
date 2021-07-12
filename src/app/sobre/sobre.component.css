@@ -1,10 +1,15 @@
 .tamanho-img {
-  width: 7rem;
-  height: 7rem;
+    width: 7rem;
+    height: 7rem;
+}
+
+.fundo {
+    background-image: linear-gradient(to right, #434343 0%, rgb(0, 0, 0) 100%);
 }
 
 .cortext {
-  color: bisque; /*	#FFE4C4*/
+    color: bisque;
+    /*	#FFE4C4*/
 }
 
 .fundo-sobre {
@@ -71,8 +76,13 @@ ul.social-midias li {
 .fa-github {
   color: black;
 }
+
 .fa-github:hover {
   color: black;
+}
+
+.bRedonda {
+    border-radius: 35%;
 }
 
 .s {
