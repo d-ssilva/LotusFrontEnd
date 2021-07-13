@@ -11,7 +11,8 @@
         <div class="card-body">
           <ul class="nav nav-pills d-flex flex-column justify-content-center my-5" id="pills-tab" role="tablist">
             <li class="nav-item my-2" role="presentation">
-              <button [routerLink]="['/user-edit', idUser]" class="a btn btn-dark active" id="altUsuario" type="button">Alterar Cadastro</button>
+              <button [routerLink]="['/user-edit', idUser]" class="a btn btn-dark active" id="altUsuario"
+                type="button">Alterar Cadastro</button>
             </li>
             <li class="nav-item my-2" role="presentation">
               <button class="a btn btn-dark active" id="todaspostagens" data-bs-toggle="pill"
@@ -34,21 +35,26 @@
     </div>
 
     <!--Abertura Feed Centro-->
-    <div class="col-lg-6 mb-5">
-      <div class="card pt-4">
+    <div class="col-lg-6">
+      <div class="card">
         <div class="d-flex justify-content-center align-items-center">
-          <div class="d-grid gap-2">
-            <button type="button" class="btn btn-dark m-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-              Nova Postagem
-            </button>
+          <div class="row">
+            <div class="col-12">
+
+              <button type="button" class="btn btn-dark m-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Nova Postagem
+              </button>
+            </div>
           </div>
         </div>
       </div>
+    
 
       <!-- Todas Postagens -->
       <div class="tab-content my-5" id="pills-tabContent">
         <div class="tab-pane fade show active" id="t-postagens" role="tabpanel" aria-labelledby="todaspostagens">
-          <div class="card h-100 my-2" *ngFor='let i of listaPostagens | orderBy : key : reverse' data-aos="fade-right" data-aos-duration="1000" data-aos-delay="20">
+          <div class="card h-100 my-2" *ngFor='let i of listaPostagens | orderBy : key : reverse' data-aos="fade-right"
+            data-aos-duration="1000" data-aos-delay="20">
             <div class="pt-4 card-body text-center">
               <img src="{{i.usuario.foto}}" alt="imagem de perfil" width="35px" class="img-fluid rounded-circle">
               <p class="card-text"><small class="text-muted">Postado por: {{i.usuario.nome}}</small></p>
@@ -80,8 +86,8 @@
                     às {{ i.data | date: "HH:mm" }}
                   </small>
                 </p>
-                <a [routerLink]="['/postagem-edit',i.id]" class="text-info mr-3" href="">Editar</a>
-                <a [routerLink]="['/postagem-delete',i.id]" class="text-danger" href="">Apagar</a>
+                <a [routerLink]="['/postagem-edit',i.id]" class="text-info mt-1 me-3" href="">Editar</a>
+                <a [routerLink]="['/postagem-delete',i.id]" class="text-danger m-1" href="">Apagar</a>
               </div>
             </div>
           </div>
