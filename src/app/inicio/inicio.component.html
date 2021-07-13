@@ -88,8 +88,12 @@
                     às {{ i.data | date: "HH:mm" }}
                   </small>
                 </p>
-                <button class="btn btn-dark me-3" [routerLink]="['/postagem-delete',i.id]">Apagar</button>
-                <button class="btn btn-outline-dark" [routerLink]="['/postagem-edit',i.id]">Editar</button>                
+                <div class="row mt-2">
+                  <div class="col-md-12">
+                    <button class="btn btn-dark me-3" [routerLink]="['/postagem-delete',i.id]">Apagar</button>
+                    <button class="btn btn-outline-dark" [routerLink]="['/postagem-edit',i.id]">Editar</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
