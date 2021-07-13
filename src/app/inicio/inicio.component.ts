@@ -25,8 +25,12 @@ export class InicioComponent implements OnInit {
   user: User = new User()
   idUser = environment.id
 
-  foto = environment.foto 
+  foto = environment.foto
   nome = environment.nome
+
+  // ESSAS VARIÁVEIS AJUDAM A SEPARAR AS POSTAGENS POR DATA EM ORDEM DESCRESCENTE
+  key = 'data'
+  reverse = true
 
   constructor(
     private rota: Router,
@@ -69,7 +73,7 @@ export class InicioComponent implements OnInit {
     })
   }
 
-  findByIdUser(){
+  findByIdUser() {
     this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
       this.user = resp
     })
@@ -83,10 +87,10 @@ export class InicioComponent implements OnInit {
     this.postagem.usuario.foto = this.foto
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
-    this.postagem = resp
-    alert('Postagem realizada com sucesso!')
-    this.getAllPostagens()
-    this.postagem = new Postagem()
+      this.postagem = resp
+      alert('Postagem realizada com sucesso!')
+      this.getAllPostagens()
+      this.postagem = new Postagem()
 
     })
   }
