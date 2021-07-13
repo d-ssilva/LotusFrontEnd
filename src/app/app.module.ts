@@ -20,6 +20,7 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
 import { OrderModule } from 'ngx-order-pipe';
 import { AlertasComponent } from './alertas/alertas.component'; // para funcionamento do order-by de postagens :-)
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 
@@ -44,7 +45,8 @@ import { AlertasComponent } from './alertas/alertas.component'; // para funciona
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    OrderModule // para funcionamento do order-by de postagens :-)
+    OrderModule, // para funcionamento do order-by de postagens :-)
+    ModalModule.forRoot() // para utilização de novos modais
   ],
   providers: [{
     provide: LocationStrategy,
