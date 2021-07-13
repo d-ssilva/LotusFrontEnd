@@ -44,12 +44,16 @@ export class LoginComponent implements OnInit {
     
     cadastroBtn?.addEventListener('click', ()=>{
       let formBx = document.querySelector('.formBx');
+      let tud = document.querySelector('.tud');
       formBx?.classList.add('active')
+      tud?.classList.add('active')
     })
 
     loginBtn?.addEventListener('click', ()=>{
       let formBx = document.querySelector('.formBx');
+      let tud = document.querySelector('.tud');
       formBx?.classList.remove('active')
+      tud?.classList.remove('active')
     })
   
     }
