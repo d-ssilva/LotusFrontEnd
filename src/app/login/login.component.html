@@ -50,15 +50,18 @@
                 <button type="button" class="cadastroBtn">Cadastre-se</button>
             </div>
         </div>
+
         <div class="formBx">
-            <div class="form loginForm">
+            <div class="form loginForm" style="margin-top: 4rem;">
+                <img class="logo" src="../../assets/img/LOGO.png" alt="Logo" style="height: 90px; width: 90px;">
+                <!--<p class="n-logo">LOTUS</p>-->
                 <form>
                     <h3>Login</h3>
                     <input [(ngModel)]="userLogin.usuario" type="text" name="usuario" id="usuario"
                         placeholder="Digite o seu usuario">
                     <input [(ngModel)]="userLogin.senha" type="password" name="senha" id="senha"
                         placeholder="Digite a sua senha">
-                    <input type="submit" value="Login" (click)='entrar()'>
+                    <input class="login" type="submit" value="Login" (click)='entrar()'>
                     <!-- <a href="#" class="forgot">Forgot Password</a> -->
                 </form>
             </div>

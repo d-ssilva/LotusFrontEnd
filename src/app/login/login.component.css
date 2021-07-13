@@ -198,6 +198,19 @@
 
 }
 
+.logo{
+  position:absolute;
+  left: 50%;
+  transform:translateX(-50%);
+  bottom: 95%;
+}
+/*.n-logo{
+  position: relative;
+  
+  left: 10.8rem;
+  bottom: 5rem;
+  font-weight: bold;
+}*/
 
 
 
