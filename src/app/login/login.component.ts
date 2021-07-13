@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   confirmarSenha: string
   tipoUsuario: string
-  
+
 
   constructor(
     private router: Router,
@@ -38,39 +38,33 @@ export class LoginComponent implements OnInit {
     this.tipoUsuario = event.target.value
   }
 
-  cadastroButton(){
+  cadastroButton() {
 
     let loginBtn = document.querySelector('.loginBtn');
     let cadastroBtn = document.querySelector('.cadastroBtn');
-    let caBtn = document.querySelector('.caBtn');
-    
-    
-    cadastroBtn?.addEventListener('click', ()=>{
+
+    cadastroBtn?.addEventListener('click', () => {
       let formBx = document.querySelector('.formBx');
-      let tud = document.querySelector('.tud');
+      // let tud = document.querySelector('.tud');
       formBx?.classList.add('active')
-      tud?.classList.add('active')
+      // tud?.classList.add('active') MUDAR COR DE FUNDO
     })
 
-    loginBtn?.addEventListener('click', ()=>{
+    loginBtn?.addEventListener('click', () => {
       let formBx = document.querySelector('.formBx');
-      let tud = document.querySelector('.tud');
+      // let tud = document.querySelector('.tud');
       formBx?.classList.remove('active')
-      tud?.classList.remove('active')
+      // tud?.classList.remove('active') MUDAR COR DE FUNDO
     })
 
-    loginBtn?.addEventListener('click', ()=>{
-      let formBx = document.querySelector('.formBx');
-      let tud = document.querySelector('.tud');
-      formBx?.classList.remove('active')
-      tud?.classList.remove('active')
-    })
+  }
 
-    caBtn?.addEventListener('click', ()=> {
-      let formBx = document.querySelector('.formBx');
-      formBx?.classList.remove('active')
-    })    
-    }
+  mudarParaLogin() {
+    let formBx = document.querySelector('.formBx');
+    formBx?.classList.remove('active')
+  }
+
+
 
   cadastrar() {
     this.user.tipo = this.tipoUsuario
@@ -80,6 +74,7 @@ export class LoginComponent implements OnInit {
       this.auth.cadastrar(this.user).subscribe((resp: User) => {
         this.user = resp
         this.router.navigate(['/login'])
+        this.mudarParaLogin();
         alert('Usuário cadastrado com sucesso!')
       })
     }
@@ -89,14 +84,11 @@ export class LoginComponent implements OnInit {
   entrar() {
     this.auth.entrar(this.userLogin).subscribe((resp: UserLogin) => {
       this.userLogin = resp
-
       environment.token = this.userLogin.token
       environment.nome = this.userLogin.nome
       environment.foto = this.userLogin.foto
       environment.id = this.userLogin.id
-    
       this.router.navigate(['/inicio'])
-
     }, erro => {
       if (erro.status == 500) {
         alert('Usuario ou senha incorretos!')
