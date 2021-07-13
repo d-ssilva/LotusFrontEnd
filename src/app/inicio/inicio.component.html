@@ -1,8 +1,8 @@
-<div class="container mt-3  bg3">
+<div class="container mt-3 bg3">
   <div class="row">
     <!-- abertura lateral esquerda -->
-    <div class="col-lg-3">
-      <div class="card d-flex justify-content-center align-items-center bg-white rounded mx-3">
+    <div class="col-lg-3 ">
+      <div class="card d-flex justify-content-center align-items-center bg-white rounded mx-3 sticky-lg-top">
         <div class="my-3">
           <img src="{{foto}}" class="rounded-circle p-2 border border-secondary tamanho-img" alt="img">
         </div>
@@ -55,8 +55,7 @@
       <!-- Todas Postagens -->
       <div class="tab-content my-5" id="pills-tabContent">
         <div class="tab-pane fade show active" id="t-postagens" role="tabpanel" aria-labelledby="todaspostagens">
-          <div class="card h-100 my-2" *ngFor='let i of listaPostagens | orderBy : key : reverse' data-aos="fade-right"
-            data-aos-duration="1000" data-aos-delay="20">
+          <div class="card h-100 my-2" *ngFor='let i of listaPostagens | orderBy : key : reverse' data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
             <div class="pt-4 card-body text-center">
               <img src="{{i.usuario.foto}}" alt="imagem de perfil" width="35px" class="img-fluid rounded-circle">
               <p class="card-text"><small class="text-muted">Postado por: {{i.usuario.nome}}</small></p>
