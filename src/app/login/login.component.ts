@@ -45,26 +45,23 @@ export class LoginComponent implements OnInit {
 
     cadastroBtn?.addEventListener('click', () => {
       let formBx = document.querySelector('.formBx');
-      // let tud = document.querySelector('.tud');
+      let tud = document.querySelector('.tud');
       formBx?.classList.add('active')
-      // tud?.classList.add('active') MUDAR COR DE FUNDO
+      tud?.classList.add('active') 
     })
 
     loginBtn?.addEventListener('click', () => {
       let formBx = document.querySelector('.formBx');
-      // let tud = document.querySelector('.tud');
+      let tud = document.querySelector('.tud');
       formBx?.classList.remove('active')
-      // tud?.classList.remove('active') MUDAR COR DE FUNDO
+      tud?.classList.remove('active') 
     })
-
   }
 
   mudarParaLogin() {
     let formBx = document.querySelector('.formBx');
     formBx?.classList.remove('active')
   }
-
-
 
   cadastrar() {
     this.user.tipo = this.tipoUsuario
