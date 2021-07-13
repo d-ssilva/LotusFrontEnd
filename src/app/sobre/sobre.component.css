@@ -82,9 +82,25 @@ ul.social-midias li {
 }
 
 .bRedonda {
-    border-radius: 35%;
+  
 }
 
 .s {
   height: 100%;
+}
+.borda{
+ 
+  
+  
+  border-radius: 30px;
+  padding: 2rem;
+  margin-left: auto !important;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+  
+}
+.textos{
+  text-align: justify !important;
+  font-size: 26px !important;
+  
 }
