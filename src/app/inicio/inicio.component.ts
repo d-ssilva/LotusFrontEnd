@@ -28,6 +28,10 @@ export class InicioComponent implements OnInit {
   foto = environment.foto
   nome = environment.nome
 
+
+  // lista de usuários empresas
+  listaUsuario: User[]
+
   // ESSAS VARIÁVEIS AJUDAM A SEPARAR AS POSTAGENS POR DATA EM ORDEM DESCRESCENTE
   key = 'data'
   reverse = true
@@ -47,7 +51,6 @@ export class InicioComponent implements OnInit {
       alert('Sua seção expirou, faça o login novamente')
       this.rota.navigate(['/login'])
     }
-
     this.temaService.refreshToken()
     this.postagemService.refreshToken()
     this.getAllTema()
