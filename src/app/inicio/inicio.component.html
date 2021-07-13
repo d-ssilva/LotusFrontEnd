@@ -7,8 +7,9 @@
           <img src="{{foto}}" class="rounded-circle p-2 border border-secondary tamanho-img" alt="img">
         </div>
         <h5 class="fw-bolder">Olá, {{nome}}</h5>
-        <hr>
         <div class="card-body">
+          <hr>
+
           <ul class="nav nav-pills d-flex flex-column justify-content-center my-5" id="pills-tab" role="tablist">
             <li class="nav-item my-2" role="presentation">
               <button [routerLink]="['/user-edit', idUser]" class="a btn btn-dark active" id="altUsuario"
@@ -37,10 +38,11 @@
     <!--Abertura Feed Centro-->
     <div class="col-lg-6">
       <div class="card">
-        <div class="d-flex justify-content-center align-items-center">
-          <div class="row">
-            <div class="col-12">
-
+        <div class="d-flex justify-content-center align-content-center bg-primary">
+          <div
+            class="row border border-2 bg-danger justify-content-center justify-items-center align-content-center align-items-center ">
+            <div class="col-md-12 justify-content-center align-items-center">
+              <h6>Faça uma uma nova publicação aqui!</h6>
               <button type="button" class="btn btn-dark m-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 Nova Postagem
               </button>
@@ -48,7 +50,7 @@
           </div>
         </div>
       </div>
-    
+
 
       <!-- Todas Postagens -->
       <div class="tab-content my-5" id="pills-tabContent">
@@ -86,8 +88,8 @@
                     às {{ i.data | date: "HH:mm" }}
                   </small>
                 </p>
-                <a [routerLink]="['/postagem-edit',i.id]" class="text-info mt-1 me-3" href="">Editar</a>
-                <a [routerLink]="['/postagem-delete',i.id]" class="text-danger m-1" href="">Apagar</a>
+                <button class="btn btn-dark me-3" [routerLink]="['/postagem-delete',i.id]">Apagar</button>
+                <button class="btn btn-outline-dark" [routerLink]="['/postagem-edit',i.id]">Editar</button>                
               </div>
             </div>
           </div>
