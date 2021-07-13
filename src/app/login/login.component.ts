@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
 
   confirmarSenha: string
   tipoUsuario: string
+  
 
   constructor(
     private router: Router,
@@ -26,6 +27,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0)
+    this.cadastroButton();
   }
 
   confirmSenha(event: any) {
@@ -36,9 +38,42 @@ export class LoginComponent implements OnInit {
     this.tipoUsuario = event.target.value
   }
 
+  cadastroButton(){
+
+    let loginBtn = document.querySelector('.loginBtn');
+    let cadastroBtn = document.querySelector('.cadastroBtn');
+    let caBtn = document.querySelector('.caBtn');
+    
+    
+    cadastroBtn?.addEventListener('click', ()=>{
+      let formBx = document.querySelector('.formBx');
+      let tud = document.querySelector('.tud');
+      formBx?.classList.add('active')
+      tud?.classList.add('active')
+    })
+
+    loginBtn?.addEventListener('click', ()=>{
+      let formBx = document.querySelector('.formBx');
+      let tud = document.querySelector('.tud');
+      formBx?.classList.remove('active')
+      tud?.classList.remove('active')
+    })
+
+    loginBtn?.addEventListener('click', ()=>{
+      let formBx = document.querySelector('.formBx');
+      let tud = document.querySelector('.tud');
+      formBx?.classList.remove('active')
+      tud?.classList.remove('active')
+    })
+
+    caBtn?.addEventListener('click', ()=> {
+      let formBx = document.querySelector('.formBx');
+      formBx?.classList.remove('active')
+    })    
+    }
+
   cadastrar() {
     this.user.tipo = this.tipoUsuario
-
     if (this.user.senha != this.confirmarSenha) {
       alert('As senhas estão incorretas')
     } else {
