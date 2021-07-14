@@ -109,3 +109,20 @@ a {
 .ac {
   width: 15rem;
 }
+
+.links:hover {
+color: #4ac2da;
+transform: scale(1.1);
+
+
+}
+
+.ods-5{
+  margin-left: 50px;
+}
+
+.chuchu{
+
+background-color: transparent!important;
+border: none;
+}
