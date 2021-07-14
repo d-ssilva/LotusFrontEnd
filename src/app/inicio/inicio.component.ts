@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { User } from '../model/User';
+import { UserLogin } from '../model/UserLogin';
 import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
@@ -18,6 +19,8 @@ export class InicioComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
+
+  listaUsuarios: User[]
 
   tema: Tema = new Tema()
   listasTemas: Tema[]
@@ -55,6 +58,7 @@ export class InicioComponent implements OnInit {
     this.getAllTema()
     this.getAllPostagens()
     this.findByIdUser()
+    this.getAllUsuario() 
   }
 
   getAllTema() {
@@ -72,6 +76,12 @@ export class InicioComponent implements OnInit {
   getAllPostagens() {
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp
+    })
+  }
+
+  getAllUsuario() {
+    this.authService.getAllUser().subscribe((resp: User[]) => {
+      this.listaUsuarios = resp
     })
   }
 

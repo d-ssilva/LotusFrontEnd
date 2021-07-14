@@ -30,6 +30,10 @@ export class AuthService {
     return this.http.get<User>(`https://apilotus.herokuapp.com/usuario/${id}`)
   }
 
+  getAllUser(): Observable<User[]> {
+    return this.http.get<User[]>('https://apilotus.herokuapp.com/usuario/')
+  }
+
   logado() {
     let logado = false
 
