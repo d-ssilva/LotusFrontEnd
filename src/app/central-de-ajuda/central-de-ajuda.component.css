@@ -99,7 +99,7 @@ a {
 }
 
 .bot {
-  background-color: #8ddbeb;
+  background-color: #ffe4c4;
 }
 
 .mg {
@@ -115,4 +115,14 @@ color: #4ac2da;
 transform: scale(1.1);
 
 
+}
+
+.ods-5{
+  margin-left: 50px;
+}
+
+.chuchu{
+
+background-color: transparent!important;
+border: none;
 }
