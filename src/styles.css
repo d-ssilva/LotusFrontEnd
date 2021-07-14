@@ -1,7 +1,7 @@
 body {
     background-color: #f3f2ef;
-  }
-  
+}
+
 .mev {
     min-height: 100vh;
 }
@@ -12,7 +12,7 @@ body {
 
 .cortext {
     color: bisque;
-  }
+}
 
 .textb {
     border: transparent;
@@ -29,4 +29,6 @@ html {
     scroll-behavior: smooth;
 }
 
-  
+hr {
+    color: bisque;
+}
