@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400&display=swap"); */
 
 html {
     scroll-behavior: smooth;
@@ -8,7 +8,7 @@ html {
 
 body{
     background-color: initial!important;
-    font-family: "Montserrat", sans-serif !important;
+    /* font-family: "Montserrat", sans-serif !important; */
 }
   
 .mev {
@@ -32,4 +32,8 @@ body{
 
 .t {
     height: 200px;
+}
+
+.mevs {
+    min-height: 60vh;
 }
