@@ -1,43 +1,42 @@
-<div class="container mt-3 bg3 mb-3">
+<div class="container mt-3 mb-3">
   <div class="row">
     <!-- abertura lateral esquerda -->
-    <div class="col-lg-4 ">
-      <div class="card d-flex justify-content-center align-items-center bg-white rounded mx-3 sticky-lg-top">
+    <div class="col-lg-3 ">
+      <div class="card d-flex justify-content-center align-items-center bg-white rounded sticky-lg-top">
 
-        <!-- <div class="my-3">  ============= FOTO ANTIGA
+        <div class="my-3">
           <img src="{{foto}}" class="rounded-circle p-2 border border-secondary tamanho-img" alt="img">
         </div>
-        <h5 class="fw-bolder">Olá, {{nome}}</h5> -->
-
-        <div class="profile-card-2 col-12">
-          <img src="{{foto}}">
-          <div class="profile-name">{{nome}}</div>
-          <div class="profile-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i
-                class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
-        </div>
+        <h5 class="fw-bolder">Olá, {{nome}}</h5>
         <hr>
-        <div class="card-body">
-          <hr>
 
+        <div class="card-body frame">
+          <hr>
           <ul class="nav nav-pills d-flex flex-column justify-content-center my-5" id="pills-tab" role="tablist">
-            <li class="nav-item my-2" role="presentation">
-              <button [routerLink]="['/user-edit', idUser]" class="a btn btn-dark active" id="altUsuario"
-                type="button">Alterar Cadastro</button>
+
+            <li class="nav-item my-2 active" role="presentation">
+              <a [routerLink]="['/user-edit', idUser]" href=""><i class="fa fa-pencil "
+                  aria-hidden="true"></i><span>Alterar Cadastro</span></a>
             </li>
+
             <li class="nav-item my-2" role="presentation">
-              <button class="a btn btn-dark active" id="todaspostagens" data-bs-toggle="pill"
-                data-bs-target="#t-postagens" type="button" role="tab" aria-controls="t-postagens"
-                aria-selected="true">Todas Postagens</button>
+              <a href="" id="todaspostagens" data-bs-toggle="pill" data-bs-target="#t-postagens" type="button"
+                role="tab" aria-controls="t-postagens" aria-selected="true"><i class="fa fa-envelope-o"
+                  aria-hidden="true"></i><span>Todas Postagens</span></a>
             </li>
+
             <li class="nav-item my-2" role="presentation">
-              <button class="a btn btn-dark" id="minhaspostagens" data-bs-toggle="pill" data-bs-target="#m-postagens"
-                type="button" role="tab" aria-controls="m-postagens" aria-selected="false">Minhas Postagens</button>
+              <a href="" id="minhaspostagens" data-bs-toggle="pill" data-bs-target="#m-postagens" type="button"
+                role="tab" aria-controls="m-postagens" aria-selected="false"><i class="fa fa-at"
+                  aria-hidden="true"></i><span>Minhas
+                  Postagens</span></a>
             </li>
+
             <li class="nav-item my-2 " role="presentation">
-              <button class="a btn btn-dark" id="postagensportema" data-bs-toggle="pill" data-bs-target="#p-tema"
-                type="button" role="tab" aria-controls="p-tema" aria-selected="false">Postagens
-                por
-                tema</button>
+              <a href="" id="postagensportema" data-bs-toggle="pill" data-bs-target="#p-tema" type="button" role="tab"
+                aria-controls="p-tema" aria-selected="false"><i class="fa fa-building"
+                  aria-hidden="true"></i><span>Postagens
+                  por tema</span></a>
             </li>
           </ul>
         </div>
@@ -49,7 +48,7 @@
       <div class="card  pt-4">
         <div class="d-flex justify-content-center align-items-center">
           <div class="d-grid gap-2">
-            <button type="button" class="btn btn-dark m-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <button type="button" class="btn btn-dark m-4 custom" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
               Nova Postagem
             </button>
           </div>
@@ -59,20 +58,28 @@
       <!-- Todas Postagens -->
       <div class="tab-content my-5" id="pills-tabContent">
         <div class="tab-pane fade show active" id="t-postagens" role="tabpanel" aria-labelledby="todaspostagens">
-          <div class="card h-100 my-2" *ngFor='let i of listaPostagens | orderBy : key : reverse' data-aos="fade-up"
+          <div class="card h-100 my-3" *ngFor='let i of listaPostagens | orderBy : key : reverse' data-aos="fade-up"
             data-aos-once="true" data-aos-duration="1000">
-            <div class="pt-4 card-body text-center">
-              <img src="{{i.usuario.foto}}" alt="imagem de perfil" width="35px" class="img-fluid rounded-circle">
-              <p class="card-text"><small class="text-muted">Postado por: {{i.usuario.nome}}</small></p>
-              <h5 class="card-title">{{i.titulo}}</h5>
-              <p class="card-text"><small class="text-muted">Tema: {{i.tema.nome}}</small></p>
-              <p class="card-text">{{i.mensagem}}</p>
-              <p class="card-text m-0">
-                <small class="text-muted">
-                  {{ i.data | date: "dd/MM/yyyy" }}
-                  às {{ i.data | date: "HH:mm" }}
-                </small>
-              </p>
+            <div class="pt-4 card-body text-center d-flex">
+              <div class="row">
+                <div class="col-lg-12 d-flex flex-start">
+                  <div class="imgBox">
+                    <img src="{{i.usuario.foto}}" alt="imagem de perfil" class="img-fluid rounded-circle">
+                  </div>
+                  <div class="pp">
+                    <p class="card-text mb-0"><small class="text-muted  lead"><b>{{i.usuario.nome}}</b></small></p>
+                    <p class="card-text mt-0">
+                      <small class="text-muted">
+                        {{ i.data | date: "dd/MM/yyyy" }}
+                        às {{ i.data | date: "HH:mm" }}
+                      </small>
+                    </p>
+                  </div>
+                </div>
+                <h5 class="card-title">{{i.titulo}}</h5>
+                <p class="card-text"><small class="text-muted">Tema: {{i.tema.nome}}</small></p>
+                <p class="card-text text-start">{{i.mensagem}}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -126,7 +133,7 @@
     </div>
 
     <!-- Barra lateral direita -->
-    <div class="col-lg-2 card mev">
+    <div class="col-lg-3 card mev">
     </div>
     <!-- fechamento lateral direita -->
   </div>
