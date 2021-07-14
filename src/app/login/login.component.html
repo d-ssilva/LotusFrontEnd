@@ -34,18 +34,13 @@
                     Não tem uma conta? <a data-bs-toggle="modal" data-bs-target="#cadastrarModal"
                         routerLink='/cadastrar'>Cadastre-se</a>
                 </p> -->
-                <div class="imgBox">
-                    <img src="../assets/img/img-fundo.jpg" alt="">
-                </div>
+<div class="imgBox">
+    <img src="../../assets/img/img-fundo3.jpg" alt="">
+</div>
 <div class="container-fluid tud">
-    
     <div class="container-fluidl">
-        
         <div class="fundoazul shadow-lg">
             <div class="box blogin">
-                <!-- <img class="justify-content-center mt-4 mb-3" src="../../assets/img/LOGO.png" alt="Logo da rede"
-                    width="200rem"> -->
-                <!-- <h2>Faça login</h2> -->
                 <h2>Já possui cadastro? Acesse</h2>
                 <button type="button" class="loginBtn">Entrar</button>
             </div>
@@ -56,20 +51,27 @@
         </div>
         <div class="formBx">
             <div class="form loginForm">
+                <div class="d-flex justify-content-center flex-column align-items-center pb-5">
+                    <img class="justify-content-center mt-4 mb-3" src="../../assets/img/LOGO.png" alt="Logo da rede"
+                        width="130rem">
+                    <h3 class="text-center fw-light">Lotus</h3>
+                </div>
                 <form>
-                    <h3>Login</h3>
                     <input [(ngModel)]="userLogin.usuario" type="text" name="usuario" id="usuario"
                         placeholder="Digite o seu usuario">
                     <input [(ngModel)]="userLogin.senha" type="password" name="senha" id="senha"
                         placeholder="Digite a sua senha">
-                    <input type="submit" value="Login" (click)='entrar()'>
-                    <!-- <a href="#" class="forgot">Forgot Password</a> -->
+                    <div class="d-flex justify-content-center">
+                        <input type="submit" value="Login" (click)='entrar()'>
+                    </div>
                 </form>
             </div>
 
             <div class="form cadaForm">
                 <form>
-                    <h3>Cadastre-se</h3>
+                    <div class="d-flex justify-content-center align-content-center">
+                        <h3 class="fw-light">Cadastre-se</h3>
+                    </div>
                     <input [(ngModel)]="user.nome" type="text" name="nome" id="nome" placeholder="Digite o seu nome">
                     <input [(ngModel)]="user.usuario" type="text" name="nomeDeUsuaria" id="nomeDeUsuaria"
                         placeholder="Digite o nome de usuario">
@@ -81,7 +83,13 @@
                         placeholder="Digite a sua senha">
                     <input [(ngModel)]="user.senha" type="password" name="confirmarSenha" id="confirmarSenha"
                         placeholder="Digite novamente sua senha">
-                    <input (click)='cadastrar()' type="submit" value="Cadastre-se" class="caBtn">
+                        <select [(ngModel)]="user.tipo" class="form-control"  name="pj" id="pj">
+                            <option value="pj">Empresa</option>
+                            <option value="pf">Pessoa Fisica</option>
+                          </select>
+                    <div class="d-flex justify-content-center align-content-center">
+                        <input (click)='cadastrar()' type="submit" value="Cadastre-se" class="caBtn">
+                    </div>
                 </form>
             </div>
         </div>

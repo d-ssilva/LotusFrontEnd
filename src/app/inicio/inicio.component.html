@@ -2,7 +2,7 @@
   <div class="row">
     <!-- abertura lateral esquerda -->
     <div class="col-lg-3 ">
-      <div class="card d-flex justify-content-center align-items-center bg-white rounded sticky-lg-top">
+      <div class="card d-flex justify-content-center align-items-center rounded sticky-lg-top shadow-sm">
 
         <div class="my-3">
           <img src="{{foto}}" class="rounded-circle p-2 border border-secondary tamanho-img" alt="img">
@@ -14,7 +14,7 @@
           <hr>
           <ul class="nav nav-pills d-flex flex-column justify-content-center my-5" id="pills-tab" role="tablist">
 
-            <li class="nav-item my-2 active" role="presentation">
+            <li class="nav-item my-2" role="presentation">
               <a [routerLink]="['/user-edit', idUser]" href=""><i class="fa fa-pencil "
                   aria-hidden="true"></i><span>Alterar Cadastro</span></a>
             </li>
@@ -45,10 +45,11 @@
 
     <!--Abertura Feed Centro-->
     <div class="col-lg-6 mb-5">
-      <div class="card  pt-4">
+      <div class="card pt-4">
         <div class="d-flex justify-content-center align-items-center">
           <div class="d-grid gap-2">
-            <button type="button" class="btn btn-dark m-4 custom" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <button type="button" class="btn btn-dark m-4 custom" data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop">
               Nova Postagem
             </button>
           </div>
@@ -58,8 +59,9 @@
       <!-- Todas Postagens -->
       <div class="tab-content my-5" id="pills-tabContent">
         <div class="tab-pane fade show active" id="t-postagens" role="tabpanel" aria-labelledby="todaspostagens">
-          <div class="card h-100 my-3" *ngFor='let i of listaPostagens | orderBy : key : reverse' data-aos="fade-up"
-            data-aos-once="true" data-aos-duration="1000">
+          <div class="card h-100 shadow-sm p-1 mb-4 bg-body rounded"
+            *ngFor='let i of listaPostagens | orderBy : key : reverse' data-aos="fade-up" data-aos-once="true"
+            data-aos-duration="1000">
             <div class="pt-4 card-body text-center d-flex">
               <div class="row">
                 <div class="col-lg-12 d-flex flex-start">
@@ -67,7 +69,7 @@
                     <img src="{{i.usuario.foto}}" alt="imagem de perfil" class="img-fluid rounded-circle">
                   </div>
                   <div class="pp">
-                    <p class="card-text mb-0"><small class="text-muted  lead"><b>{{i.usuario.nome}}</b></small></p>
+                    <p class="card-text mb-0"><small class="text-muted lead"><b>{{i.usuario.nome}}</b></small></p>
                     <p class="card-text mt-0">
                       <small class="text-muted">
                         {{ i.data | date: "dd/MM/yyyy" }}
@@ -76,9 +78,8 @@
                     </p>
                   </div>
                 </div>
-                <h5 class="card-title">{{i.titulo}}</h5>
+                <h5 class="card-title pt-3">{{i.titulo}}</h5>
                 <p class="card-text"><small class="text-muted">Tema: {{i.tema.nome}}</small></p>
-                <hr>
                 <p class="card-text text-start">{{i.mensagem}}</p>
               </div>
             </div>
@@ -134,7 +135,7 @@
     </div>
 
     <!-- Barra lateral direita -->
-    <div class="col-lg-3 card mev">
+    <div class="col-lg-3 card mev shadow-sm">
     </div>
     <!-- fechamento lateral direita -->
   </div>

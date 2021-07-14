@@ -1,7 +1,16 @@
-body {
+
+html {
+    scroll-behavior: smooth;
     background-color: #f3f2ef;
+    
 }
 
+body{
+    background-color: initial!important;
+    /* font-family: "Roboto", sans-serif !important; */
+
+}
+  
 .mev {
     min-height: 100vh;
 }
@@ -25,10 +34,6 @@ body {
     height: 200px;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-hr {
-    color: bisque;
+.mevs {
+    min-height: 60vh;
 }
