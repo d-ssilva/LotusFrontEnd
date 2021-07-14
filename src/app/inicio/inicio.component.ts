@@ -45,10 +45,10 @@ export class InicioComponent implements OnInit {
   ngOnInit() {
     window.scroll(0, 0)
 
-    // if (environment.token == '') {
-    //   alert('Sua seção expirou, faça o login novamente')
-    //   this.rota.navigate(['/login'])
-    // }
+    if (environment.token == '') {
+    this.alert.showAlertInfo('Sua seção expirou, faça o login novamente')
+      this.rota.navigate(['/login'])
+    }
 
     this.temaService.refreshToken()
     this.postagemService.refreshToken()

@@ -18,10 +18,22 @@ a {
   color: bisque;
 }
 
-.fa:hover {
+.navbar-nav a:hover {
   color: #f69bbc;
 }
 
 .corlotus {
   color: #f69bbc;
+}
+
+.navbar-nav a, .fa {
+  font-size: 1.2rem;
+}
+
+.navbar-nav i{
+  padding-left: 5px;
+}
+
+.nav-link{
+  padding: 0;
 }

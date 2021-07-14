@@ -17,20 +17,25 @@ ul.social-midias, ul.logo-rodape {
     padding: 0;
 }
 
-ul.social-midias li {
+.tituloTopico{
     display: inline;
     margin: 0;
     padding: 5px;
+    font-size: 2rem;
 }
 
 ul.texto-rodape li a {
-
     text-decoration:none;
     color: bisque;
+    font-size: 1.3rem;
+}
+
+ul.texto-rodape li:hover a {
+    color: #ea7ac7;
 }
 
 .fa {
-    font-size: 35pt;
+    font-size: 2rem;
     color: bisque;
     padding: 10px;
 }
