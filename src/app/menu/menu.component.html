@@ -2,14 +2,15 @@
     <div class="container">
         <!-- LOGO DO MENU -->
         <div class="logo-menu">
-            <a routerLing='/inicio'>
+            <a routerLink='/inicio'>
                 <img src="../../assets/img/LOGO.png" alt="Logo">
             </a>
         </div>
-        <div class="d-flex justify-content-center align-items-center mx-3 p-0 ">
-            <a routerLing='/inicio'>
+        <div class="linkLogoMenu d-flex justify-content-center align-items-center mx-3 p-0 ">
+            <a routerLink='/inicio'>
                 <h1 class="fs-3 fw-lighter p-0 m-0">LOTUS</h1>
             </a>
+
         </div>
         <!-- BOTAO (RESPONSIVO) -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -21,9 +22,8 @@
             <div class="navbar-nav">
                 <!-- <a class="nav-link m-0 py-0 pl-1 px-3" routerLink='/inicio'><i class="fa fa-home" aria-hidden="true"></i></a> -->
                 <!-- <a class="nav-link m-0 py-0 pl-1" routeLink="#"><i class="fa fa-bell" aria-hidden="true"></i></a> -->
-                <a class="nav-link m-0 py-0 pl-1 px-3" routerLink='/sobre'> Sobre <i class="fa fa-question-circle" aria-hidden="true"></i></a>
-
-                <a class="nav-link m-0 py-0 pl-1 px-3" (click)='sair()'> Sair <i class="fa fa-sign-in" aria-hidden="true"></i></a>
+                <a class="nav-link m-0 py-0 pl-1 px-3" routerLink='/sobre'>Sobre<i class="fa fa-question-circle" aria-hidden="true"></i></a>
+                <a class="nav-link m-0 py-0 pl-1 px-3" (click)='sair()'> Sair <i class="fa fa-sign-in"aria-hidden="true"></i></a>
             </div>
         </div>
     </div>

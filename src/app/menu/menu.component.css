@@ -37,3 +37,7 @@ a {
 .nav-link{
   padding: 0;
 }
+
+.linkLogoMenu a {
+  text-decoration: none;
+}
