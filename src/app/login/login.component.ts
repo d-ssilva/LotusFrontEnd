@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { User } from '../model/User';
 import { UserLogin } from '../model/UserLogin';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 
@@ -23,6 +24,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private auth: AuthService,
+    private alert: AlertasService
   ) { }
 
   ngOnInit() {
@@ -66,13 +68,13 @@ export class LoginComponent implements OnInit {
   cadastrar() {
     this.user.tipo = this.tipoUsuario
     if (this.user.senha != this.confirmarSenha) {
-      alert('As senhas estão incorretas')
+      this.alert.showAlertDanger('As senhas estão incorretas')
     } else {
       this.auth.cadastrar(this.user).subscribe((resp: User) => {
         this.user = resp
         this.router.navigate(['/login'])
         this.mudarParaLogin();
-        alert('Usuário cadastrado com sucesso!')
+        this.alert.showAlertSuccess('Usuário cadastrado com sucesso!')
       })
     }
   }
@@ -89,7 +91,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/inicio'])
     }, erro => {
       if (erro.status == 500) {
-        alert('Usuario ou senha incorretos!')
+        this.alert.showAlertDanger('Usuario ou senha incorretos!')
       }
     })
   }

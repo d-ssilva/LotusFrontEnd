@@ -5,10 +5,12 @@
 }
 
 ul.texto-rodape {
-    list-style: none;
     color: bisque;
 }
 
+.tituloTopico{
+    list-style: none;
+}
 
 ul.social-midias, ul.logo-rodape {
     list-style: none; /*  tirando as bolinhas laterais */

@@ -4,6 +4,7 @@ import { Tema } from 'src/app/model/Tema';
 import { TemaService } from 'src/app/service/tema.service';
 import { environment } from 'src/environments/environment.prod';
 import { Subscriber } from 'rxjs';
+import { AlertasService } from 'src/app/service/alertas.service';
 
 @Component({
   selector: 'app-tema-edit',
@@ -17,12 +18,13 @@ export class TemaEditComponent implements OnInit {
   constructor(
     private temaService: TemaService,
     private router: Router,
-    private pegarRota: ActivatedRoute
+    private pegarRota: ActivatedRoute,
+    private alert: AlertasService
   ) { }
 
   ngOnInit() {
     if (environment.token == '') {
-      alert('Sua seção expirou, faça o login novamente')
+      this.alert.showAlertInfo('Sua seção expirou, faça o login novamente')
       this.router.navigate(['/entrar'])
     }
 
@@ -41,7 +43,7 @@ export class TemaEditComponent implements OnInit {
   atualizar() {
     this.temaService.putTema(this.tema).subscribe((resp: Tema) => {
       this.tema = resp
-      alert('Tema atualizado com sucesso')
+      this.alert.showAlertSuccess('Tema atualizado com sucesso')
       this.router.navigate(['/tema'])
     })
   }
