@@ -18,7 +18,9 @@ import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component'
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
-import { OrderModule } from 'ngx-order-pipe'; // para funcionamento do order-by de postagens :-)
+import { OrderModule } from 'ngx-order-pipe';
+import { AlertasComponent } from './alertas/alertas.component'; // para funcionamento do order-by de postagens :-)
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 
@@ -35,14 +37,16 @@ import { OrderModule } from 'ngx-order-pipe'; // para funcionamento do order-by 
     TemaDeleteComponent,
     PostagemEditComponent,
     PostagemDeleteComponent,
-    UserEditComponent
+    UserEditComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    OrderModule // para funcionamento do order-by de postagens :-)
+    OrderModule, // para funcionamento do order-by de postagens :-)
+    ModalModule.forRoot() // para utilização de novos modais
   ],
   providers: [{
     provide: LocationStrategy,
