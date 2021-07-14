@@ -137,12 +137,12 @@
 
                 <h2 class="faq">Segurança</h2>
 
-                <a data-bs-toggle="modal" data-bs-target="#antivirus">
-                    <h4 class="links">Antivírus</h4>
+                <a data-bs-toggle="modal" data-bs-target="#protIdent">
+                    <h4 class="links">Proteção de identidade</h4>
                 </a>
 
-                <a data-bs-toggle="modal" data-bs-target="#trojan">
-                    <h4 class="links">Trojan</h4>
+                <a data-bs-toggle="modal" data-bs-target="#recConta">
+                    <h4 class="links">Recuperação de conta</h4>
                 </a>
 
                 <a data-bs-toggle="modal" data-bs-target="#protConta">
@@ -259,7 +259,6 @@
                         experiências, ideias, desabafos, denúncias ou qualquer manifestação do pensamento, desde que não
                         ofenda nossos termos de Uso.
                     </p>
-
                 </div>
             </div>
         </div>
@@ -271,16 +270,44 @@
     <div class="modal" tabindex="-1" id="realPost">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="d-flex justify-content-end">
+                <div class="modal-header">
+                    <h5 class="modal-title">Publicando postagens</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- X para fechar a janela -->
+                <!-- <div class="d-flex justify-content-end">
                     <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
                             src="https://i.imgur.com/GQ8buZn.png" alt="">
                     </button>
-                </div>
+                </div> -->
                 <div class="modal-body">
-                    <div class=" d-flex justify-content-center align-items-center"><img
-                            src="https://i.imgur.com/wjogJH0.png" class="mt-5 mb-5" width="250px" alt=""></div>
-
-                    <p>As postagens são o meio de interação principal da rede Lotus, é a função principal que permite expor idéias, acontecimentos ou eventos do nosso cotidiâno, você fazer suas postagens através da página 'início' clicando no botão "Nova Postagem" no centro do feed de postagens.
+                    <!-- <div class=" d-flex justify-content-center align-items-center"><img
+                            src="https://i.imgur.com/wjogJH0.png" class="mt-5 mb-5" width="250px" alt=""></div> -->
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../../assets/img/tutorial postagem/Capturar1.1.png" class="d-block w-100"
+                                    alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../../assets/img/tutorial postagem/Capturar2.PNG" class="d-block w-100"
+                                    alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev fa-black-tie" type="button"
+                            data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <hr>
+                    <p>Você fazer suas postagens através da página 'início' clicando no botão "Nova Postagem" no centro
+                        do feed de postagens.
                     </p>
                     <p>
                         A Rede Social Lotus tem como objetivo prover o meio para que as mulheres exponham suas
@@ -288,6 +315,186 @@
                         ofenda nossos termos de Uso.
                     </p>
 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Selecionar Tema -->
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal" tabindex="-1" id="cadTema">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                            src="https://i.imgur.com/GQ8buZn.png" alt="">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../../assets/img/tutorial tema/Cadtema1.PNG" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../../assets/img/tutorial tema/Cadtema2.PNG" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <hr>
+                    <p>O cadastro de temas pode ser feito por qualquer usuário cadastrado na rede, e pode ser
+                        reutilizado para criação de novas postagens por outros(as) usuários(as).
+                    </p>
+                    <p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Cadastrar Tema -->
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal" tabindex="-1" id="selecTema">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                            src="https://i.imgur.com/GQ8buZn.png" alt="">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class=" d-flex justify-content-center align-items-center"><img
+                            src="../../assets/img/tutorial tema/Capturar2.PNG" class="mt-5 mb-5" width="250px" alt="">
+                    </div>
+                    <hr>
+                    <p>A Guia de Tema, permite filtrar uma determinada postagem a um assunto específico, isso acontece
+                        no momento de publicação da postagem, segundo manipulação do(a) usuário(a)
+                    </p>
+                    <p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Filtrar Postagens Tema -->
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal" tabindex="-1" id="filtTemas">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                            src="https://i.imgur.com/GQ8buZn.png" alt="">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class=" d-flex justify-content-center align-items-center"><img
+                            src="../../assets/img/tutorial tema/Capturar2.PNG" class="mt-5 mb-5" width="250px" alt="">
+                    </div>
+                    <hr>
+                    <p>Há um botão no na página inicial que possui a função de filtrar todas as postagens por título, em
+                        ordem alfabética.
+                    </p>
+                    <p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Recuperação de conta -->
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal" tabindex="-1" id="recConta">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                            src="https://i.imgur.com/GQ8buZn.png" alt="">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class=" d-flex justify-content-center align-items-center"><img
+                            src="../../assets/img/Active Support-amico.png" class="mt-5 mb-5" width="250px" alt="">
+                    </div>
+                    <hr>
+                    <p>Em casos de recuperação de acesso, entre em contato com nossa equipe de suporte via e-mail: </p><p class="fs-bold">danilo.dos.s.silva@gmail.com
+                    </p>                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Proteção de identidade -->
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal" tabindex="-1" id="protIdent">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                            src="https://i.imgur.com/GQ8buZn.png" alt="">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class=" d-flex justify-content-center align-items-center"><img
+                            src="../../assets/img/Gender violence-rafiki.png" class="mt-5 mb-5" width="250px" alt="">
+                    </div>
+                    <hr>
+                    <p>Infelizmente, muitas mulheres são vítimas de crimes morais ou perseguições dentro do ambiente de trabalho, seja injúria física ou moral, jamais deixe de denunciar! A plataforma contará com uma guia que irá ocultar o perfil da usuária que fez a postagem e em casos de retaliação a carreira da mesma, existem grupos internos dentro da rede social que podem ajudar a realocar a usuária no mercado de trabalho. Jamais omita qualquer crime!
+                    </p>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Proteger Conta -->
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal" tabindex="-1" id="protConta">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                            src="https://i.imgur.com/GQ8buZn.png" alt="">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class=" d-flex justify-content-center align-items-center"><img
+                            src="../../assets/img/Secure login-pana.png" class="mt-5 mb-5" width="250px" alt="">
+                    </div>
+                    <hr>
+                    <p>É recomendado a todos os usuários que criem senhas que contenham:</p>
+                    <ul>
+                        <li>
+                            Números
+                        </li>
+                        <li>
+                            Caractéres especiais
+                        </li>
+                        <li>
+                            Contenha letras maiúsculas e minúsculas
+                        </li>
+                    </ul>
+                    <p>
+                        Se caso sua senha não obedeça esses critérios, favor modifique-a o quanto antes
+                    </p>
                 </div>
             </div>
         </div>
