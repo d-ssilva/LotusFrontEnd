@@ -11,15 +11,18 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background:  #F8A8C3!important;
+  /* background:  #F8A8C3!important; */
   /* background-image: url(../../assets/img/img-fundo3.jpg) !important; */
   transition: 0.5s;
   font-family: Roboto;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-
+/* 
 .tud.active {
-  background: #8DDBEB!important;
-}
+  background-image: url("/assets/img/img-fundo.jpg");
+} */
 
 .container-fluidl {
   position: relative;
@@ -144,9 +147,13 @@
   cursor: pointer;
 }
 
+ .cadastroBtn {
+  background-color: #F8A8C3;
+  color: black;
+}
 
-.loginBtn, .cadastroBtn {
-  background-color: rgba(255, 255, 255, 1.9);
+.loginBtn{
+  background-color: #8DDBEB;
   color: black;
 }
 
@@ -198,6 +205,31 @@
 
 }
 
+.imgBox {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
 
+.imgBox:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(225deg, #e91e63, #03a9f4);
+  z-index: 1;
+  mix-blend-mode: screen;
+}
 
+.imgBox img { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 

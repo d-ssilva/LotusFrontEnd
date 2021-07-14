@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Tema } from '../model/Tema';
+import { AlertasService } from '../service/alertas.service';
 import { TemaService } from '../service/tema.service';
 
 @Component({
@@ -16,12 +17,13 @@ export class TemaComponent implements OnInit {
 
   constructor(
     private rota: Router,
-    private temaService: TemaService
+    private temaService: TemaService,
+    private alert: AlertasService
   ) { }
 
   ngOnInit() {
     if (environment.token == '') {
-      alert('Sua seção expirou, faça o login novamente')
+      this.alert.showAlertInfo('Sua seção expirou, faça o login novamente')
       this.rota.navigate(['/login'])
     }
 
@@ -33,7 +35,7 @@ export class TemaComponent implements OnInit {
   cadastrarTema() {
     this.temaService.postTema(this.tema).subscribe((resp: Tema) => {
       this.tema = resp
-      alert('Tema cadastrado com sucesso')
+      this.alert.showAlertSuccess('Tema cadastrado com sucesso')
       this.findAllTemas()
       this.tema = new Tema()
     })

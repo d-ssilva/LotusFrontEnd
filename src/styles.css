@@ -1,3 +1,7 @@
+body {
+    background-color: #f3f2ef;
+  }
+  
 .mev {
     min-height: 100vh;
 }
@@ -25,9 +29,4 @@ html {
     scroll-behavior: smooth;
 }
 
-.bg3 {
-    /* min-height: 100vh; */
-    background-color: #f8f9fa;
-  }
-  
   
