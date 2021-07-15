@@ -46,7 +46,7 @@
     <!--Abertura Feed Centro-->
     <div class="col-lg-6 mb-5">
       <div class="card pt-4">
-        <div class="d-flex justify-content-center align-items-center">
+        <div class="col-lg-12 d-flex justify-content-center align-items-center my-auto">
           <div class="d-grid gap-2">
             <button type="button" class="btn btn-dark m-4 custom" data-bs-toggle="modal"
               data-bs-target="#staticBackdrop">
@@ -136,6 +136,23 @@
 
     <!-- Barra lateral direita -->
     <div class="col-lg-3 card mev shadow-sm">
+      <h5 class="fw-normal f-6 text-center my-4">EMPRESAS PARCEIRAS</h5>
+      <div class="my-0 bg-body rounded d-flex justify-content-center align-content-center"
+        *ngFor='let i of listaUsuarios | orderBy : key : reverse' data-aos="fade-up" data-aos-once="true"
+        data-aos-duration="1000">
+        <div class="py-2   card-body text-center d-flex">
+          <div class="row">
+            <div class="col-lg-12 d-flex flex-start">
+              <div class="imgBox-lateralDireita">
+                <img src="{{i.foto}}" alt="imagem de perfil" class="img-fluid rounded-circle">
+              </div>
+              <div class="pp">
+                <p class="card-text mb-0 text-muted lead fw-light fs-6">{{i.nome}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- fechamento lateral direita -->
   </div>

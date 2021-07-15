@@ -25,12 +25,16 @@ ul.logo-rodape {
 ul.texto-rodape li a {
   text-decoration: none;
   color: bisque;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  list-style: none !important;
+}
+
+ul.texto-rodape li {
   list-style: none !important;
 }
 
 ul.texto-rodape li:hover a {
-  color: #ea7ac7;
+  color: #4ac2da;
 }
 
 .fa {
