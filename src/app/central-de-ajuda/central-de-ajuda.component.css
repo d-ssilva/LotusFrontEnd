@@ -3,7 +3,9 @@
 /* .container {
   max-width: 90%;
 } */
-
+p{
+  text-align: justify;
+}
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
