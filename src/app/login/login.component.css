@@ -115,8 +115,24 @@
 
 .formBx .cadaForm {
   left: 100%;
-  transition-delay: 0.0%;
+  transition-delay: 0.0%;  
 }
+
+/* TAMANHO DA CAIXA DO SELECIONE TIPO DE CONTA */
+.formBx .cadaForm form select{
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  outline: none;
+  font-size: 16px;
+  border: 1px solid #333;
+}
+/* /TAMANHO DA CAIXA DO SELECIONE TIPO DE CONTA */
+/* o place holder de tipo de conta */
+option .formBx.active:first { 
+  color: #999;
+}
+/* o place holder de tipo de conta */
 
 .formBx.active .cadaForm {
   left: 0;
@@ -147,7 +163,7 @@
   cursor: pointer;
 }
 
- .cadastroBtn {
+.cadastroBtn {
   background-color: #F8A8C3;
   color: black;
 }
@@ -232,4 +248,7 @@
   height: 100%;
   object-fit: cover;
 }
+
+
+
 

@@ -83,11 +83,18 @@
                         placeholder="Digite a sua senha">
                     <input [(ngModel)]="user.senha" type="password" name="confirmarSenha" id="confirmarSenha"
                         placeholder="Digite novamente sua senha">
-                        <select [(ngModel)]="user.tipo" class="form-control"  name="pj" id="pj">
-                            <option value="pj">Empresa</option>
-                            <option value="pf">Pessoa Fisica</option>
-                          </select>
-                    <div class="d-flex justify-content-center align-content-center">
+                    
+                    <select 
+                    class="border border-dark w-auto h-auto"
+                    [(ngModel)]="user.tipo" 
+                    type="text"                     
+                    name="pj" 
+                    id="pj">
+                        <option class="option" value="" active disabled selected>Selecione o tipo de conta:</option> <!-- disable selected desvalida essa string na caixa de opções -->
+                        <option class="fst-italic" value="pj">Empresa</option>
+                        <option class="fst-italic" value="pf">Pessoa Fisica</option>
+                    </select>
+                    <div class="d-flex justify-content-center align-content-center mt-2">
                         <input (click)='cadastrar()' type="submit" value="Cadastre-se" class="caBtn">
                     </div>
                 </form>
