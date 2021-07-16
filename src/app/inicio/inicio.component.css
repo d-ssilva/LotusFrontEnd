@@ -101,4 +101,12 @@ ul li a {
   border-color: #8ddbeb !important;
 }
 
+.pesqPost{
+  border-radius: 30px;
+  border-color:  #ea7ac7;
+}
+::placeholder{
+  text-align: center;
+}
+
 /* #f3f2ef */
