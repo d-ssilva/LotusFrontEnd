@@ -30,7 +30,9 @@ ul li a {
 .nav-item.active a {
   color: #4ac2da;
 }
-
+.mens{
+  text-align: justify !important;
+}
 .imgBox {
   position: relative;
   width: 75px;
