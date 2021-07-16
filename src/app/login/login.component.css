@@ -129,7 +129,7 @@
 }
 /* /TAMANHO DA CAIXA DO SELECIONE TIPO DE CONTA */
 /* o place holder de tipo de conta */
-option .formBx.active:first { 
+.formBx .cadaForm form select option:first { 
   color: #999;
 }
 /* o place holder de tipo de conta */
