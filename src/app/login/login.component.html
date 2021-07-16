@@ -85,11 +85,13 @@
                         placeholder="Digite novamente sua senha">
                     
                     <select 
+                    name = "form-control"
                     class="border border-dark w-auto h-auto"
                     [(ngModel)]="user.tipo" 
                     type="text"                     
-                    name="pj" 
-                    id="pj">
+                    name="tipo" 
+                    id="tipo"
+                    (change)='tipoUser($event)'>
                         <option class="option" value="" active disabled selected>Selecione o tipo de conta:</option> <!-- disable selected desvalida essa string na caixa de opções -->
                         <option class="fst-italic" value="pj">Empresa</option>
                         <option class="fst-italic" value="pf">Pessoa Fisica</option>
