@@ -33,6 +33,11 @@ export class TemaService {
     return this.http.get<Tema>(`https://apilotus.herokuapp.com/tema/${id}`, this.token)
   }
 
+  // MÉTODO PARA PESQUISAR POSTAGENS POR TEMA
+  getByNomeTema(nome: string): Observable<Tema[]>{
+    return this.http.get<Tema[]>(`https://apilotus.herokuapp.com/tema/nome/${nome}`, this.token)
+  }
+
   putTema(tema: Tema): Observable<Tema>{
     return this.http.put<Tema>('https://apilotus.herokuapp.com/tema', tema, this.token)
   }
