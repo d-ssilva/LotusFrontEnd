@@ -105,4 +105,18 @@ pp a:hover {
   border-color: #8ddbeb !important;
 }
 
+.pesqPost{
+  border-radius: 30px;
+  border-color:  #ea7ac7;
+}
+::placeholder{
+  text-align: center;
+}
+
+a i:hover {
+  cursor:pointer;
+  pointer-events: all;
+  color: #ea7ac7;
+}
+
 /* #f3f2ef */

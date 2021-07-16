@@ -19,6 +19,7 @@ export class InicioComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
+  tituloPost: string
 
   listaUsuarios: User[]
 
@@ -49,7 +50,7 @@ export class InicioComponent implements OnInit {
     window.scroll(0, 0)
 
     if (environment.token == '') {
-    this.alert.showAlertInfo('Sua seção expirou, faça o login novamente')
+      this.alert.showAlertInfo('Sua seção expirou, faça o login novamente')
       this.rota.navigate(['/login'])
     }
 
@@ -58,7 +59,7 @@ export class InicioComponent implements OnInit {
     this.getAllTema()
     this.getAllPostagens()
     this.findByIdUser()
-    this.getAllUsuario() 
+    this.getAllUsuario()
   }
 
   getAllTema() {
@@ -91,6 +92,17 @@ export class InicioComponent implements OnInit {
     })
   }
 
+  findByTituloPostagem() {
+
+    if (this.tituloPost == '') {
+      this.getAllPostagens()
+    } else {
+      this.postagemService.getbyTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
+        this.listaPostagens = resp
+      })
+    }
+  }
+
   publicar() {
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
@@ -103,7 +115,7 @@ export class InicioComponent implements OnInit {
       this.alert.showAlertSuccess('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
       this.getAllPostagens()
-      
-    })
+    })    
   }
+
 }
