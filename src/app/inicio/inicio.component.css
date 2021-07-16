@@ -111,4 +111,10 @@ pp a:hover {
   text-align: center;
 }
 
+a i:hover {
+  cursor:pointer;
+  pointer-events: all;
+  color: #ea7ac7;
+}
+
 /* #f3f2ef */
