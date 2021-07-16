@@ -101,8 +101,6 @@ export class InicioComponent implements OnInit {
         this.listaPostagens = resp
       })
     }
-
-
   }
 
   publicar() {
@@ -117,7 +115,7 @@ export class InicioComponent implements OnInit {
       this.alert.showAlertSuccess('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
       this.getAllPostagens()
-
-    })
+    })    
   }
+
 }

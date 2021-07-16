@@ -5,9 +5,11 @@
                 <h2 class="fw-bolder fs-1 text-white text-center">Olá, {{nome}}.</h2>
                 <h3 class="fw-lighter fs-5 text-white text-center">bem vindo(a) a central de ajuda!</h3>
                 <div class="form-group ">
-                    <input type="text" id="name" class="form-control" required>
+                    <input type="text" id="name" class="form-control" required
+                    (keyup)='findByTopico()'>
                     <label class="form-control-placeholder" for="name"><i
-                            class="fa fa-search text-white ms-5 font-buscador" aria-hidden="true"></i></label>
+                            class="fa fa-search text-white ms-5 font-buscador" aria-hidden="true"
+                            ></i></label>
                     <h1 class="text-white pt-3">Use o buscador ou procure na seção abaixo sua dúvida</h1>
                 </div>
             </div>

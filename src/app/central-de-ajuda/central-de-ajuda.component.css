@@ -112,8 +112,6 @@ a {
 .links:hover {
 color: #4ac2da;
 transform: scale(1.1);
-
-
 }
 
 .ods-5{
@@ -121,7 +119,6 @@ transform: scale(1.1);
 }
 
 .chuchu{
-
 background-color: transparent!important;
 border: none;
 }

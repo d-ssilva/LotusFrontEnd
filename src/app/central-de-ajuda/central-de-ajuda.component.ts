@@ -25,4 +25,7 @@ export class CentralDeAjudaComponent implements OnInit {
       this.rota.navigate(['/login'])
     }
   }
+
+  // método para pesquisar um tópico
+  // findByTopico(){if( this.findByTopico() != ''){}}
 }
