@@ -59,4 +59,6 @@ ul.texto-rodape li:hover a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
+.fa-linkedin:hover {
+  color: #0e76a8;
+}
