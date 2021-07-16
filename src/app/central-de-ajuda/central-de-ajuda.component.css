@@ -4,7 +4,7 @@
   max-width: 90%;
 } */
 p{
-  text-align: justify;
+  text-align: justify !important;
 }
 .row {
   --bs-gutter-x: 1.5rem;
@@ -15,7 +15,9 @@ p{
   margin-right: 0px !important;
   margin-left: 0px !important;
 }
-
+.center{
+  text-align: center !important;
+}
 
 
 .mt100 {
