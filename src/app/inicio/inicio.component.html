@@ -81,6 +81,22 @@
                 <h5 class="card-title pt-3">{{i.titulo}}</h5>
                 <p class="card-text"><small class="text-muted">Tema: {{i.tema.nome}}</small></p>
                 <p class="card-text text-start">{{i.mensagem}}</p>
+                <hr>
+                <div class="d-flex justify-content-around">
+                  <a>
+                    <i class="bi bi-hand-thumbs-up">
+                      <p class="text-muted"> Gostei </p>
+                    </i>
+                  </a>
+                  <p class="card-text">{{i.score}}</p>
+
+                  <a>
+                    <i class="justify-content-end bi bi-hand-thumbs-down">
+                      <p class="text-muted"> Ñ gostei </p>
+                    </i>
+                    <!-- variável de dislike -->
+                  </a>
+                </div>
               </div>
             </div>
           </div>
