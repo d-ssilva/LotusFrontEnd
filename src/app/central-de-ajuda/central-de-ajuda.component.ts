@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { listeners } from 'process';
 import { environment } from 'src/environments/environment.prod';
 import { AlertasService } from '../service/alertas.service';
 
@@ -17,7 +18,7 @@ export class CentralDeAjudaComponent implements OnInit {
     private alert: AlertasService
   ) { }
 
-  ngOnInit(){
+  ngOnInit() {
     window.scroll(0, 0)
 
     if (environment.token == '') {
@@ -27,5 +28,23 @@ export class CentralDeAjudaComponent implements OnInit {
   }
 
   // método para pesquisar um tópico
-  // findByTopico(){if( this.findByTopico() != ''){}}
+  filter() {
+
+    const searchText = document.querySelector('#pesquisa')
+
+    searchText?.addEventListener('keyup', function (e) {
+      const searchFilter = e?.target.value.toLowerCase().trim();
+      let cards = document.querySelectorAll('.divPai');
+
+      //console.log(cards);
+      cards.forEach(card => {
+        if (card.id.toLowerCase().includes(searchFilter)) {
+          card.style.display = 'inline-block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+    )
+  }
 }
