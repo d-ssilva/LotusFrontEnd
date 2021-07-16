@@ -168,10 +168,12 @@
       <div class="my-0 bg-body rounded d-flex justify-content-center align-content-center" data-aos="fade-up"
         data-aos-once="true" data-aos-duration="1000">
 
-        <ng-container *ngFor="let i of listaUsuarios">
-          <div *ngIf="i.tipo == 'pj'">
-            <div class="py-2 card-body text-center d-flex">
-              <div class="row border w-100 my-1">
+
+        <div class="py-2 card-body text-center d-flex">
+          <div class="row w-100 my-1">
+            <ng-container *ngFor="let i of listaUsuarios">
+              <div *ngIf="i.tipo == 'pj'">
+                <div class="row border"></div>
                 <div class="col-lg-12 d-flex flex-start">
                   <div class="imgBox-lateralDireita">
                     <img src="{{i.foto}}" alt="imagem de perfil" class="img-fluid rounded-circle">
@@ -181,9 +183,9 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </ng-container>
           </div>
-        </ng-container>
+        </div>
       </div>
     </div>
   </div><!-- fechamento lateral direita -->
