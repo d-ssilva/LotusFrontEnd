@@ -18,6 +18,7 @@ export class UserEditComponent implements OnInit {
 
   tipoUsuario: string
   confirmarSenha: string
+  generoUsuario: string
 
   constructor(
 
@@ -46,6 +47,10 @@ export class UserEditComponent implements OnInit {
 
   tipoUser(event: any) {
     this.tipoUsuario = event.target.value
+  }
+
+  generoUser(event: any) {
+    this.generoUsuario = event.target.value
   }
 
   atualizar() {

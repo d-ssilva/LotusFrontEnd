@@ -1,7 +1,8 @@
 <div class="container mb-5 mt-5">
     <div class="row">
-        <div class="col-md-12">
-            <h1 class="text-center">Atualize suas informações!</h1>
+        <h1 class="fw-lighter text-center mb-2">Atualize suas informações!</h1>
+
+        <div class="col-md-6 border-end align-content-between">
             <!-- NOME -->
             <div class="form-group">
                 <label for="nome">Nome</label>
@@ -26,12 +27,6 @@
                 <input [(ngModel)]="user.email" class="form-control" type="text" name="email" id="email"
                     placeholder="Digite a sua e-mail">
             </div>
-            <!-- TELEFONE -->
-            <!-- <div class="form-group mt-4">
-                <label for="telefone">Telefone</label>
-                <input (click)='user.telefone' class="form-control" type="text" name="telefone" id="telefone"
-                    placeholder="Telefone">
-            </div> -->
             <!-- SENHA -->
             <div class="form-group mt-4">
                 <label for="senha">Senha</label>
@@ -44,23 +39,65 @@
                 <input [(ngModel)]="user.senha" class="form-control" type="password" name="confirmarSenha"
                     id="confirmarSenha" placeholder="Digite novamente sua senha">
             </div>
+        </div>
 
-            <!-- TIPO DE USUÁRIO -->
-            <!-- <div class="form-group mt-4">
-                    <label for="tipo">Tipo de Conta</label>
-                    <select name="tipo" id="tipo" class="form-control" (change)='tipoUser($event)'>
-                    <option>Selecione um tipo de usuário:</option>
-                    <option value="true">Fisica</option>
-                    <option value="false">Empresarial</option>
-                    </select>
-                    </div> -->
-            
-            <!-- /CADASTRAR-CANCELAR-->
-            <div class="modal-footer mt-4 justify-content-center">
-                <button type="button" class="cortext btn btn-dark me-4" data-bs-dismiss="modal" routerLink='/inicio'>CANCELAR</button>
-                <button type="button" class=" btn btn-outline-dark" 
-                    data-bs-dismiss="modal"(click)='atualizar()'>ATUALIZAR</button>
 
+        <!-- SEGUNDA COLUNA DA PÁGINA -->
+        <div class="col-md-6 align-content-between">
+            <!-- DATA DE NASCIMENTO -->
+            <div class="row">
+                <div class="cold-md-6">
+                    <div class="form-group">
+                        <label for="confirmarSenha">Informa sua data de nascimento</label>
+                        <input [(ngModel)]="user.dataNasc" class="form-control" type="date" name="dataNasc"
+                            id="dataNasc" placeholder="xx/xx/xxxx">
+                    </div>
+                </div>
             </div>
+            <!-- GENERO -->
+            <div class="form-group mt-4">
+                <label for="tipo">Gênero:</label>
+                <select name="tipo" id="tipo" class="form-control" (change)='generoUser($event)'>
+                    <option disabled selected>Selecione um gênero</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="trans">Transgenero</option>
+                    <option value="ninfo">Não informar</option>
+                </select>
+            </div>
+            <!-- TELEFONE -->
+            <div class="form-group mt-4">
+                <label for="telefone">Telefone</label>
+                <input (click)='user.telefone' class="form-control" type="text" name="telefone" id="telefone"
+                    placeholder="Telefone">
+            </div>
+            <!-- Cargo -->
+            <div class="form-group mt-4">
+                <label for="confirmarSenha">Cargo atual</label>
+                <input [(ngModel)]="user.cargo" class="form-control" type="password" name="confirmarSenha"
+                    id="confirmarSenha" placeholder="Digite seu cargo (Opcional)">
+            </div>
+            <!-- Empresa atual -->
+            <div class="form-group mt-4">
+                <label for="empresaAtual">Empresa atual</label>
+                <input [(ngModel)]="user.empresaAtual" class="form-control" type="text" name="empresaAtual"
+                    id="empresaAtual" placeholder="Digite o nome da empresa em que trabalha">
+            </div>
+
+            <!-- Empresa atual -->
+            <div class="form-group mt-4">
+                <label for="empresaAtual">Informe seu CPF</label>
+                <input [(ngModel)]="user.cpf" class="form-control" type="text" name="cpf" id="cpf"
+                    placeholder="Digite seu cpf">
+            </div>
+        </div> <!-- Fechamento da Row -->
+
+        <!-- /CADASTRAR-CANCELAR-->
+        <div class="modal-footer mt-4 justify-content-center">
+
+            <button type="button" class="bt1 me-4" data-bs-dismiss="modal" routerLink='/inicio'>CANCELAR</button>
+
+            <button type="button" class=" bt1" data-bs-dismiss="modal" (click)='atualizar()'>ATUALIZAR</button>
         </div>
     </div>
+</div>
