@@ -100,21 +100,19 @@
                 <p class="card-text text-start mens">{{i.mensagem}}</p>
                 <hr>
                 <div class="d-flex justify-content-around">
-                  <a>
-                  
+                  <p></p>
+                  <a (click)='like($event)' >                               
                   <i class="bi bi-hand-thumbs-up">
                     <p class="text-muted"> Gostei </p>
-                  </i>
-                  
+                  </i>                  
                   </a>
                   <p class="card-text">{{i.score}}</p>
-
                   <a>
                     <i class="justify-content-end bi bi-hand-thumbs-down">
                       <p class="text-muted"> Ñ gostei </p>
                     </i>
-                    <!-- variável de dislike -->
                   </a>
+                    <p>10</p>                  
                 </div>
               </div>
             </div>

@@ -119,4 +119,6 @@ export class InicioComponent implements OnInit {
     })    
   }
 
+  like(event: any){    
+  }
 }
