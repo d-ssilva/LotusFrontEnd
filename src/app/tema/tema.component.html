@@ -14,7 +14,7 @@
                             placeholder="Digite o nome do tema">
                     </div>
                     <div class="d-flex justify-content-center mt-3">
-                        <button class="btn btn-outline-light" (click)='cadastrarTema()'>Cadastrar</button>
+                        <button class="bt2" (click)='cadastrarTema()'>Cadastrar</button>
                     </div>
                 </div>
             </div>
@@ -32,20 +32,23 @@
     </div>
     <div class="row mt-3 mb-5 d-flex justify-content-center">
         <div class="col-lg-6">
-            <table class="table table-hover">
-                <thead>
+            <table class="border border-2 table table-hover">
+                <thead class="rounded-top fundo">
                     <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nome do Tema</th>
+                        <!-- <th scope="col">ID</th> -->
+                        <th class="fw-lighter justify-content-start" scope="col">NOME DO TEMA</th>
+                        <th class="justify-content-end" scope="col"></th>
                     </tr>
                 </thead>
+
                 <tbody>
                     <tr *ngFor='let i of listaTemas'>
-                        <td>{{i.id}}</td>
-                        <td>{{i.nome}}</td>
+                        <!-- <td>{{i.id}}</td> -->
+                        <td class="align-content-center">{{i.nome}}</td>
+
                         <td class="d-flex justify-content-end">
-                            <button class="btn btn-dark me-3" [routerLink]="['/tema-delete',i.id]">Apagar</button>
-                            <button class="btn btn-outline-dark" [routerLink]="['/tema-edit',i.id]">Editar</button>                            
+                            <button class="bt1 me-3" [routerLink]="['/tema-delete',i.id]">Apagar</button>
+                            <button class="bt1" [routerLink]="['/tema-edit',i.id]">Editar</button>                            
                         </td>
                     </tr>
                 </tbody>
