@@ -8,6 +8,9 @@
           <img src="{{foto}}" class="rounded-circle p-2 border border-secondary tamanho-img" alt="img">
         </div>
         <h5 class="fw-bolder">Olá, {{nome}}</h5>
+        <h6 class="text-start">Idade:</h6>
+        <h6>Empresa:</h6>
+        <h6>Cargo: </h6>
         <hr>
 
         <div class="card-body frame">
@@ -45,7 +48,7 @@
 
     <!--Abertura Feed Centro-->
     <div class="col-lg-6 mb-5">
-      <div class="card pt-4">
+      <div class="card pt-3 pb-3">
         <div class="col-lg-12 d-flex justify-content-center align-items-center my-auto">
           <div class="d-grid gap-2">
             <button type="button" class="btn btn-dark m-4 custom" data-bs-toggle="modal"
@@ -54,7 +57,21 @@
             </button>
           </div>
         </div>
+        <hr>
+        <!-- Barra de pesquisa -->
+
+        <div class="col-lg-12 d-flex justify-content-center align-items-center my-auto">          
+          <div class="justify-content-center mt-4 col-md-8">            
+            <div class="form-group">
+              <input type="text" class="pesqPost form-control" id="titulo" placeholder="Pesquise uma postagem"
+                [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()'>
+            </div>
+          </div>
+        </div>
       </div>
+
+
+
 
       <!-- Todas Postagens -->
       <div class="tab-content my-5" id="pills-tabContent">
@@ -80,13 +97,15 @@
                 </div>
                 <h5 class="card-title pt-3">{{i.titulo}}</h5>
                 <p class="card-text"><small class="text-muted">Tema: {{i.tema.nome}}</small></p>
-                <p class="card-text text-start">{{i.mensagem}}</p>
+                <p class="card-text text-start mens">{{i.mensagem}}</p>
                 <hr>
                 <div class="d-flex justify-content-around">
                   <a>
-                    <i class="bi bi-hand-thumbs-up">
-                      <p class="text-muted"> Gostei </p>
-                    </i>
+                  
+                  <i class="bi bi-hand-thumbs-up">
+                    <p class="text-muted"> Gostei </p>
+                  </i>
+                  
                   </a>
                   <p class="card-text">{{i.score}}</p>
 
@@ -156,10 +175,12 @@
       <div class="my-0 bg-body rounded d-flex justify-content-center align-content-center" data-aos="fade-up"
         data-aos-once="true" data-aos-duration="1000">
 
-        <ng-container *ngFor="let i of listaUsuarios">
-          <div *ngIf="i.tipo == 'pj'">
-            <div class="py-2 card-body text-center d-flex">
-              <div class="row border w-100 my-1">
+
+        <div class="py-2 card-body text-center d-flex">
+          <div class="row w-100 my-1">
+            <ng-container *ngFor="let i of listaUsuarios">
+              <div *ngIf="i.tipo == 'pj'">
+                <div class="row border"></div>
                 <div class="col-lg-12 d-flex flex-start">
                   <div class="imgBox-lateralDireita">
                     <img src="{{i.foto}}" alt="imagem de perfil" class="img-fluid rounded-circle">
@@ -169,9 +190,9 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </ng-container>
           </div>
-        </ng-container>
+        </div>
       </div>
     </div>
   </div><!-- fechamento lateral direita -->
@@ -211,11 +232,20 @@
         <div class="form-group">
           <label for="texto">Escolha um tema ou <a routerLink='/tema' data-bs-dismiss="modal">Cadastre-se um
               novo:</a></label>
-
           <select class="form-control" [(ngModel)]='idTema' name="tema" id="tema">
             <option *ngFor='let i of listasTemas' value="{{i.id}}">
               {{i.nome}}
             </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="texto">Selecione o tipo da postagem:</label>
+          <select class="form-control" name="tipoPostagem" id="tipoPostagem">
+            <option value="" disabled selected hidden></option>
+            <option value="reclamacao">Reclamação</option>
+            <option value="elogio">Elogiar</option>
+            <option value="postage">Mensagem</option>
           </select>
         </div>
 
