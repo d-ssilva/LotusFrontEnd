@@ -71,7 +71,7 @@ ul li a {
   padding-left: 10px;
 }
 
-pp a:hover {
+.pp a:hover {
   text-decoration: none;
 }
 
@@ -120,3 +120,8 @@ a i:hover {
 }
 
 /* #f3f2ef */
+
+
+.fa {
+  font-size: 2rem;
+}
