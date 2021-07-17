@@ -69,7 +69,9 @@ ul li a {
   padding-left: 10px;
 }
 
-
+pp a:hover {
+  text-decoration: none;
+}
 
 .gap-2 {
   width: 100%;

@@ -41,10 +41,8 @@ export class LoginComponent implements OnInit {
   }
 
   cadastroButton() {
-
     let loginBtn = document.querySelector('.loginBtn');
     let cadastroBtn = document.querySelector('.cadastroBtn');
-
     cadastroBtn?.addEventListener('click', () => {
       let formBx = document.querySelector('.formBx');
       let tud = document.querySelector('.tud');
@@ -64,7 +62,7 @@ export class LoginComponent implements OnInit {
     let formBx = document.querySelector('.formBx');
     formBx?.classList.remove('active')
   }
-
+  
   cadastrar() {
     this.user.tipo = this.tipoUsuario
     if (this.user.senha != this.confirmarSenha) {

@@ -53,12 +53,12 @@ export class InicioComponent implements OnInit {
       this.rota.navigate(['/login'])
     }
 
+    this.getAllUsuario() 
     this.temaService.refreshToken()
     this.postagemService.refreshToken()
     this.getAllTema()
     this.getAllPostagens()
     this.findByIdUser()
-    this.getAllUsuario() 
   }
 
   getAllTema() {
@@ -95,15 +95,15 @@ export class InicioComponent implements OnInit {
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
     this.user.id = this.idUser
-    this.postagem.usuario = this.user
-    this.postagem.usuario.foto = this.foto
+    this.postagem.usuario = this.user // relacionando a tabela de usuario relacionando com seu id
+    this.postagem.usuario.foto = this.foto // colocar a foto do usuário que fez a postagem
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
       this.alert.showAlertSuccess('Postagem realizada com sucesso!')
-      this.getAllPostagens()
       this.postagem = new Postagem()
-
+      this.getAllPostagens()
+      
     })
   }
 }
