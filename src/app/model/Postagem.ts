@@ -16,9 +16,7 @@ export class Postagem{
     // novos atributos
     public like: number
     public dislike: number
-
     public tipoPostagem: string
-    public elogio: Postagem // estará relacionado com tipoPostagem
-    public reclamacao: Postagem // estará relacionado com tipoPostagem
+
 
 }

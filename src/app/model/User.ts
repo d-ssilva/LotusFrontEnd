@@ -16,6 +16,7 @@ export class User{
     public postagem: Postagem[]
 
     // novos atributos
-    public dataNasc: Date // data de nascimento do cadastro
-    public qtdReclamacao: number // número de ocorrências para contas tipo: Empresa
+    public dataNasc: Date // data de nascimento do cadastro    
+    public qtdElogio: Postagem[] // número de ocorrências para contas tipo: Empresa
+    public qtdReclamacao: Postagem[] // número de ocorrências para contas tipo: Empresa
 }   
