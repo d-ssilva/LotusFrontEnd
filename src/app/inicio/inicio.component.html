@@ -1,5 +1,6 @@
 <div class="container mt-3 mb-3">
   <div class="row">
+
     <!-- LATERAL ESQUERDA -->
     <div class="col-lg-3 tudo lead">
       <div class=" d-flex justify-content-center flex-column align-items-center text-center navigation">
@@ -12,6 +13,7 @@
             <a href="#"><i class="fa fa-twitter"></i></a>
             <a href="#"><i class="fa fa-linkedin"></i></a>
           </div>
+
         </div>
 
         <ul class="nav nav-pills" id="pills-tab" role="tablist">
@@ -195,8 +197,8 @@
                 </p>
                 <div class="row mt-2">
                   <div class="col-md-12">
-                    <button class="btn btn-dark me-3" [routerLink]="['/postagem-delete',i.id]">Apagar</button>
-                    <button class="btn btn-outline-dark" [routerLink]="['/postagem-edit',i.id]">Editar</button>
+                    <button class="bt1 me-4" [routerLink]="['/postagem-delete',i.id]">Apagar</button>
+                    <button class="bt1" [routerLink]="['/postagem-edit',i.id]">Editar</button>
                   </div>
                 </div>
               </div>
@@ -289,39 +291,39 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
-      <div class="modal-body">
-        <div class="form-group">
-          <label for="titulo">Titulo</label>
+      <div class="modal-body ">
+        <div class="form-group mt-4">
+          <!-- <label for="titulo">Titulo</label> -->
           <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo"
             placeholder="Digite o titulo da postagem">
         </div>
 
-        <div class="form-group">
-          <label for="empresa">Empresa</label>
+        <div class="form-group mt-4">
+          <!-- <label for="empresa">Empresa</label> -->
           <input [(ngModel)]='postagem.empresa' type="text" class="form-control" id="empresa"
             placeholder="Digite o nome da empresa">
         </div>
 
-        <div class="form-group">
-          <label for="texto">Mensagem</label>
+        <div class="form-group mt-4">
+          <!-- <label for="texto">Mensagem</label> -->
           <textarea [(ngModel)]='postagem.mensagem' class="form-control" id="texto" name="texto" rows="3"
             placeholder="Digite sua mensagem"></textarea>
         </div>
 
-        <div class="form-group">
-          <label for="texto">Escolha um tema ou <a routerLink='/tema' data-bs-dismiss="modal">Cadastre-se um
-              novo:</a></label>
+        <div class="form-group mt-4">
+          <!-- <label for="texto">Escolha um tema ou <a routerLink='/tema' data-bs-dismiss="modal">Cadastre-se um novo:</a></label> -->
           <select class="form-control" [(ngModel)]='idTema' name="tema" id="tema">
+            <option value="" disabled selected >Selecione o tipo de postagem</option>
             <option *ngFor='let i of listasTemas' value="{{i.id}}">
               {{i.nome}}
             </option>
           </select>
         </div>
 
-        <div class="form-group">
-          <label for="texto">Selecione o tipo da postagem:</label>
+        <div class="form-group mt-4">
+          <!-- <label for="texto">Selecione o tipo da postagem:</label> -->
           <select class="form-control" name="tipoPostagem" id="tipoPostagem">
-            <option value="" disabled selected hidden></option>
+            <option value="" disabled selected >Selecione o tipo de postagem</option>
             <option value="reclamacao">Reclamação</option>
             <option value="elogio">Elogiar</option>
             <option value="postage">Mensagem</option>
@@ -334,5 +336,6 @@
         <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal" (click)='publicar()'>POSTAR</button>
       </div>
     </div>
+
   </div>
 </div>

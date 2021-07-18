@@ -7,7 +7,16 @@ export class Postagem{
     public titulo: string
     public data: Date
     public midia: string
-    public empresa: string
     public usuario: User
     public tema: Tema
+
+    // atributos modificados
+    public empresa: User // antes era um atributo do tipo string
+
+    // novos atributos
+    public like: number
+    public dislike: number
+    public tipoPostagem: string
+
+
 }

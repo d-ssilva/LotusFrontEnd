@@ -29,9 +29,9 @@ export class InicioComponent implements OnInit {
 
   user: User = new User()
   idUser = environment.id
-
   foto = environment.foto
   nome = environment.nome
+  
 
   // ESSAS VARIÁVEIS AJUDAM A SEPARAR AS POSTAGENS POR DATA EM ORDEM DESCRESCENTE
   key = 'data'
@@ -140,5 +140,8 @@ export class InicioComponent implements OnInit {
       this.postagem = new Postagem()
       this.getAllPostagens()
     })    
+  }
+
+  like(event: any){    
   }
 }
