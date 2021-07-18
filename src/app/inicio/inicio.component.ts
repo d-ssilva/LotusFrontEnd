@@ -60,8 +60,33 @@ export class InicioComponent implements OnInit {
     this.getAllTema()
     this.getAllPostagens()
     this.findByIdUser()
+    this.menuLateral()
+    this.botaoLateral()
     
   }
+
+  menuLateral(){
+    let list = document.querySelectorAll('.list');
+    for (let i = 0; i < list.length; i++){
+      list[i].addEventListener('click', function(){
+        let j = 0;
+        while(j < list.length){
+          list[j++].className = 'list';
+        }
+        list[i].className = 'list active';
+      }
+      )}
+  }
+
+  botaoLateral(){
+    let menuToggle = document.querySelector('.toggle');
+    let navigation = document.querySelector('.navigation');
+    menuToggle?.addEventListener('click', function(){
+      menuToggle?.classList.toggle('active');
+      navigation?.classList.toggle('active');
+    })
+  }
+
 
   getAllTema() {
     this.temaService.getAllTema().subscribe((resp: Tema[]) => {
@@ -94,7 +119,6 @@ export class InicioComponent implements OnInit {
   }
 
   findByTituloPostagem() {
-
     if (this.tituloPost == '') {
       this.getAllPostagens()
     } else {
@@ -110,7 +134,6 @@ export class InicioComponent implements OnInit {
     this.user.id = this.idUser
     this.postagem.usuario = this.user // relacionando a tabela de usuario relacionando com seu id
     this.postagem.usuario.foto = this.foto // colocar a foto do usuário que fez a postagem
-
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
       this.alert.showAlertSuccess('Postagem realizada com sucesso!')
@@ -118,5 +141,4 @@ export class InicioComponent implements OnInit {
       this.getAllPostagens()
     })    
   }
-
 }

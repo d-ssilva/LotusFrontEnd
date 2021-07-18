@@ -1,84 +1,154 @@
 <div class="container mt-3 mb-3">
   <div class="row">
-    <!-- abertura lateral esquerda -->
-    <div class="col-lg-3 ">
-      <div class="card d-flex justify-content-center align-items-center rounded sticky-lg-top shadow-sm">
-
-        <div class="my-3">
-          <img src="{{foto}}" class="rounded-circle p-2 border border-secondary tamanho-img" alt="img">
+    <!-- LATERAL ESQUERDA -->
+    <div class="col-lg-3 tudo lead">
+      <div class=" d-flex justify-content-center flex-column align-items-center text-center navigation">
+        <div class="profile-card-2">
+          <img src="{{foto}}" class="img img-responsive" alt="img">
+          <div class="profile-name fw-light">{{nome}}</div>
+          <div class="profile-username">@{{nome}}</div>
+          <div class="profile-icons">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+          </div>
         </div>
-        <h5 class="fw-bolder">Olá, {{nome}}</h5>
-        <h6 class="text-start">Idade:</h6>
-        <h6>Empresa:</h6>
-        <h6>Cargo: </h6>
-        <hr>
 
-        <div class="card-body frame">
-          <hr>
-          <ul class="nav nav-pills d-flex flex-column justify-content-center my-5" id="pills-tab" role="tablist">
+        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+          <!-- <div class="my-5 d-flex flex-column justify-content-center align-items-center rounded sticky-lg-top">
+            <img src="{{foto}}" class="rounded-circle p-2 border border-secondary tamanho-img" alt="img">
+            <h5 class="fw-bolder lead my-5">Olá, {{nome}}</h5>
+          </div> -->
 
-            <li class="nav-item my-2" role="presentation">
-              <a [routerLink]="['/user-edit', idUser]" href=""><i class="fa fa-pencil "
-                  aria-hidden="true"></i><span>Alterar Cadastro</span></a>
-            </li>
+          <li class="list active" role="presentation">
+            <b></b>
+            <b></b>
+            <a a href="" id="todaspostagens" data-bs-toggle="pill" data-bs-target="#t-postagens" type="button"
+              role="tab" aria-controls="t-postagens" aria-selected="true">
+              <span class="icon"><i class="fa fa-home" aria-hidden="true"></i>
+              </span>
+              <span class="title">Feed</span>
+            </a>
+          </li>
 
-            <li class="nav-item my-2" role="presentation">
-              <a href="" id="todaspostagens" data-bs-toggle="pill" data-bs-target="#t-postagens" type="button"
-                role="tab" aria-controls="t-postagens" aria-selected="true"><i class="fa fa-envelope-o"
-                  aria-hidden="true"></i><span>Todas Postagens</span></a>
-            </li>
+          <li class="list" role="presentation">
+            <b></b>
+            <b></b>
+            <a [routerLink]="['/user-edit', idUser]" href="">
+              <span class="icon"><i class="fa fa-user" aria-hidden="true"></i>
+              </span>
+              <span class="title">Profile</span>
+            </a>
+          </li>
 
-            <li class="nav-item my-2" role="presentation">
-              <a href="" id="minhaspostagens" data-bs-toggle="pill" data-bs-target="#m-postagens" type="button"
-                role="tab" aria-controls="m-postagens" aria-selected="false"><i class="fa fa-at"
-                  aria-hidden="true"></i><span>Minhas
-                  Postagens</span></a>
-            </li>
+          <li class="list" role="presentation">
+            <b></b>
+            <b></b>
+            <a href="" id="minhaspostagens" data-bs-toggle="pill" data-bs-target="#m-postagens" type="button" role="tab"
+              aria-controls="m-postagens" aria-selected="false">
+              <span class="icon"><i class="fa fa-comments-o" aria-hidden="true"></i></span>
+              <span class="title">Messages</span>
+            </a>
+          </li>
 
-            <li class="nav-item my-2 " role="presentation">
-              <a href="" id="postagensportema" data-bs-toggle="pill" data-bs-target="#p-tema" type="button" role="tab"
-                aria-controls="p-tema" aria-selected="false"><i class="fa fa-building"
-                  aria-hidden="true"></i><span>Postagens
-                  por tema</span></a>
-            </li>
-          </ul>
-        </div>
+          <li class="list" role="presentation">
+            <b></b>
+            <b></b>
+            <a href="" id="postagensportema" data-bs-toggle="pill" data-bs-target="#p-tema" type="button" role="tab"
+              aria-controls="p-tema" aria-selected="false">
+              <span class="icon"><i class="fa fa-cog" aria-hidden="true"></i>
+              </span>
+              <span class="title">Empresa</span>
+            </a>
+          </li>
+
+          <li class="list" role="presentation">
+            <b></b>
+            <b></b>
+            <a href="">
+              <span class="icon"><i class="fa fa-info" aria-hidden="true"></i></span>
+              <span class="title">Help</span>
+            </a>
+          </li>
+
+          <li class="list" role="presentation">
+            <b></b>
+            <b></b>
+            <a href="">
+              <span class="icon"><i class="fa fa-external-link" aria-hidden="true"></i></span>
+              <span class="title">Exit</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- </div> -->
+      <div class="toggle">
+        <i class="fa fa-bars abrir" aria-hidden="true"></i>
+        <i class="fa fa-times fechar" aria-hidden="true"></i>
       </div>
     </div>
 
-    <!--Abertura Feed Centro-->
+    <!--FEED CENTRO -->
     <div class="col-lg-6 mb-5">
-      <div class="card pt-3 pb-3">
-        <div class="col-lg-12 d-flex justify-content-center align-items-center my-auto">
-          <div class="d-grid gap-2">
-            <button type="button" class="btn btn-dark m-4 custom" data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop">
-              Nova Postagem
-            </button>
-          </div>
-        </div>
-        <hr>
-        <!-- Barra de pesquisa -->
 
-        <div class="col-lg-12 d-flex justify-content-center align-items-center my-auto">          
-          <div class="justify-content-center mt-4 col-md-8">            
+      <!-- <div class="col-lg-12 d-flex justify-content-center align-items-center my-auto">
+          <div class="justify-content-center mt-4 col-md-8">
             <div class="form-group">
               <input type="text" class="pesqPost form-control" id="titulo" placeholder="Pesquise uma postagem"
                 [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()'>
             </div>
           </div>
+        </div> 
+      </div>-->
+
+
+      <div class="col-lg-12 card postagem">
+        <div class="card-body">
+          <div class="mb-3">
+            <textarea [(ngModel)]='postagem.mensagem' class="form-control" id="texto" rows="3"
+              placeholder="Escreva sua postagem"></textarea>
+          </div>
+
+          <div class="d-flex justify-content-start align-items-center">
+
+            <button type="button" class="btn text-dark me-4" data-bs-toggle="modal" data-bs-target="#ModalPostagem">
+              Inserir mídia
+            </button>
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="postagem">
+              <label class="form-check-label" for="inlineRadio1">Postagem</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="vaga">
+              <label class="form-check-label" for="inlineRadio2">Reclamação</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="vaga">
+              <label class="form-check-label" for="inlineRadio2">Elogio</label>
+            </div>
+
+            <select class="form-control" [(ngModel)]='idTema' name="tema" id="tema">
+              <option value="Escola um tema">Escola um tema</option>
+              <option *ngFor='let i of listasTemas' value="{{i.id}}">{{i.nome}}</option>
+            </select>
+
+            <button type="button" class="btn" (click)='publicar()'>Postar</button>
+          </div>
         </div>
       </div>
 
 
 
 
-      <!-- Todas Postagens -->
+
+      <!-- ALL POSTAGENS -->
       <div class="tab-content my-5" id="pills-tabContent">
         <div class="tab-pane fade show active" id="t-postagens" role="tabpanel" aria-labelledby="todaspostagens">
-          <div class="card h-100 shadow-sm p-1 mb-4 bg-body rounded"
-            *ngFor='let i of listaPostagens | orderBy : key : reverse' data-aos="fade-up" data-aos-once="true"
-            data-aos-duration="1000">
+          <div class="card h-100 p-1 mb-4 bg-body rounded" *ngFor='let i of listaPostagens | orderBy : key : reverse'
+            data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
             <div class="pt-4 card-body text-center d-flex">
               <div class="row">
                 <div class="col-lg-12 d-flex flex-start">
@@ -98,30 +168,17 @@
                 <h5 class="card-title pt-3">{{i.titulo}}</h5>
                 <p class="card-text"><small class="text-muted">Tema: {{i.tema.nome}}</small></p>
                 <p class="card-text text-start mens">{{i.mensagem}}</p>
-                <hr>
-                <div class="d-flex justify-content-around">
-                  <a>
-                  
-                  <i class="bi bi-hand-thumbs-up">
-                    <p class="text-muted"> Gostei </p>
-                  </i>
-                  
-                  </a>
-                  <p class="card-text">{{i.score}}</p>
-
-                  <a>
-                    <i class="justify-content-end bi bi-hand-thumbs-down">
-                      <p class="text-muted"> Ñ gostei </p>
-                    </i>
-                    <!-- variável de dislike -->
-                  </a>
+                <hr class="my-3">
+                <div class="d-flex justify-content-around align-items-center">
+                  <a><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span>Gostei</span></a>
+                  <a><i class="fa fa-thumbs-down" aria-hidden="true"></i><span>Não Gostei</span></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Minha Postagens -->
+        <!-- MINHAS POSTAGENS -->
         <div class="tab-pane fade" id="m-postagens" role="tabpanel" aria-labelledby="minhaspostagens">
           <div class="card-columns">
             <div class="card h-100 my-2" *ngFor='let i of user.postagem | orderBy : key : reverse'>
@@ -147,7 +204,7 @@
           </div>
         </div>
 
-        <!-- Postagens por Tema -->
+        <!-- POSTAGEM POR TEMA -->
         <div class="tab-pane fade" id="p-tema" role="tabpanel" aria-labelledby="postagensportema">
           <div class="card-columns" *ngFor='let t of listasTemas | orderBy : key : reverse'>
             <div class="card h-100 my-2" *ngFor='let i of t.postagem'>
@@ -169,37 +226,59 @@
       </div>
     </div>
 
-    <!-- Barra lateral direita -->
-    <div class="col-lg-3 card mev shadow-sm">
+    <!-- LATERAL DIREITA -->
+    <div class="col-lg-3 card mev">
+
+      <!-- EMPRESAS -->
       <h5 class="fw-normal f-6 text-center my-4">EMPRESAS PARCEIRAS</h5>
       <div class="my-0 bg-body rounded d-flex justify-content-center align-content-center" data-aos="fade-up"
         data-aos-once="true" data-aos-duration="1000">
-
-
         <div class="py-2 card-body text-center d-flex">
           <div class="row w-100 my-1">
-            <ng-container *ngFor="let i of listaUsuarios">
+            <div *ngFor="let i of listaUsuarios">
               <div *ngIf="i.tipo == 'pj'">
-                <div class="row border"></div>
                 <div class="col-lg-12 d-flex flex-start">
                   <div class="imgBox-lateralDireita">
                     <img src="{{i.foto}}" alt="imagem de perfil" class="img-fluid rounded-circle">
                   </div>
                   <div class="pp">
-                    <p class="card-text mb-0 text-muted lead fw-light fs-6">{{i.nome}}</p>
+                    <p class="card-text mb-0 lead fw-normal">{{i.nome}}</p>
                   </div>
                 </div>
               </div>
-            </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- USUARIAS -->
+      <h5 class="fw-normal f-6 text-center my-4">USUARIAS</h5>
+      <div class="my-0 bg-body rounded d-flex justify-content-center align-content-center" data-aos="fade-up"
+        data-aos-once="true" data-aos-duration="1000">
+        <div class="py-2 card-body text-center d-flex">
+          <div class="row w-100 my-1">
+            <div *ngFor="let i of listaUsuarios">
+              <div *ngIf="i.tipo == 'pf'">
+                <div class="col-lg-12 d-flex flex-start">
+                  <div class="imgBox-lateralDireita">
+                    <img src="{{i.foto}}" alt="imagem de perfil" class="img-fluid rounded-circle">
+                  </div>
+                  <div class="pp">
+                    <p class="card-text mb-0 lead fw-normal">{{i.nome}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div><!-- fechamento lateral direita -->
+  </div><!-- FECHAMENTO LATERAL DIREITA -->
 </div>
 
 
-<!-- Modal -->
+
+<!-- MODAL -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">

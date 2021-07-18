@@ -1,39 +1,3 @@
-<!-- <div class="container-fluid mev">                ==================================================== LOGIN ANTIGO =========================
-    <div class="row d-flex align-items-center justify-content-center fundo-menu mev">
-        <div class="col-lg-7 col-md-7 d-flex justify-content-end ">
-            <div class="col-lg-7 col-md-8 border-end border-start bg-white p-5 mev">
-                <div class="container-fluid">
-                    <div class="d-flex justify-content-center">
-                        <img class="justify-content-center mt-4 mb-3" src="../../assets/img/LOGOP.png"
-                            alt="Logo da rede" width="200rem">
-                    </div>
-                </div>
-               
-                <div class="container rounded-3">
-                    <h1 class="text-center mb-3 mt-5 pb-2">Login</h1>
-                </div>
-               
-                <div class="form-group">
-                    <label for="email">Usuario</label>
-                    <input [(ngModel)]="userLogin.usuario" class="form-control" type="text" name="email" id="email"
-                        placeholder="Digite o seu e-mail">
-                </div>
-                
-                <div class="form-group mt-4">
-                    <label for="senha">Senha</label>
-                    <input [(ngModel)]="userLogin.senha" class="form-control" type="password" name="senha" id="senha"
-                        placeholder="Digite a sua senha">
-                </div>
-               
-                <div class="d-flex justify-content-center mt-3 me-4">
-                    <button type="submit" class="btn btn-secondary" (click)='entrar()'>Entrar</button>
-                </div>
-                
-                <hr class="mt-5 mb-5">
-                <p class="text-center">
-                    Não tem uma conta? <a data-bs-toggle="modal" data-bs-target="#cadastrarModal"
-                        routerLink='/cadastrar'>Cadastre-se</a>
-                </p> -->
 <div class="imgBox">
     <img src="../../assets/img/img-fundo3.jpg" alt="">
 </div>
@@ -62,7 +26,7 @@
                     <input [(ngModel)]="userLogin.senha" type="password" name="senha" id="senha"
                         placeholder="Digite a sua senha">
                     <div class="d-flex justify-content-center">
-                        <input type="submit" value="Login" (click)='entrar()'>
+                        <input class="loginBtn2" type="submit" value="Login" (click)='entrar()'>
                     </div>
                 </form>
             </div>
@@ -95,8 +59,8 @@
                         <option class="fst-italic text-dark" value="pj">Empresa</option>
                         <option class="fst-italic text-dark" value="pf">Pessoa Fisica</option>
                     </select>
-                    <div class="d-flex justify-content-center align-content-center mt-1">
-                        <input (click)='cadastrar()' type="submit" value="Cadastre-se" class="caBtn">
+                    <div class="d-flex justify-content-center align-content-center text-center">
+                        <input (click)='cadastrar()' type="submit" value="Cadastre-se" class="btnCar">
                     </div>
                 </form>
             </div>
