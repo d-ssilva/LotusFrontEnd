@@ -34,6 +34,10 @@ ul li a {
 .mens {
   text-align: justify !important;
 }
+a:hover{
+  background-color: #ef9bd5;
+  border-radius: 20px 0px 0px 20px;
+}
 .imgBox {
   position: relative;
   width: 75px;
