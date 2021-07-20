@@ -34,10 +34,10 @@ ul li a {
 .mens {
   text-align: justify !important;
 }
-a:hover{
+/* a:hover{
   background-color: #ef9bd5;
   border-radius: 20px 0px 0px 20px;
-}
+} */
 .imgBox {
   position: relative;
   width: 75px;
@@ -260,16 +260,15 @@ a:hover{
 
 .navigation ul li a .icon .fa {
   font-size: 1.5em;
+  width: 35px;
 }
 
 .navigation ul li a .title {
   position: relative;
   display: block;
-  padding-left: 20px;
   height: 60px;
   line-height: 60px;
   white-space: normal;
-
 }
 
 .toggle {

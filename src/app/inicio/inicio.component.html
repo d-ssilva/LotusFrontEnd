@@ -5,7 +5,11 @@
     <div class="col-lg-3 tudo lead">
       <div class=" d-flex justify-content-center flex-column align-items-center text-center navigation">
         <div class="profile-card-2">
+
           <img src="{{foto}}" class="img img-responsive" alt="img">
+          <!-- <img *ngIf = '!authService.semFoto()' src="../../assets/img/Danilo.jpg" class="img img-responsive" alt="img">  -->
+
+
           <div class="profile-name fw-light">{{nome}}</div>
           <div class="profile-username">@{{nome}}</div>
           <div class="profile-icons">
@@ -23,7 +27,7 @@
           </div> -->
 
           <li class="list active" role="presentation">
-            
+
             <a a href="" id="todaspostagens" data-bs-toggle="pill" data-bs-target="#t-postagens" type="button"
               role="tab" aria-controls="t-postagens" aria-selected="true">
               <span class="icon"><i class="fa fa-home" aria-hidden="true"></i>
@@ -33,7 +37,7 @@
           </li>
 
           <li class="list" role="presentation">
-          
+
             <a [routerLink]="['/user-edit', idUser]" href="">
               <span class="icon"><i class="fa fa-user" aria-hidden="true"></i>
               </span>
@@ -42,7 +46,7 @@
           </li>
 
           <li class="list" role="presentation">
-           
+
             <a href="" id="minhaspostagens" data-bs-toggle="pill" data-bs-target="#m-postagens" type="button" role="tab"
               aria-controls="m-postagens" aria-selected="false">
               <span class="icon"><i class="fa fa-comments-o" aria-hidden="true"></i></span>
@@ -51,7 +55,7 @@
           </li>
 
           <li class="list" role="presentation">
-           
+
             <a href="" id="postagensportema" data-bs-toggle="pill" data-bs-target="#p-tema" type="button" role="tab"
               aria-controls="p-tema" aria-selected="false">
               <span class="icon"><i class="fa fa-cog" aria-hidden="true"></i>
@@ -61,7 +65,7 @@
           </li>
 
           <li class="list" role="presentation">
-            
+
             <a href="">
               <span class="icon"><i class="fa fa-info" aria-hidden="true"></i></span>
               <span class="title">Help</span>
@@ -69,7 +73,7 @@
           </li>
 
           <li class="list" role="presentation">
-            
+
             <a href="">
               <span class="icon"><i class="fa fa-external-link" aria-hidden="true"></i></span>
               <span class="title">Exit</span>
@@ -78,10 +82,10 @@
         </ul>
       </div>
       <!-- </div> -->
-      <div class="toggle">
+      <!-- <div class="toggle">
         <i class="fa fa-bars abrir" aria-hidden="true"></i>
         <i class="fa fa-times fechar" aria-hidden="true"></i>
-      </div>
+      </div> -->
     </div>
 
     <!--FEED CENTRO -->
@@ -98,61 +102,108 @@
       </div>-->
 
 
-      <div class="col-lg-12 card postagem">
+      <div class="col-lg-12 card postagem d-flex">
         <div class="card-body">
-          <div class="mb-3">
-            <textarea [(ngModel)]='postagem.mensagem' class="form-control" id="texto" rows="3"
-              placeholder="Escreva sua postagem"></textarea>
+
+
+          <!-- TITULO -->
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="d-flex justify-content-around">
+                <input class="mb-3" [(ngModel)]="postagem.titulo" type="text" name="titulo" id="titulo"
+                  placeholder="Escreva um titulo">
+              </div>
+            </div>
           </div>
 
-          <div class="d-flex justify-content-start align-items-center">
+          <!-- TEXTO -->
+          <div class="row">
+            <div class="mb-3">
+              <textarea [(ngModel)]='postagem.mensagem' class="form-control" id="texto" rows="3"
+                placeholder="Escreva sua postagem"></textarea>
+            </div>
+          </div>
 
-            <button type="button" class="btn text-dark me-4" data-bs-toggle="modal" data-bs-target="#ModalPostagem">
-              Inserir mídia
-            </button>
 
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="postagem">
-              <label class="form-check-label" for="inlineRadio1">Postagem</label>
+          <!-- ESCOLHA UM TEMA -->
+          <div class="row">
+            <div class="col-lg-6">
+              <label for="tema">Escolha um tema</label>
+              <select class="form-control" [(ngModel)]='idTema' name="tema" id="tema">
+                <option *ngFor='let i of listasTemas' value="{{i.id}}">{{i.nome}}</option>
+              </select>
+
             </div>
 
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="vaga">
-              <label class="form-check-label" for="inlineRadio2">Reclamação</label>
+            <!-- ESCOLHA UMA EMPRESA -->
+            <div class="col-lg-6">
+              <label for="tema">Escolha uma Empresa</label>
+              <select class="form-control" [(ngModel)]='postagem.empresa' name="empresa" id="empresa">
+                <option *ngFor="let i of listaUsuarios" value="{{i.nome}}">{{i.nome}}</option>
+              </select>
             </div>
+          </div>
 
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="vaga">
-              <label class="form-check-label" for="inlineRadio3">Elogio</label>
+          <!-- TIPO DE POSTAGEM -->
+          <div class="row mt-3 mb-3 ">
+            <div class="col-lg-12 d-flex justify-content-around">
+              <div class="d-flex justify-content-start align-items-center">
+                <i class="fa fa-picture-o" aria-hidden="true"></i>
+
+                <div class="form-check form-check-inline">
+                  <input [(ngModel)]='postagem.tipoPostagem' class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                    value="p">
+                  <label class="form-check-label" for="inlineRadio1">Postagem</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input [(ngModel)]='postagem.tipoPostagem' class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="r">
+                  <label class="form-check-label" for="inlineRadio2">Reclamação</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input [(ngModel)]='postagem.tipoPostagem' class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="e">
+                  <label class="form-check-label" for="inlineRadio3">Elogio</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input [(ngModel)]='postagem.anonima' class="form-check-input" type="radio" name="anonimo"
+                    id="anonimo" value="true">
+                  <label class="form-check-label" for="anonimo">Anonimo</label>
+                </div>
+              </div>
             </div>
+          </div>
 
-            <select class="form-control" [(ngModel)]='idTema' name="tema" id="tema">
-              <option value="Escola um tema">Escola um tema</option>
-              <option *ngFor='let i of listasTemas' value="{{i.id}}">{{i.nome}}</option>
-            </select>
-
-            <button type="button" class="btn" (click)='publicar()'>Postar</button>
+          <div class="row">
+            <div class="col-lg-12 d-flex justify-content-around">
+            <button type="button" class="btn btn-success" (click)='publicar()'>Postar</button>
           </div>
         </div>
+        </div>
       </div>
-
-
-
 
 
       <!-- ALL POSTAGENS -->
       <div class="tab-content my-5" id="pills-tabContent">
         <div class="tab-pane fade show active" id="t-postagens" role="tabpanel" aria-labelledby="todaspostagens">
-          <div class="card h-100 p-1 mb-4 bg-body rounded" *ngFor='let i of listaPostagens | orderBy : key : reverse'
-            data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
+          <div class="card h-100 p-1 mb-4 bg-body rounded" *ngFor='let i of listaPostagens | orderBy : key : reverse'>
             <div class="pt-4 card-body text-center d-flex">
               <div class="row">
                 <div class="col-lg-12 d-flex flex-start">
                   <div class="imgBox">
-                    <img src="{{i.usuario.foto}}" alt="imagem de perfil" class="img-fluid rounded-circle">
+
+                    <img *ngIf='i.anonima === false' src="{{i.usuario.foto}}" alt="imagem de perfil"
+                      class="img-fluid rounded-circle">
+                    <img *ngIf='i.anonima === true' src="../../assets/img/privado.png" alt="imagem de perfil"
+                      class="img-fluid rounded-circle">
+
                   </div>
                   <div class="pp">
-                    <p class="card-text mb-0"><small class="text-muted lead"><b>{{i.usuario.nome}}</b></small></p>
+                    <p class="card-text mb-0"><small *ngIf='i.anonima === false'
+                        class="text-muted lead"><b>{{i.usuario.nome}}</b></small></p>
+                    <p class="card-text mb-0"><small *ngIf='i.anonima === true'
+                        class="text-muted lead"><b>Privado</b></small></p>
                     <p class="card-text mt-0">
                       <small class="text-muted">
                         {{ i.data | date: "dd/MM/yyyy" }}
@@ -227,8 +278,7 @@
 
       <!-- EMPRESAS -->
       <h5 class="fw-normal f-6 text-center my-4">EMPRESAS PARCEIRAS</h5>
-      <div class="my-0 bg-body rounded d-flex justify-content-center align-content-center" data-aos="fade-up"
-        data-aos-once="true" data-aos-duration="1000">
+      <div class="my-0 bg-body rounded d-flex justify-content-center align-content-center">
         <div class="py-2 card-body text-center d-flex">
           <div class="row w-100 my-1">
             <div *ngFor="let i of listaUsuarios">
@@ -249,8 +299,7 @@
 
       <!-- USUARIAS -->
       <h5 class="fw-normal f-6 text-center my-4">USUARIAS</h5>
-      <div class="my-0 bg-body rounded d-flex justify-content-center align-content-center" data-aos="fade-up"
-        data-aos-once="true" data-aos-duration="1000">
+      <div class="my-0 bg-body rounded d-flex justify-content-center align-content-center">
         <div class="py-2 card-body text-center d-flex">
           <div class="row w-100 my-1">
             <div *ngFor="let i of listaUsuarios">
@@ -307,7 +356,7 @@
         <div class="form-group mt-4">
           <!-- <label for="texto">Escolha um tema ou <a routerLink='/tema' data-bs-dismiss="modal">Cadastre-se um novo:</a></label> -->
           <select class="form-control" [(ngModel)]='idTema' name="tema" id="tema">
-            <option value="" disabled selected >Selecione o tipo de postagem</option>
+            <option value="" disabled selected>Selecione o tipo de postagem</option>
             <option *ngFor='let i of listasTemas' value="{{i.id}}">
               {{i.nome}}
             </option>
@@ -317,7 +366,7 @@
         <div class="form-group mt-4">
           <!-- <label for="texto">Selecione o tipo da postagem:</label> -->
           <select class="form-control" name="tipoPostagem" id="tipoPostagem">
-            <option value="" disabled selected >Selecione o tipo de postagem</option>
+            <option value="" disabled selected>Selecione o tipo de postagem</option>
             <option value="reclamacao">Reclamação</option>
             <option value="elogio">Elogiar</option>
             <option value="postage">Mensagem</option>

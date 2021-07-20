@@ -7,6 +7,7 @@ import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,7 +16,7 @@ import { AuthService } from '../service/auth.service';
 export class LoginComponent implements OnInit {
 
   userLogin: UserLogin = new UserLogin()
-  user: User = new User
+  user: User = new User()
 
   confirmarSenha: string
   tipoUsuario: string
@@ -30,6 +31,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     window.scroll(0, 0)
     this.cadastroButton();
+
+    this.cadastrar();
   }
 
   confirmSenha(event: any) {
@@ -86,6 +89,7 @@ export class LoginComponent implements OnInit {
       environment.foto = this.userLogin.foto
       environment.id = this.userLogin.id
       environment.email = this.userLogin.email
+      environment.tipo = this.userLogin.tipo
       this.router.navigate(['/inicio'])
     }, erro => {
       if (erro.status == 500) {

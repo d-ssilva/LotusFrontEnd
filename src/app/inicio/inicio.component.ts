@@ -31,7 +31,7 @@ export class InicioComponent implements OnInit {
   idUser = environment.id
   foto = environment.foto
   nome = environment.nome
-  
+
 
   // ESSAS VARIÁVEIS AJUDAM A SEPARAR AS POSTAGENS POR DATA EM ORDEM DESCRESCENTE
   key = 'data'
@@ -41,7 +41,7 @@ export class InicioComponent implements OnInit {
     private rota: Router,
     private postagemService: PostagemService,
     private temaService: TemaService,
-    private authService: AuthService,
+    public authService: AuthService,
     private alert: AlertasService
 
   ) { }
@@ -54,7 +54,7 @@ export class InicioComponent implements OnInit {
       this.rota.navigate(['/login'])
     }
 
-    this.getAllUsuario() 
+    this.getAllUsuario()
     this.temaService.refreshToken()
     this.postagemService.refreshToken()
     this.getAllTema()
@@ -62,26 +62,28 @@ export class InicioComponent implements OnInit {
     this.findByIdUser()
     this.menuLateral()
     this.botaoLateral()
-    
+    // this.authService.semFoto()
+
   }
 
-  menuLateral(){
+  menuLateral() {
     let list = document.querySelectorAll('.list');
-    for (let i = 0; i < list.length; i++){
-      list[i].addEventListener('click', function(){
+    for (let i = 0; i < list.length; i++) {
+      list[i].addEventListener('click', function () {
         let j = 0;
-        while(j < list.length){
+        while (j < list.length) {
           list[j++].className = 'list';
         }
         list[i].className = 'list active';
       }
-      )}
+      )
+    }
   }
 
-  botaoLateral(){
+  botaoLateral() {
     let menuToggle = document.querySelector('.toggle');
     let navigation = document.querySelector('.navigation');
-    menuToggle?.addEventListener('click', function(){
+    menuToggle?.addEventListener('click', function () {
       menuToggle?.classList.toggle('active');
       navigation?.classList.toggle('active');
     })
@@ -129,19 +131,19 @@ export class InicioComponent implements OnInit {
   }
 
   publicar() {
+
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
     this.user.id = this.idUser
     this.postagem.usuario = this.user // relacionando a tabela de usuario relacionando com seu id
     this.postagem.usuario.foto = this.foto // colocar a foto do usuário que fez a postagem
+    
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
       this.alert.showAlertSuccess('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
       this.getAllPostagens()
-    })    
+    })
   }
 
-  like(event: any){    
-  }
 }
