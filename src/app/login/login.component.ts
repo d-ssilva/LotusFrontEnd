@@ -90,6 +90,7 @@ export class LoginComponent implements OnInit {
       environment.id = this.userLogin.id
       environment.email = this.userLogin.email
       environment.tipo = this.userLogin.tipo
+      environment.user = this.userLogin.usuario
       this.router.navigate(['/inicio'])
     }, erro => {
       if (erro.status == 500) {

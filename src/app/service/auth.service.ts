@@ -42,4 +42,14 @@ export class AuthService {
     }
     return logado
   }
+
+  semFoto() {
+    let semFoto = false 
+
+    if (environment.foto === '' || environment.foto === null){
+      semFoto = true
+    }
+
+    return semFoto
+  }
 }

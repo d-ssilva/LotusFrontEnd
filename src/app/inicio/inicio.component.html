@@ -6,12 +6,13 @@
       <div class=" d-flex justify-content-center flex-column align-items-center text-center navigation">
         <div class="profile-card-2">
 
-          <img src="{{foto}}" class="img img-responsive" alt="img">
-          <!-- <img *ngIf = '!authService.semFoto()' src="../../assets/img/Danilo.jpg" class="img img-responsive" alt="img">  -->
+          <img *ngIf='authService.semFoto() === false' src="{{foto}}" class="img img-responsive" alt="img">
+          <img *ngIf='authService.semFoto() === true' src="../../assets/img/avatar-default2.png"
+            class="img img-responsive" alt="img">
 
 
           <div class="profile-name fw-light">{{nome}}</div>
-          <div class="profile-username">@{{nome}}</div>
+          <div class="profile-username">@{{usuariot}}</div>
           <div class="profile-icons">
             <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
@@ -151,18 +152,20 @@
                 <i class="fa fa-picture-o" aria-hidden="true"></i>
 
                 <div class="form-check form-check-inline">
-                  <input [(ngModel)]='postagem.tipoPostagem' class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                    value="p">
+                  <input [(ngModel)]='postagem.tipoPostagem' class="form-check-input" type="radio"
+                    name="inlineRadioOptions" id="inlineRadio1" value="p">
                   <label class="form-check-label" for="inlineRadio1">Postagem</label>
                 </div>
 
                 <div class="form-check form-check-inline">
-                  <input [(ngModel)]='postagem.tipoPostagem' class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="r">
+                  <input [(ngModel)]='postagem.tipoPostagem' class="form-check-input" type="radio"
+                    name="inlineRadioOptions" id="inlineRadio2" value="r">
                   <label class="form-check-label" for="inlineRadio2">Reclamação</label>
                 </div>
 
                 <div class="form-check form-check-inline">
-                  <input [(ngModel)]='postagem.tipoPostagem' class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="e">
+                  <input [(ngModel)]='postagem.tipoPostagem' class="form-check-input" type="radio"
+                    name="inlineRadioOptions" id="inlineRadio3" value="e">
                   <label class="form-check-label" for="inlineRadio3">Elogio</label>
                 </div>
 
@@ -177,9 +180,9 @@
 
           <div class="row">
             <div class="col-lg-12 d-flex justify-content-around">
-            <button type="button" class="btn btn-success" (click)='publicar()'>Postar</button>
+              <button type="button" class="btn btn-success" (click)='publicar()'>Postar</button>
+            </div>
           </div>
-        </div>
         </div>
       </div>
 
@@ -203,7 +206,7 @@
                     <p class="card-text mb-0"><small *ngIf='i.anonima === false'
                         class="text-muted lead"><b>{{i.usuario.nome}}</b></small></p>
                     <p class="card-text mb-0"><small *ngIf='i.anonima === true'
-                        class="text-muted lead"><b>Privado</b></small></p>
+                        class="text-muted lead"><b>Anônimo</b></small></p>
                     <p class="card-text mt-0">
                       <small class="text-muted">
                         {{ i.data | date: "dd/MM/yyyy" }}
@@ -230,7 +233,11 @@
           <div class="card-columns">
             <div class="card h-100 my-2" *ngFor='let i of user.postagem | orderBy : key : reverse'>
               <div class="pt-4 card-body text-center">
-                <img src="{{foto}}" alt="imagem de perfil" width="45px" class="img-fluid rounded-circle">
+
+                <img *ngIf='authService.semFoto() === false' src="{{foto}}" class="img img-responsive" alt="img"  width="45px">
+                <img *ngIf='authService.semFoto() === true' src="../../assets/img/avatar-default2.png"
+                  class="img img-responsive" alt="img"  width="45px">
+                
                 <h5 class="card-title">{{i.titulo}}</h5>
                 <p class="card-text"><small class="text-muted">Tema: {{i.tema.nome}}</small></p>
                 <p class="card-text">{{i.mensagem}}</p>
@@ -306,7 +313,11 @@
               <div *ngIf="i.tipo == 'pf'">
                 <div class="col-lg-12 d-flex flex-start">
                   <div class="imgBox-lateralDireita">
-                    <img src="{{i.foto}}" alt="imagem de perfil" class="img-fluid rounded-circle">
+
+                    <img *ngIf='authService.semFoto() === false' src="{{i.foto}}" alt="imagem de perfil"
+                      class="img-fluid rounded-circle">
+                    <img *ngIf='authService.semFoto() === true' src="../../assets/img/avatar-default2.png"
+                      alt="imagem de perfil" class="img-fluid rounded-circle">
                   </div>
                   <div class="pp">
                     <p class="card-text mb-0 lead fw-normal">{{i.nome}}</p>

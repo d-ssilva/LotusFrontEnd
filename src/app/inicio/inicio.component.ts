@@ -21,6 +21,8 @@ export class InicioComponent implements OnInit {
   listaPostagens: Postagem[]
   tituloPost: string
 
+  postagensTeste: Postagem[]
+
   listaUsuarios: User[]
 
   tema: Tema = new Tema()
@@ -28,9 +30,11 @@ export class InicioComponent implements OnInit {
   idTema: number
 
   user: User = new User()
+
   idUser = environment.id
   foto = environment.foto
   nome = environment.nome
+  usuariot = environment.user
 
 
   // ESSAS VARIÁVEIS AJUDAM A SEPARAR AS POSTAGENS POR DATA EM ORDEM DESCRESCENTE
@@ -54,14 +58,15 @@ export class InicioComponent implements OnInit {
       this.rota.navigate(['/login'])
     }
 
-    this.getAllUsuario()
     this.temaService.refreshToken()
     this.postagemService.refreshToken()
+    this.findByIdUser()
+    this.getAllUsuario()
     this.getAllTema()
     this.getAllPostagens()
-    this.findByIdUser()
     this.menuLateral()
     this.botaoLateral()
+    this.findTeste()
     // this.authService.semFoto()
 
   }
@@ -131,7 +136,6 @@ export class InicioComponent implements OnInit {
   }
 
   publicar() {
-
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
     this.user.id = this.idUser
@@ -146,4 +150,9 @@ export class InicioComponent implements OnInit {
     })
   }
 
+  findTeste() {
+    this.postagemService.getbyTeste().subscribe((resp: Postagem[]) => {
+      this.postagensTeste = resp;
+    })
+  }
 }

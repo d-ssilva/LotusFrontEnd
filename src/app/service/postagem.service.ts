@@ -36,6 +36,11 @@ export class PostagemService {
     return this.http.get<Postagem[]>(`https://apilotus.herokuapp.com/postagem/titulo/${titulo}`, this.token)
   }
 
+   // MÉTODO PARA PESQUISAR POSTAGENS POR NOME
+   getbyTeste(): Observable<Postagem[]>{
+    return this.http.get<Postagem[]>('https://apilotus.herokuapp.com/postagem/maiorReclamacao', this.token)
+  }
+
   postPostagem(postagem: Postagem): Observable<Postagem>{
     return this.http.post<Postagem>('https://apilotus.herokuapp.com/postagem', postagem, this.token)
   }
