@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.tud {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* background:  #F8A8C3!important; */
+  /* background-image: url(../../assets/img/img-fundo3.jpg) !important; */
+  transition: 0.5s;
+  font-family: Roboto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* 
+.tud.active {
+  background-image: url("/assets/img/img-fundo.jpg");
+} */
+
+.container-fluidl {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  margin: 20px;
+}
+
+.fundoazul {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  height: 420px;
+  display: flex;
+  /* background-color: rgba(255, 255, 255, 0.2);  */
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  
+}
+
+.fundoazul .box {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fundoazul .box h2 {
+  color: #333;
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.fundoazul .box button {
+  cursor: pointer;
+  padding: 10px 20px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+}
+
+.formBx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  border-radius: 20px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 45px rgba(102, 67, 67, 0.25);
+  transition: 0.6s ease-in-out;
+  overflow: hidden;
+}
+
+.formBx.active {
+  left: 50%;
+  height: 100%;
+
+}
+
+.formBx .form {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 50px;
+  transition: 0.5s;
+}
+
+.formBx .form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.formBx.active .loginForm {
+  left: -100%;
+  transition-delay: 0%;
+}
+
+.formBx .loginForm {
+  transition-delay: 0.25%;
+}
+
+.formBx .cadaForm {
+  left: 100%;
+  transition-delay: 0.0%;  
+}
+
+/* TAMANHO DA CAIXA DO SELECIONE TIPO DE CONTA */
+.formBx .cadaForm form select{
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  outline: none;
+  font-size: 16px;
+  border: 1px solid #333;
+}
+/* /TAMANHO DA CAIXA DO SELECIONE TIPO DE CONTA */
+/* o place holder de tipo de conta */
+.formBx .cadaForm form select option:first { 
+  color: #999;
+}
+/* o place holder de tipo de conta */
+
+.formBx.active .cadaForm {
+  left: 0;
+  transition-delay: 0.25%;
+}
+
+.formBx .form h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.formBx .form form input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  outline: none;
+  font-size: 15px;
+  border: 1px solid #333;
+}
+
+.formBx .form form input[type="submit"] {
+  background: #8DDBEB;
+  border: none;
+  color: black;
+  max-width: 100px;
+  cursor: pointer;
+}
+
+.cadastroBtn {
+  background-color: #F8A8C3;
+  color: black;
+  border-radius: 10px;
+  width: 35%;
+}
+
+.loginBtn{
+  background-color: #8DDBEB;
+  color: black;
+  border-radius: 10px;
+  width: 35%;
+}
+
+.loginBtn2{
+  background-color: #8DDBEB;
+  color: black;
+  border-radius: 10px;
+  width: 45%;
+}
+
+.btnCar{
+  border-radius: 10px;
+}
+
+.formBx.active .form form input[type="submit"] {
+  background: #F8A8C3;
+}
+
+.formBx .form form .forgot {
+  color: #333;
+}
+
+@media (max-width: 991px) {
+  .container-fluid {
+    max-width: 400px;
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container-fluid .fundoazul 
+  {
+    top: 0;
+    height: 100%;
+  }
+
+  .formBx {
+    width: 100%;
+    height: 500px;
+    top: 0;
+    box-shadow: none;
+  }
+
+  .fundoazul .box {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    bottom: 0;
+  }
+
+  .box.loginBtn {
+    top: 0;
+  }
+
+  .formBx.active{
+    left: 0;
+    top: 180px;
+  }
+
+}
+
+.imgBox {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
+
+.imgBox:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(225deg, #e91e63, #03a9f4);
+  z-index: 1;
+  mix-blend-mode: screen;
+}
+
+.imgBox img { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+

@@ -1,0 +1,64 @@
+.cortext {
+  color: bisque;
+}
+
+ul.texto-rodape {
+  color: bisque;
+}
+
+
+ul.social-midias,
+ul.logo-rodape {
+  list-style: none; /*  tirando as bolinhas laterais */
+  padding: 0;
+}
+
+.tituloTopico {
+  display: inline;
+  margin: 0;
+  padding: 5px;
+  font-size: 2rem;
+  list-style: none;
+  
+}
+
+ul.texto-rodape li a {
+  text-decoration: none;
+  color: bisque;
+  font-size: 1.2rem;
+  list-style: none !important;
+}
+
+ul.texto-rodape li {
+  list-style: none !important;
+}
+
+ul.texto-rodape li:hover a {
+  color: #4ac2da;
+}
+
+.fa {
+  font-size: 2rem;
+  color: bisque;
+  padding: 10px;
+}
+
+.fa-facebook:hover {
+  color: #1197f5;
+}
+
+.fa-instagram:hover {
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(217, 132, 66, 1) 0%,
+    rgba(198, 68, 83, 1) 24%,
+    rgba(197, 57, 92, 1) 55%,
+    rgba(169, 28, 141, 1) 79%,
+    rgba(118, 35, 190, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.fa-linkedin:hover {
+  color: #0e76a8;
+}

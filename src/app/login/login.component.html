@@ -1,0 +1,68 @@
+<div class="imgBox">
+    <img src="../../assets/img/img-fundo3.jpg" alt="">
+</div>
+<div class="container-fluid tud">
+    <div class="container-fluidl">
+        <div class="fundoazul shadow-lg">
+            <div class="box blogin">
+                <h2>Já possui cadastro? Acesse</h2>
+                <button type="button" class="loginBtn">Entrar</button>
+            </div>
+            <div class="box bcadastro">
+                <h2>Ainda não tem uma conta?</h2>
+                <button type="button" class="cadastroBtn">Cadastre-se</button>
+            </div>
+        </div>
+        <div class="formBx">
+            <div class="form loginForm">
+                <div class="d-flex justify-content-center flex-column align-items-center pb-5">
+                    <img class="justify-content-center mt-4 mb-3" src="../../assets/img/LOGO.png" alt="Logo da rede"
+                        width="130rem">
+                    <h3 class="text-center fw-light">Lotus</h3>
+                </div>
+                <form>
+                    <input [(ngModel)]="userLogin.usuario" type="text" name="usuario" id="usuario"
+                        placeholder="Digite o seu usuario">
+                    <input [(ngModel)]="userLogin.senha" type="password" name="senha" id="senha"
+                        placeholder="Digite a sua senha">
+                    <div class="d-flex justify-content-center">
+                        <input class="loginBtn2" type="submit" value="Login" (click)='entrar()'>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form cadaForm">
+                <form>
+                    <div class="d-flex justify-content-center align-content-center">
+                        <h3 class="fw-light">Cadastre-se</h3>
+                    </div>
+                    <input [(ngModel)]="user.nome" type="text" name="nome" id="nome" placeholder="Digite o seu nome">
+                    <input [(ngModel)]="user.usuario" type="text" name="nomeDeUsuaria" id="nomeDeUsuaria"
+                        placeholder="Digite o nome de usuario">
+                    <input [(ngModel)]="user.foto" type="text" name="foto" id="foto"
+                        placeholder="Insira o link da sua foto">
+                    <input [(ngModel)]="user.email" type="text" name="email" id="email"
+                        placeholder="Digite a sua e-mail">
+                    <input (input)='confirmSenha($event)' type="password" name="senha" id="senha"
+                        placeholder="Digite a sua senha">
+                    <input [(ngModel)]="user.senha" type="password" name="confirmarSenha" id="confirmarSenha"
+                        placeholder="Digite novamente sua senha">
+                    <select 
+                    name = "form-control"
+                    class="text-secondary"                     
+                    type="text"                     
+                    name="tipo" 
+                    id="tipo"
+                    (change)='tipoUser($event)'>
+                        <option class="text-secondary" disabled selected hidden>Selecione o tipo de conta:</option> <!-- disable selected desvalida essa string na caixa de opções -->
+                        <option class="fst-italic text-dark" value="pj">Empresa</option>
+                        <option class="fst-italic text-dark" value="pf">Pessoa Fisica</option>
+                    </select>
+                    <div class="d-flex justify-content-center align-content-center text-center">
+                        <input (click)='cadastrar()' type="submit" value="Cadastre-se" class="btnCar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

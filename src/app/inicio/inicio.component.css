@@ -1,0 +1,374 @@
+.tamanho-img {
+  width: 7rem;
+  height: 7rem;
+}
+
+ul li a {
+  text-decoration: none;
+}
+
+.fa {
+  margin-right: 15px;
+  font-size: 1.3rem;
+}
+
+.nav-item {
+  padding: 10px 15px;
+}
+
+.nav-item a {
+  color: #ea7ac7;
+}
+
+.nav-item:hover a {
+  color: #4ac2da;
+}
+
+.nav-item.active {
+  padding: 10px 15px;
+}
+
+.nav-item.active a {
+  color: #4ac2da;
+}
+.mens {
+  text-align: justify !important;
+}
+
+.imgBox {
+  position: relative;
+  width: 75px;
+  height: 75px;
+  overflow: hidden;
+  border: 5px solid rgb(255 255 255);
+}
+
+.imgBox-lateralDireita {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  overflow: hidden;
+  border: 5px solid rgb(255 255 255);
+}
+
+.imgBox img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.col-lg-6.mb-5 {
+  padding-left: 0 !important;
+}
+
+.pp {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 10px;
+}
+
+.pp a:hover {
+  text-decoration: none;
+}
+
+.gap-2 {
+  width: 100%;
+}
+
+.custom {
+  color: #6c757d;
+  font-weight: 400;
+  background-color: #fff;
+  border-radius: 30px;
+  height: 50px;
+  border-color: #ea7ac7;
+}
+
+.custom:hover {
+  background: #ea7ac74d;
+  color: rgba(0, 0, 0, 1);
+}
+
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(234, 122, 199, 0.125) !important;
+}
+
+.rounded-circle {
+  border-color: #ef9bd5 !important;
+}
+
+.rounded-circle:hover {
+  border-color: #8ddbeb !important;
+}
+
+.pesqPost {
+  border-radius: 30px;
+  border-color: #ea7ac7;
+}
+::placeholder {
+  text-align: center;
+}
+
+.card {
+  border-radius: 10px !important;
+  border: 1px solid rgba(95, 95, 95, 0.123) !important;
+}
+
+/*============================================================================= INICIO MENU LATERAL */
+
+.tudo {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* min-height: 100hv; */
+  /* background: #fff; */
+}
+
+.navigation {
+  /* position: fixed; */
+  top: 20px;
+  left: 20px;
+  bottom: 20px;
+  width: 95%;
+  border-radius: 10px;
+  box-sizing: initial;
+  /* border: 5px solid #333; */
+  background: #FFFFFF;
+  transition: width 0.5s;
+  overflow-x: hidden;
+  /* bottom: 20px;
+  padding-right: 0px;
+  margin-right: 0px;
+  padding-left: 15%;
+  margin-bottom: 15%; */
+}
+
+.navigation.active{
+  width: 80px;
+}
+
+
+
+.navigation ul {
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+  width: 100%;
+  padding-left: 35px;
+  padding-top: 40px;
+  transition: width 0.5s;
+}
+
+.navigation.active ul{
+  padding-left: 10px;
+}
+
+.navigation ul li {
+  position: relative;
+  list-style: none;
+  width: 100%;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+.navigation ul li.active {
+  background: #f3f2ef !important;
+}
+
+.navigation ul li.active a {
+  color: #333;
+}
+
+
+/*link*/
+.navigation ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: #333;
+}
+
+.navigation ul li b:nth-child(1){
+  position: absolute;
+  top: -20px;
+  height: 20px;
+  width: 100%;
+  background: #f3f2ef;
+  display: none;
+} 
+
+.navigation ul li b:nth-child(1)::before{
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  border-bottom-right-radius: 20px;
+
+}
+
+.navigation ul li b:nth-child(2){
+  position: absolute;
+  bottom: -20px;
+  height: 20px;
+  width: 100%;
+  background: #f3f2ef;
+  display: none;
+} 
+
+.navigation ul li b:nth-child(2)::before{
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  border-top-right-radius: 20px;
+
+}
+
+.navigation ul li.active b:nth-child(1),
+.navigation ul li.active b:nth-child(2) {
+  display: block;
+}
+
+
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 40px;
+  line-height: 70px;
+  padding-left: 25px;
+
+}
+
+.navigation ul li a .icon .fa {
+  font-size: 1.5em;
+  width: 35px;
+}
+
+.navigation ul li a .title {
+  position: relative;
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  white-space: normal;
+}
+
+.toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  height: 50px; 
+  width: 50px;
+  background: #333;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle.active {
+  background: #ff4d89;
+}
+
+.toggle i.fa{
+  position: absolute;
+  color: #fff;
+  font-size: 34px;
+  display: none;
+}
+
+.toggle i.abrir,
+.toggle.active i.fechar{
+  display: block;
+}
+
+.toggle i.fechar,
+.toggle.active i.abrir{
+  display: none;
+}
+
+/* ======================================================================== CARD FOTO */
+
+.profile-card-2 {
+  
+  max-width: 80%;
+  /* background-color: #fff;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1); */
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+  margin: 10px auto;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+/* FOTO */
+.profile-card-2 img {
+  margin-top: 40px;
+  transition: all linear 0.25s;
+  width: 50%;
+  border-radius: 20px;
+}
+
+.profile-card-2 .profile-name {
+  left: 30px;
+  bottom: 70px;
+  font-size: 30px;
+  color: #333;
+  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  transition: all linear 0.25s;
+}
+
+.profile-card-2 .profile-icons {
+  bottom: 30px;
+  right: 30px;
+  color: #FFF;
+  transition: all linear 0.25s;
+}
+
+.profile-card-2 .profile-username {
+  bottom: 50px;
+  left: 30px;
+  color: #333;
+  font-size: 13px;
+  transition: all linear 0.25s;
+}
+
+.profile-card-2 .profile-icons .fa {
+  margin: 5px;
+}
+
+.profile-card-2:hover img {
+  filter: grayscale(100%);
+}
+
+.profile-card-2:hover .profile-name {
+  bottom: 80px;
+}
+
+.profile-card-2:hover .profile-username {
+  bottom: 60px;
+}
+
+.profile-card-2:hover .profile-icons {
+  right: 40px;
+}
+
+/* ======================================================================== END CARD FOTO */

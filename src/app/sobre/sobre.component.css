@@ -1,0 +1,104 @@
+.tamanho-img {
+    width: 7rem;
+    height: 7rem;
+}
+
+.fundo {
+    background-image: linear-gradient(to right, #434343 0%, rgb(0, 0, 0) 100%);
+}
+
+.cortext {
+    color: bisque;
+    /*	#FFE4C4*/
+}
+
+.fundo-sobre {
+  background-color: rgba(255, 228, 196, 0.336);
+}
+
+ul.social-midias {
+  list-style: none; /*  tirando as bolinhas laterais */
+  padding: 0;
+}
+
+ul.social-midias li {
+  display: inline;
+  margin: 0;
+}
+
+.fa {
+  color: black;
+  padding: 10px;
+}
+
+.fa-facebook {
+  color: #1197f5;
+}
+
+.fa-facebook:hover {
+  color: #1197f5;
+}
+
+.fa-instagram:hover {
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(217, 132, 66, 1) 0%,
+    rgba(198, 68, 83, 1) 24%,
+    rgba(197, 57, 92, 1) 55%,
+    rgba(169, 28, 141, 1) 79%,
+    rgba(118, 35, 190, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-instagram {
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(217, 132, 66, 1) 0%,
+    rgba(198, 68, 83, 1) 24%,
+    rgba(197, 57, 92, 1) 55%,
+    rgba(169, 28, 141, 1) 79%,
+    rgba(118, 35, 190, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-linkedin:hover {
+  color: #0a66c2;
+}
+
+.fa-linkedin {
+  color: #0a66c2;
+}
+
+.fa-github {
+  color: black;
+}
+
+.fa-github:hover {
+  color: black;
+}
+
+.bRedonda {
+  
+}
+
+.s {
+  height: 100%;
+}
+.borda{
+  
+  border-radius: 30px;
+  padding: 2rem;
+  margin-left: auto !important;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+  
+}
+.textos{
+  text-align: justify !important;
+  font-size: 26px !important;
+  
+}

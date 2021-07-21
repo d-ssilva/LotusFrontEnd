@@ -1,0 +1,783 @@
+<div class="container-fluid bg3 p-0">
+    <div class="d-flex justify-content-center fundo">
+        <div class="row">
+            <div class="col-lg-12 p-5">
+                <h2 class="fw-bolder fs-1 text-white text-center">Olá, {{nome}}.</h2>
+                <h3 class="fw-lighter fs-5 text-white text-center">bem vindo(a) a central de ajuda!</h3>
+                <div class="form-group ">
+                    <input type="text" id="pesquisa" class="form-control" required>
+                    <label class="form-control-placeholder" for="name"><i
+                            class="fa fa-search text-white ms-5 font-buscador" aria-hidden="true"></i></label>
+                    <h1 class="text-white pt-3">Use o buscador ou procure na seção abaixo sua dúvida</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center align-items-center">
+            <h2 class="font py-5 align-items-center"> Perguntas Respondidas Frequentemente </h2>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-evenly py-5 align-items-end">
+        <div class="col-lg-3 font d-flex flex-column">
+            <div class="align-self-center ac">
+
+                <h2 class="faq">Geral</h2>
+
+                <a data-bs-toggle="modal" data-bs-target="#versao">
+                    <h4 class="links">Versão Rede Social Lotus</h4>
+                </a>
+
+                <a data-bs-toggle="modal" data-bs-target="#navegadores">
+                    <h4 class="links">Navegadores</h4>
+                </a>
+
+                <a data-bs-toggle="modal" data-bs-target="#termos">
+                    <h4 class="links">Termos de Serviço</h4>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="col-lg-3 font d-flex flex-column">
+            <div class="align-self-center ac">
+
+                <h2 class="faq">Perfil</h2>
+
+                <a data-bs-toggle="modal" data-bs-target="#altFoto">
+                    <h4 class="links">Atualização de Foto</h4>
+                </a>
+
+                <a data-bs-toggle="modal" data-bs-target="#altSenha">
+                    <h4 class="links">Atualização de Senha</h4>
+                </a>
+
+                <a data-bs-toggle="modal" data-bs-target="#delAcc">
+                    <h4 class="links">Exclusão de Conta</h4>
+                </a>
+
+            </div>
+        </div>
+
+
+
+
+
+        <div class="col-lg-3 font d-flex flex-column">
+            <div class="align-self-center ac">
+
+                <h2 class="faq">Políticas</h2>
+
+                <a data-bs-toggle="modal" data-bs-target="#ods5">
+                    <h4 class="links">ODS-5</h4>
+                </a>
+
+                <a data-bs-toggle="modal" data-bs-target="#inclusaoSocial">
+                    <h4 class="links">Inclusão Social</h4>
+                </a>
+
+                <a data-bs-toggle="modal" data-bs-target="#igualdadeGenero">
+                    <h4 class="links">Igualdade de Gênero</h4>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 
+    DANILO 
+    -->
+    <!-- POSTAGEM -->
+    <div class="row d-flex justify-content-evenly pt-5 align-items-end m-0">
+
+        <div class="col-lg-3 font d-flex flex-column">
+            <div class="align-self-center ac">
+
+                <h2 class="faq">Postagem</h2>
+
+                <a data-bs-toggle="modal" data-bs-target="#realPost">
+                    <h4 class="links">Como Realizar uma Postagem</h4>
+                </a>
+
+                <a data-bs-toggle="modal" data-bs-target="#addMidia">
+                    <h4 class="links">Adicionando Mídia</h4>
+                </a>
+
+                <a data-bs-toggle="modal" data-bs-target="#marcandoUsuarios">
+                    <h4 class="links">Marcando Usuários</h4>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- TEMA -->
+        <div class="col-lg-3 font d-flex flex-column m-0">
+            <div class="align-self-center ac">
+
+                <h2 class="faq">Tema</h2>
+
+                <a data-bs-toggle="modal" data-bs-target="#selecTema">
+                    <h4 class="links">Selecionar Tema</h4>
+                </a>
+
+                <a data-bs-toggle="modal" data-bs-target="#cadTema">
+                    <h4 class="links">Cadastrar Tema</h4>
+                </a>
+
+                <a data-bs-toggle="modal" data-bs-target="#filtTemas">
+                    <h4 class="links">Filtrar Postagens por Tema</h4>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- SEGURANÇA -->
+        <div class="col-lg-3 font d-flex flex-column m-0">
+            <div class="align-self-center ac">
+
+                <h2 class="faq">Segurança</h2>
+
+                <a data-bs-toggle="modal" data-bs-target="#protIdent">
+                    <h4 class="links">Proteção de identidade</h4>
+                </a>
+
+                <a data-bs-toggle="modal" data-bs-target="#recConta">
+                    <h4 class="links">Recuperação de conta</h4>
+                </a>
+
+                <a data-bs-toggle="modal" data-bs-target="#protConta">
+                    <h4 class="links">Proteger Conta</h4>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-0 text-center">
+        <div class="row bot pt-3 text-center mg">
+            <p class="center">Temos o compromisso de criar uma Lotus mais segura. Encontre recursos e saiba mais em
+                nosso Centro de
+                Segurança.</p>
+        </div>
+    </div>
+</div>
+
+
+<!--                    Geral                      -->
+
+<!--Versão Rede Social Lotus-->
+<div id="divPai">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable m-0">
+        <div class="modal" tabindex="-1" id="versao">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                                src="https://i.imgur.com/GQ8buZn.png" alt="">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class=" d-flex justify-content-center align-items-center"><img
+                                src="https://i.imgur.com/B9HG4ev.png" class="mt-5 mb-5" width="250px" alt="">
+                        </div>
+                        <p>Lotus Social Network</p>
+                        <p>Versão: 0.8.5</p>
+                        <p>Build at: 2021-07-14T03:24:49.635Z</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Navegadores-->
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable m-0">
+        <div class="modal" tabindex="-1" id="navegadores">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                                src="https://i.imgur.com/GQ8buZn.png" alt="">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class=" d-flex justify-content-center align-items-center"><img
+                                src="https://i.imgur.com/BF5Vt50.jpg" class="mt-5 mb-5" width="250px" alt=""></div>
+
+                        <ul>
+                            <p>Atualmente a Lotus suporta os seguintes navegadores:</p>
+                            <li>Google Chrome Versão 91.0.4472.124</li>
+                            <li>Mozilla Firefox Versão 89.0.2</li>
+                            <li>Microsoft Edge Versão 91.0.864.67</li>
+                            <li>Opera Versão 77.0 4054.146</li>
+                            <li>Safari Versão 14.0</li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Termos de Uso-->
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable m-0">
+        <div class="modal" tabindex="-1" id="termos">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                                src="https://i.imgur.com/GQ8buZn.png" alt="">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class=" d-flex justify-content-center align-items-center"><img
+                                src="https://i.imgur.com/FlOpRjU.png" class="mt-5 mb-5" width="250px" alt=""></div>
+
+                        <p>Estes Termos de Serviço (“Termos”) regem seu acesso e uso de nossos serviços, incluindo
+                            nossos vários sites, SMS, APIs, notificações por e-mail, aplicativos, botões, widgets,
+                            anúncios, serviços comerciais, e nossos outros serviços cobertos que estão vinculados a
+                            estes Termos (coletivamente, os “Serviços”), e quaisquer informações, textos, links,
+                            gráficos, fotos, áudios, vídeos ou outros materiais ou disposição de materiais enviados,
+                            baixados ou exibidos nos Serviços (coletivamente denominados como “Conteúdo”). Ao utilizar
+                            os Serviços, você concorda em estar sujeito a estes Termos.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--                    Perfil                     -->
+
+    <!--Atualização de Foto-->
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable m-0">
+        <div class="modal" tabindex="-1" id="altFoto">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                                src="https://i.imgur.com/GQ8buZn.png" alt="">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class=" d-flex justify-content-center align-items-center"><img
+                                src="https://i.imgur.com/7GNO1Tf.jpg" class="mt-5 mb-5" width="250px" alt=""></div>
+
+                        <ul>
+                            <p>Para atualizar sua foto, siga os passos a seguir:</p>
+                            <li>Escolha sua nova foto</li>
+                            <li>Faça o upload da nova foto em um banco de imagens</li>
+                            <li>Copie o link da nova foto</li>
+                            <li>Na tela inicial Lotus clique em "Alterar Cadastro"</li>
+                            <li>Copie o novo link no campo "Foto"</li>
+                            <li>Clique em atualizar</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Alterando sua Senha-->
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable m-0">
+        <div class="modal" tabindex="-1" id="altSenha">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                                src="https://i.imgur.com/GQ8buZn.png" alt="">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class=" d-flex justify-content-center align-items-center"><img
+                                src="https://i.imgur.com/Ssau9Fc.jpg" class="mt-5 mb-5" width="250px" alt=""></div>
+
+                        <ul>
+                            <p>Para atualizar sua senha, siga os passos a seguir:</p>
+                            <li>Escolha uma nova senha, com no mínimo 8 caracteres, sendo pelo menos uma letra
+                                maiúscula, um
+                                número e um caractere especial</li>
+                            <li>Na tela inicial Lotus clique em "Alterar Cadastro"</li>
+                            <li>Digite sua nova senha</li>
+                            <li>Confirme sua nova senha</li>
+                            <li>Clique em atualizar</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Exclusão de Conta-->
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable m-0">
+        <div class="modal" tabindex="-1" id="delAcc">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                                src="https://i.imgur.com/GQ8buZn.png" alt="">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class=" d-flex justify-content-center align-items-center"><img
+                                src="https://i.imgur.com/xFVgnTJ.png" class="mt-5 mb-5" width="250px" alt=""></div>
+
+                        <ul>
+                            <p>Para excluir sua conta, siga os passos a seguir:</p>
+                            <li>Na tela inicial Lotus clique em "Alterar Cadastro"</li>
+                            <li>Clique em "Excluir Conta"</li>
+                            <li>Confirme sua senha</li>
+                            <li>Confirme sua exclusão</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--                    Políticas                  -->
+
+    <!--ODS-5-->
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable m-0">
+        <div class="modal" tabindex="-1" id="ods5">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                                src="https://i.imgur.com/GQ8buZn.png" alt="">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class=" d-flex justify-content-center align-items-center"><img
+                                src="http://www.agenda2030.org.br/static/home/images/ods_icons/5.png" class="mt-5 mb-5"
+                                width="250px" alt=""></div>
+
+                        <p> O Objetivo de Desenvolvimento Sustentável 5 diz respeito à igualdade de
+                            gênero e é o quinto dos 17 Objetivos de Desenvolvimento Sustentável
+                            estabelecidos pelas Nações Unidas em 2015. A redação oficial do ODS
+                            5 é "alcançar a igualdade de gênero e empoderar todas as mulheres e
+                            meninas".
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inclusão Social -->
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable m-0 p-0">
+        <div class="modal" tabindex="-1" id="inclusaoSocial">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                                src="https://i.imgur.com/GQ8buZn.png" alt="">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class=" d-flex justify-content-center align-items-center"><img
+                                src="https://i.imgur.com/wjogJH0.png" class="mt-5 mb-5" width="250px" alt=""></div>
+                        <p>A inclusão social é o conjunto de medidas direcionadas a indivíduos excluídos do meio social,
+                            seja por alguma deficiência física ou mental, cor da pele, orientação sexual, gênero ou
+                            poder
+                            aquisitivo dentro da comunidade. Dessa forma, o objetivo dessas ações é possibilitar que
+                            todos
+                            os cidadãos tenham oportunidades de acesso a bens e serviços, como saúde, educação, emprego,
+                            renda, lazer, cultura, entre outros.
+                        </p>
+                        <p>
+                            A Rede Social Lotus tem como objetivo prover o meio para que as mulheres exponham suas
+                            experiências, ideias, desabafos, denúncias ou qualquer manifestação do pensamento, desde que
+                            não
+                            ofenda nossos termos de Uso.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Igualdade de Gênero -->
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable m-0 p-0">
+        <div class="modal" tabindex="-1" id="igualdadeGenero">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                                src="https://i.imgur.com/GQ8buZn.png" alt="">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class=" d-flex justify-content-center align-items-center"><img
+                                src="https://i.imgur.com/82eutZU.jpg" class="mt-5 mb-5" width="250px" alt=""></div>
+
+                        <p>Igualdade de Género é a “igualdade em direitos, responsabilidades e oportunidades das
+                            mulheres e
+                            dos homens, bem como das meninas e dos meninos. Igualdade não significa que mulheres e
+                            homens
+                            são os mesmos, mas que os direitos, responsabilidades e oportunidades dos homens e das
+                            mulheres
+                            não devem depender do fato de nascerem do sexo masculino ou feminino. A Igualdade de Género
+                            não
+                            é uma questão das mulheres, é uma questão de direitos humanos que deve envolver igualmente
+                            homens e mulheres. A Igualdade de Género e também condição para e indicador de
+                            desenvolvimento
+                            sustentável centrado nas pessoas.”
+                        </p>
+                        <p>
+                            Nós da Lotus, buscamos incentivar principalmente a igualdade de gênero dentro do meio
+                            profissional, apontando os meios que trazem a igualdade no dia a dia e os que não,
+                            fornecendo
+                            dados suficientes para uma escolha assertiva em seu futuro profissional.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Postagem -->
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable m-0">
+        <div class="modal" tabindex="-1" id="realPost">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Publicando postagens</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <!-- X para fechar a janela -->
+                    <!-- <div class="d-flex justify-content-end">
+                    <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                            src="https://i.imgur.com/GQ8buZn.png" alt="">
+                    </button>
+                </div> -->
+                    <div class="modal-body">
+                        <!-- <div class=" d-flex justify-content-center align-items-center"><img
+                            src="https://i.imgur.com/wjogJH0.png" class="mt-5 mb-5" width="250px" alt=""></div> -->
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="../../assets/img/tutorial postagem/Capturar1.1.png" class="d-block w-100"
+                                        alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="../../assets/img/tutorial postagem/Capturar2.PNG" class="d-block w-100"
+                                        alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev fa-black-tie" type="button"
+                                data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <hr>
+                        <p>Você fazer suas postagens através da página 'início' clicando no botão "Nova Postagem" no
+                            centro
+                            do feed de postagens.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Versão da LOTUS -->
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable m-0 p-0">
+        <div class="modal" tabindex="-1" id="versao">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                                src="https://i.imgur.com/GQ8buZn.png" alt="">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class=" d-flex justify-content-center align-items-center"><img
+                                src="../../assets/img/LOGO.png" class="mt-5 mb-5" width="100px" alt=""></div>
+
+                        <p> A rede social Lotus está em sua versão de teste.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- como atualizar a foto -->
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable m-0 p-0">
+        <div class="modal" tabindex="-1" id="altFoto">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                                src="https://i.imgur.com/GQ8buZn.png" alt="">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class=" d-flex justify-content-center align-items-center">
+
+                            <p> Volte para tela inicial, no menu lateral esquerdo click em "Alterar Cadastro" e coloque
+                                o link da sua foto na área "Foto".
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- como atualizar sua senha -->
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable m-0 p-0">
+            <div class="modal" tabindex="-1" id="altSenha">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                                    src="https://i.imgur.com/GQ8buZn.png" alt="">
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class=" d-flex justify-content-center align-items-center">
+
+                                <p> Volte para tela inicial, no menu lateral esquerdo click em
+                                    "Alterar Cadastro" e coloque sua nova senha na área "Senha"
+                                    e confirme ela na área "Confirme sua senha".
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- como realizar uma postagem -->
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable m-0 p-0">
+                <div class="modal" tabindex="-1" id="realPost">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="d-flex justify-content-end">
+                                <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                                        src="https://i.imgur.com/GQ8buZn.png" alt="">
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class=" d-flex justify-content-center align-items-center">
+
+                                    <p> Volte para tela inicial, e click na palavra "Nova Postagem".
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Selecionar Tema -->
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable m-0">
+                    <div class="modal" tabindex="-1" id="cadTema">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="d-flex justify-content-end">
+                                    <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                                            src="https://i.imgur.com/GQ8buZn.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="../../assets/img/tutorial tema/Cadtema1.PNG"
+                                                    class="d-block w-100" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="../../assets/img/tutorial tema/Cadtema2.PNG"
+                                                    class="d-block w-100" alt="...">
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                    <hr>
+                                    <p>O cadastro de temas pode ser feito por qualquer usuário cadastrado na rede, e
+                                        pode ser
+                                        reutilizado para criação de novas postagens por outros(as) usuários(as).
+                                    </p>
+                                    <p>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cadastrar Tema -->
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable m-0">
+                    <div class="modal" tabindex="-1" id="selecTema">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="d-flex justify-content-end">
+                                    <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                                            src="https://i.imgur.com/GQ8buZn.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class=" d-flex justify-content-center align-items-center"><img
+                                            src="../../assets/img/tutorial tema/Capturar2.PNG" class="mt-5 mb-5"
+                                            width="250px" alt="">
+                                    </div>
+                                    <hr>
+                                    <p>A Guia de Tema, permite filtrar uma determinada postagem a um assunto específico,
+                                        isso acontece
+                                        no momento de publicação da postagem, segundo manipulação do(a) usuário(a)
+                                    </p>
+                                    <p>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filtrar Postagens Tema -->
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable m-0">
+                    <div class="modal" tabindex="-1" id="filtTemas">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="d-flex justify-content-end">
+                                    <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                                            src="https://i.imgur.com/GQ8buZn.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class=" d-flex justify-content-center align-items-center"><img
+                                            src="../../assets/img/tutorial tema/Capturar2.PNG" class="mt-5 mb-5"
+                                            width="250px" alt="">
+                                    </div>
+                                    <hr>
+                                    <p>Há um botão no na página inicial que possui a função de filtrar todas as
+                                        postagens por título, em
+                                        ordem alfabética.
+                                    </p>
+                                    <p>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Recuperação de conta -->
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable m-0">
+                    <div class="modal" tabindex="-1" id="recConta">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="d-flex justify-content-end">
+                                    <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                                            src="https://i.imgur.com/GQ8buZn.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class=" d-flex justify-content-center align-items-center"><img
+                                            src="../../assets/img/Active Support-amico.png" class="mt-5 mb-5"
+                                            width="250px" alt="">
+                                    </div>
+                                    <hr>
+                                    <p>Em casos de recuperação de acesso, entre em contato com nossa equipe de suporte
+                                        via e-mail: </p>
+                                    <p class="fs-bold">danilo.dos.s.silva@gmail.com
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Proteção de identidade -->
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable m-0">
+                    <div class="modal" tabindex="-1" id="protIdent">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="d-flex justify-content-end">
+                                    <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                                            src="https://i.imgur.com/GQ8buZn.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class=" d-flex justify-content-center align-items-center"><img
+                                            src="../../assets/img/Gender violence-rafiki.png" class="mt-5 mb-5"
+                                            width="250px" alt="">
+                                    </div>
+                                    <hr>
+                                    <p>Infelizmente, muitas mulheres são vítimas de crimes morais ou perseguições dentro
+                                        do ambiente de trabalho, seja injúria física ou moral, jamais deixe de
+                                        denunciar! A plataforma contará com uma guia que irá ocultar seu perfil para de
+                                        retaliação, existem grupos internos dentro da rede social que podem ajudar a
+                                        realocar a usuária no mercado
+                                        de trabalho. Jamais omita qualquer crime!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Proteger Conta -->
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable m-0">
+                    <div class="modal" tabindex="-1" id="protConta">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="d-flex justify-content-end">
+                                    <button type="button" class="chuchu" data-bs-dismiss="modal"> <img
+                                            src="https://i.imgur.com/GQ8buZn.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class=" d-flex justify-content-center align-items-center"><img
+                                            src="../../assets/img/Secure login-pana.png" class="mt-5 mb-5" width="250px"
+                                            alt="">
+                                    </div>
+                                    <hr>
+                                    <p>É recomendado a todos os usuários que criem senhas que contenham:</p>
+                                    <ul>
+                                        <li>
+                                            Números
+                                        </li>
+                                        <li>
+                                            Caractéres especiais
+                                        </li>
+                                        <li>
+                                            Contenha letras maiúsculas e minúsculas
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        Se caso sua senha não obedeça esses critérios, favor modimne-a o quanto antes
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
