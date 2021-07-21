@@ -133,9 +133,8 @@ export class InicioComponent implements OnInit {
   }
 
   inserindoMidia(event: any) {
-
-    this.midiaPost = event.target.value
-    console.log(this.midiaPost)
+    this.postagem.midia = event.target.value    
+    console.log(this.postagem.midia)
   }
 
   publicar() {
