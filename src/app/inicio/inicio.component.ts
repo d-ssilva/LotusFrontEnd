@@ -112,7 +112,6 @@ export class InicioComponent implements OnInit {
     })
   }
 
-
   getAllPostagens() {
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp
@@ -141,7 +140,6 @@ export class InicioComponent implements OnInit {
     }
   }
 
-
   publicar() {
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
@@ -156,6 +154,5 @@ export class InicioComponent implements OnInit {
       this.getAllPostagens()
     })
   }
-
 
 }

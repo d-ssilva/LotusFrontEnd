@@ -26,7 +26,6 @@ export class PostagemService {
     return this.http.get<Postagem[]>('https://apilotus.herokuapp.com/postagem', this.token)
   }
 
-
   getByIdPostagem(id: number): Observable<Postagem>{
     return this.http.get<Postagem>(`https://apilotus.herokuapp.com/postagem/${id}`, this.token)
   }
