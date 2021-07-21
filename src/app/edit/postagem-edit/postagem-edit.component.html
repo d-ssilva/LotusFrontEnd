@@ -27,6 +27,14 @@
         </select>
       </div>
 
+      <div class="row d-flex justify-content-center">
+    <div class="col-md-6">
+      <div class="form-group mt-4">
+        <label for="titulo">Título</label>
+        <input type="text" class="form-control" id="titulo" placeholder="Digite o título"
+          [(ngModel)]="postagem.titulo" />
+      </div>
+
       <div class="d-flex justify-content-center my-4">
         <button class="bt1 me-4" routerLink="/inicio">
           Cancelar

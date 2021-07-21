@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
@@ -20,6 +21,7 @@ export class InicioComponent implements OnInit {
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
   tituloPost: string
+  midiaPost: string // midia da postagem
 
   listaUsuarios: User[]
 
@@ -130,14 +132,20 @@ export class InicioComponent implements OnInit {
     }
   }
 
-  publicar() {
+  inserindoMidia(event: any) {
 
+    this.midiaPost = event.target.value
+    console.log(this.midiaPost)
+  }
+
+  publicar() {
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
     this.user.id = this.idUser
     this.postagem.usuario = this.user // relacionando a tabela de usuario relacionando com seu id
     this.postagem.usuario.foto = this.foto // colocar a foto do usuário que fez a postagem
-    
+    this.postagem.midia = this.midiaPost // Inserindo midia da postagem
+
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
       this.alert.showAlertSuccess('Postagem realizada com sucesso!')

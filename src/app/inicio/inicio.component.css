@@ -372,3 +372,11 @@ ul li a {
 }
 
 /* ======================================================================== END CARD FOTO */
+
+a:hover{
+  cursor: pointer
+}
+
+.placeholderStart::placeholder {
+  text-align: start;
+}
