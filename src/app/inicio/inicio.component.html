@@ -175,14 +175,14 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body d-flex">
-                        <label class="justify-content-start text-center" for="urlMidia">Cole o link </label>
+                        <label class="justify-content-start text-center pe-2" for="urlMidia">Cole o link</label>
                         <input 
+                        [(ngModel)]='postagem.midia'
                         class="w-75 placeholderStart" 
                         name='postagemMidia' 
                         id='postagemMidia' 
                         type="text" 
-                        placeholder="http//exemplo.link.com" 
-                        [(ngModel)]='postagem.midia'>
+                        placeholder="http//exemplo.link.com">
                       </div>
                       <div class="modal-footer justify-content-center">
                         <button type="button" class="bt1" data-bs-dismiss="modal">Cancelar</button>

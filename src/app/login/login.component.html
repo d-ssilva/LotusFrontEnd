@@ -23,7 +23,7 @@
                 <form>
                     <input [(ngModel)]="userLogin.usuario" type="text" name="usuario" id="usuario"
                         placeholder="Digite o seu usuario">
-                    <input [(ngModel)]="userLogin.senha" type="password" name="senha" id="senha"
+                    <input [(ngModel)]="userLogin.senha" type="password" name="senhaLogin" id="senhaLogin"
                         placeholder="Digite a sua senha">
                     <div class="d-flex justify-content-center">
                         <input class="loginBtn2" type="submit" value="Login" (click)='entrar()'>
@@ -43,7 +43,7 @@
                         placeholder="Insira o link da sua foto">
                     <input [(ngModel)]="user.email" type="text" name="email" id="email"
                         placeholder="Digite a sua e-mail">
-                    <input (input)='confirmSenha($event)' type="password" name="senha" id="senha"
+                    <input (input)='confirmSenha($event)' type="password" name="senhaCadastro" id="senhaCadastro"
                         placeholder="Digite a sua senha">
                     <input [(ngModel)]="user.senha" type="password" name="confirmarSenha" id="confirmarSenha"
                         placeholder="Digite novamente sua senha">

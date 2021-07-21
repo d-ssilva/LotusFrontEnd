@@ -143,7 +143,7 @@ export class InicioComponent implements OnInit {
     this.user.id = this.idUser
     this.postagem.usuario = this.user // relacionando a tabela de usuario relacionando com seu id
     this.postagem.usuario.foto = this.foto // colocar a foto do usuário que fez a postagem
-    this.postagem.midia = this.midiaPost // Inserindo midia da postagem
+    this.postagem.midia = this.midiaPost // Inserindo midia da postagem    
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
