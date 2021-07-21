@@ -16,5 +16,6 @@ export class User{
     public tipo: string 
     public postagem: Postagem[]
     public dataNasc: Date 
-    public qtdReclamacao: number 
+    public qtdReclamacao: number
+    public qtdElogio: number
 }   

@@ -16,5 +16,6 @@ export class UserLogin{
     public tipo: string
     public token: string  /*TOKEN APENAS PARA MOMENTO DO LOGIN*/
     public postagem: Postagem[]
-    public qtdReclamacao: User[]
+    public qtdReclamacao: number
+    public qtdElogio: number
 }   

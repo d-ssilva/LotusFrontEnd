@@ -149,7 +149,12 @@
           <div class="row mt-3 mb-3 ">
             <div class="col-lg-12 d-flex justify-content-around">
               <div class="d-flex justify-content-start align-items-center">
-                <i class="fa fa-picture-o" aria-hidden="true"></i>
+
+
+                <button type="button" class="btn btn-outline-success green text-dark me-4" data-bs-toggle="modal"
+                  data-bs-target="#ModalPostagem">
+                  Inserir mídia
+                </button>
 
                 <div class="form-check form-check-inline">
                   <input [(ngModel)]='postagem.tipoPostagem' class="form-check-input" type="radio"
@@ -218,6 +223,7 @@
                 <h5 class="card-title pt-3">{{i.titulo}}</h5>
                 <p class="card-text"><small class="text-muted">Tema: {{i.tema.nome}}</small></p>
                 <p class="card-text text-start mens">{{i.mensagem}}</p>
+                <img src="{{i.midia}}" class="card-img-bottom" alt="..."/>
                 <hr class="my-3">
                 <div class="d-flex justify-content-around align-items-center">
                   <a><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span>Gostei</span></a>
@@ -284,29 +290,8 @@
     <!-- LATERAL DIREITA -->
     <div class="col-lg-3 card mev">
 
-      <!-- EMPRESAS -->
-      <!-- <h5 class="fw-normal f-6 text-center my-4">EMPRESAS PARCEIRAS</h5>
-      <div class="my-0 bg-body rounded d-flex justify-content-center align-content-center">
-        <div class="py-2 card-body text-center d-flex">
-          <div class="row w-100 my-1">
-            <div *ngFor="let i of listaUsuarios">
-              <div *ngIf="i.tipo == 'pj'">
-                <div class="col-lg-12 d-flex flex-start">
-                  <div class="imgBox-lateralDireita">
-                    <img src="{{i.foto}}" alt="imagem de perfil" class="img-fluid rounded-circle">
-                  </div>
-                  <div class="pp">
-                    <p class="card-text mb-0 lead fw-normal">{{i.nome}}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
-
-      <h5 class="fw-normal f-6 text-center my-4">MAIS RECLAMACAO</h5>
+      <!-- EMPRESAS -->    
+      <h5 class="fw-normal f-6 text-center my-4">Reclamações</h5>
       <div class="my-0 bg-body rounded d-flex justify-content-center align-content-center">
         <div class="py-2 card-body text-center d-flex">
           <div class="row w-100 my-1">
@@ -326,8 +311,28 @@
         </div>
       </div>
 
+      <h5 class="fw-normal f-6 text-center my-4">Elogios</h5>
+      <div class="my-0 bg-body rounded d-flex justify-content-center align-content-center">
+        <div class="py-2 card-body text-center d-flex">
+          <div class="row w-100 my-1">
+            <div *ngFor="let i of ListaElogios">
+              <div *ngIf="i.tipo == 'pj' && i.qtdElogio > 0">
+                <div class="col-lg-12 d-flex flex-start">
+                  <div class="imgBox-lateralDireita">
+                    <img src="{{i.foto}}" alt="imagem de perfil" class="img-fluid rounded-circle">
+                  </div>
+                  <div class="pp">
+                    <p class="card-text mb-0 lead fw-normal">{{i.nome}} - {{i.qtdElogio}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- USUARIAS -->
-      <h5 class="fw-normal f-6 text-center my-4">USUARIAS</h5>
+      <h5 class="fw-normal f-6 text-center my-4">Usuarios</h5>
       <div class="my-0 bg-body rounded d-flex justify-content-center align-content-center">
         <div class="py-2 card-body text-center d-flex">
           <div class="row w-100 my-1">
@@ -413,5 +418,26 @@
       </div>
     </div>
 
+  </div>
+</div>
+
+<div class="modal fade" id="ModalPostagem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> Insira o link da sua mídia </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input (input)='midia($event)' type="text" class="form-control" id="midia"
+          placeholder="Digite o link da mídia" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Salvar</button>
+      </div>
+    </div>
   </div>
 </div>

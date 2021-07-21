@@ -35,7 +35,11 @@ export class AuthService {
   }
 
   getAllReclamacoes(): Observable<User[]> {
-    return this.http.get<User[]>('https://apilotus.herokuapp.com/postagem/top')
+    return this.http.get<User[]>('https://apilotus.herokuapp.com/postagem/reclamacao')
+  }
+
+  getAllElogios(): Observable<User[]> {
+    return this.http.get<User[]>('https://apilotus.herokuapp.com/postagem/elogio')
   }
 
   logado() {

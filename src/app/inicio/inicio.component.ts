@@ -31,6 +31,7 @@ export class InicioComponent implements OnInit {
   nome = environment.nome
   usuariot = environment.user  
   ListaReclamacao : User[]
+  ListaElogios : User[]
 
   key = 'data' // ESSAS VARIÁVEIS AJUDAM A SEPARAR AS POSTAGENS POR DATA EM ORDEM DESCRESCENTE
   reverse = true
@@ -52,8 +53,8 @@ export class InicioComponent implements OnInit {
       this.rota.navigate(['/login'])
     }
 
-
     this.getAllReclamacao()
+    this.getAllElogios()    
     this.temaService.refreshToken()
     this.postagemService.refreshToken()
     this.authService.semFoto()
@@ -63,14 +64,22 @@ export class InicioComponent implements OnInit {
     this.getAllPostagens()
     this.menuLateral()
     this.botaoLateral()
-
-
-    
   }
   
+  midia(event: any){
+    this.postagem.midia = event.target.value
+  }
+
+
   getAllReclamacao() {
     this.authService.getAllReclamacoes().subscribe((resp: User[]) => {
       this.ListaReclamacao = resp
+    })
+  }
+
+  getAllElogios() {
+    this.authService.getAllElogios().subscribe((resp: User[]) => {
+      this.ListaElogios = resp
     })
   }
   
