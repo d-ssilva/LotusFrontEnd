@@ -14,9 +14,9 @@
           <div class="profile-name fw-light">{{nome}}</div>
           <div class="profile-username">@{{usuariot}}</div>
           <div class="profile-icons">
-            <a href="#"><i class="fa fa-facebook"></i></a>
+            <!-- <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a> -->
           </div>
 
         </div>
@@ -150,36 +150,32 @@
             <div class="col-lg-12 d-flex justify-content-around">
               <div class="d-flex justify-content-start align-items-center">
 
-
-                <button type="button" class="btn btn-outline-success green text-dark me-4" data-bs-toggle="modal"
+                <button type="button" class="btn btn-outline-primary me-4" data-bs-toggle="modal"
                   data-bs-target="#ModalPostagem">
                   Inserir mídia
                 </button>
 
-                <div class="form-check form-check-inline">
-                  <input [(ngModel)]='postagem.tipoPostagem' class="form-check-input" type="radio"
-                    name="inlineRadioOptions" id="inlineRadio2" value="r">
-                  <label class="form-check-label" for="inlineRadio2">Reclamação</label>
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    
+                  <input class="me-3" [(ngModel)]='postagem.tipoPostagem' type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                  <label class="btn btn-outline-primary " for="btnradio2" value="r">Reclamação</label>
+                
+                  <input type="radio" class="btn-check me-3" name="btnradio" id="btnradio3" autocomplete="off">
+                  <label [(ngModel)]='postagem.tipoPostagem' class="btn btn-outline-primary me-1" for="btnradio3" value="e">Elogio</label>
                 </div>
 
-                <div class="form-check form-check-inline">
-                  <input [(ngModel)]='postagem.tipoPostagem' class="form-check-input" type="radio"
-                    name="inlineRadioOptions" id="inlineRadio3" value="e">
-                  <label class="form-check-label" for="inlineRadio3">Elogio</label>
+                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                  <input [(ngModel)]='postagem.anonima' type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" value="true">
+                  <label class="btn btn-outline-primary me-4" for="btncheck1">Anonimo</label>
                 </div>
-
-                <div class="form-check form-check-inline">
-                  <input [(ngModel)]='postagem.anonima' class="form-check-input" type="radio" name="anonimo"
-                    id="anonimo" value="true">
-                  <label class="form-check-label" for="anonimo">Anonimo</label>
-                </div>
+                
               </div>
             </div>
           </div>
 
           <div class="row">
             <div class="col-lg-12 d-flex justify-content-around">
-              <button type="button" class="btn btn-success" (click)='publicar()'>Postar</button>
+              <button type="button" class="btn btn-outline-primary" (click)='publicar()'>Postar</button>
             </div>
           </div>
         </div>
@@ -424,13 +420,13 @@
       </div>
       <div class="modal-body">
         <input (input)='midia($event)' type="text" class="form-control" id="midia"
-          placeholder="Digite o link da mídia" />
+          placeholder="Digite o link da mídia"/>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">
           Cancelar
         </button>
-        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Salvar</button>
+        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Salvar</button>
       </div>
     </div>
   </div>
