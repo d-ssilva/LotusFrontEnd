@@ -40,6 +40,7 @@ body{
     min-height: 60vh;
 }
 
+
 /* animação de botão */
 .bt1{    
     padding: 10px;
@@ -47,14 +48,14 @@ body{
     color:  bisque;
     border: none;
     background-color: #222222;
-    box-shadow: inset 0 0 0 0 #f69bbc ;
+    /* box-shadow: inset 0 0 0 0 #f69bbc ; */
     transition:  ease-out 0.5s;    
     outline: none;    
 }
 
-
 .bt1:hover{
-    box-shadow: inset  300px 0 0 0 #f69bbc;
+    /* box-shadow: inset  300px 0 0 0 #f69bbc; */
     cursor:  pointer;
     color: black;
+    background-color: bisque;
 }

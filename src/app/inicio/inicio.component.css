@@ -372,3 +372,8 @@ ul li a {
 }
 
 /* ======================================================================== END CARD FOTO */
+
+.iptRadius{
+  border-style: hidden;
+  border-radius: 30px;
+}
