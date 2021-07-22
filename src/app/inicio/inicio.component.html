@@ -1,30 +1,32 @@
 <div class="container mt-3 mb-3">
-  <div class="row">
-
+  <div class="row ">
     <!-- LATERAL ESQUERDA -->
     <div class="col-lg-3 tudo lead">
-      <div class=" d-flex justify-content-center flex-column align-items-center text-center navigation">
-        <div class="profile-card-2">
+      <div class="
+          d-flex
+          justify-content-center
+          flex-column
+          align-items-center
+          text-center
+          navigation 
+          sticky-top
+        ">
+        <div class="profile-card-2 ">
+          <img *ngIf="authService.semFoto() === false" src="{{ foto }}" class="img img-responsive" alt="img" />
+          <img *ngIf="authService.semFoto() === true" src="https://imgur.com/ZNP9l16.png" class="img img-responsive"
+            alt="img" />
 
-          <img *ngIf='authService.semFoto() === false' src="{{foto}}" class="img img-responsive" alt="img">
-          <img *ngIf='authService.semFoto() === true' src="https://imgur.com/ZNP9l16.png" class="img img-responsive"
-            alt="img">
-
-
-          <div class="profile-name fw-light">{{nome}}</div>
-          <div class="profile-username">@{{usuariot}}</div>
+          <div class="profile-name fw-light">{{ nome }}</div>
+          <div class="profile-username">@{{ usuariot }}</div>
           <div class="profile-icons">
             <!-- <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
             <a href="#"><i class="fa fa-linkedin"></i></a> -->
           </div>
-
         </div>
 
         <ul class="nav nav-pills" id="pills-tab" role="tablist">
-
           <li class="list active" role="presentation">
-
             <a id="todaspostagens" data-bs-toggle="pill" data-bs-target="#t-postagens" type="button" role="tab"
               aria-controls="t-postagens" aria-selected="true">
               <span class="icon"><i class="fa fa-home" aria-hidden="true"></i>
@@ -34,7 +36,6 @@
           </li>
 
           <li class="list" role="presentation">
-
             <a [routerLink]="['/user-edit', idUser]" href="">
               <span class="icon"><i class="fa fa-user" aria-hidden="true"></i>
               </span>
@@ -43,7 +44,6 @@
           </li>
 
           <li class="list" role="presentation">
-
             <a id="minhaspostagens" data-bs-toggle="pill" data-bs-target="#m-postagens" type="button" role="tab"
               aria-controls="m-postagens" aria-selected="false">
               <span class="icon"><i class="fa fa-comments-o" aria-hidden="true"></i></span>
@@ -62,27 +62,20 @@
           </li> -->
 
           <li class="list" role="presentation">
-
-            <a routerLink='/central-de-ajuda'>
+            <a routerLink="/central-de-ajuda">
               <span class="icon"><i class="fa fa-info" aria-hidden="true"></i></span>
               <span class="title">Central de Ajuda</span>
             </a>
           </li>
 
           <li class="list" role="presentation">
-
-            <a routerLink='/login'>
+            <a routerLink="/login">
               <span class="icon"><i class="fa fa-external-link" aria-hidden="true"></i></span>
               <span class="title">Sair</span>
             </a>
           </li>
         </ul>
       </div>
-      <!-- </div> -->
-      <!-- <div class="toggle">
-        <i class="fa fa-bars abrir" aria-hidden="true"></i>
-        <i class="fa fa-times fechar" aria-hidden="true"></i>
-      </div> -->
     </div>
 
     <!--FEED CENTRO -->
@@ -100,105 +93,100 @@
 
       <div class="col-lg-12 card postagem d-flex">
         <div class="card-body">
-
           <!-- TITULO -->
           <div class="row">
             <div class="col-lg-12">
               <div class="d-flex justify-content-around">
-                <input class="mb-3" [(ngModel)]="postagem.titulo" type="text" name="titulo" id="titulo"
-                  placeholder="Escreva um titulo">
+                <input class="mb-3 tituloTopico" [(ngModel)]="postagem.titulo" type="text" name="titulo" id="titulo"
+                  placeholder="Escreva um titulo" />
               </div>
             </div>
           </div>
 
           <!-- TEXTO -->
           <div class="row">
-            <div class="mb-3">
-              <textarea [(ngModel)]='postagem.mensagem' class="form-control" id="texto" rows="3"
+            <div class="mb-3 tituloTopico">
+              <textarea [(ngModel)]="postagem.mensagem" class="form-control" id="texto" rows="3"
                 placeholder="Escreva sua postagem"></textarea>
             </div>
           </div>
-
 
           <!-- ESCOLHA UM TEMA -->
           <div class="row">
             <div class="col-lg-6">
               <label for="tema">Escolha um tema</label>
-              <select class="form-control" [(ngModel)]='idTema' name="tema" id="tema">
-                <option *ngFor='let i of listasTemas' value="{{i.id}}">{{i.nome}}</option>
+              <select class="form-control" [(ngModel)]="idTema" name="tema" id="tema">
+                <option *ngFor="let i of listasTemas" value="{{ i.id }}">
+                  {{ i.nome }}
+                </option>
               </select>
-
             </div>
 
             <!-- ESCOLHA UMA EMPRESA -->
             <div class="col-lg-6">
               <label for="tema">Escolha uma Empresa</label>
-              <select class="form-control" [(ngModel)]='postagem.empresa' name="empresa" id="empresa">
-                <option *ngFor="let i of listaUsuarios" value="{{i.nome}}">{{i.nome}}</option>
+              <select class="form-control" [(ngModel)]="postagem.empresa" name="empresa" id="empresa">
+                <option *ngFor="let i of listaUsuarios" value="{{ i.nome }}">
+                  {{ i.nome }}
+                </option>
               </select>
             </div>
           </div>
 
           <!-- TIPO DE POSTAGEM -->
-          <div class="row mt-3 mb-3 ">
-            <div class="col-lg-12 d-flex justify-content-around">
+          <div class="row mt-3 mb-2">
+            <div class="col-lg-12 d-flex justify-content-center">
               <div class="d-flex justify-content-start align-items-center">
-
-                <button type="button" class="btn btn-outline-dark me-4" data-bs-toggle="modal"
-                  data-bs-target="#ModalPostagem">
-                  Inserir mídia
+                <button type="button" class="btn btn-outline-dark btn-sm me-3" data-bs-toggle="modal"
+                  data-bs-target="#ModalPostagem"><i class="bi bi-paperclip"></i>
+                  Mídia
                 </button>
 
-                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <div class="btn-group justify-content-around" role="group" aria-label="Basic radio toggle button group">
+                  <input class="me-3" [(ngModel)]="postagem.tipoPostagem" type="radio" class="btn-check" name="btnradio"
+                    id="btnradio2" autocomplete="off" value="r" />
+                  <label class="btn btn-outline-dark btn-sm" for="btnradio2">Reclamação</label>
 
-                  <input class="me-3" [(ngModel)]='postagem.tipoPostagem' type="radio" class="btn-check" name="btnradio"
-                    id="btnradio2" autocomplete="off" value="r">
-                  <label class="btn btn-outline-dark " for="btnradio2">Reclamação</label>
-
-                  <input [(ngModel)]='postagem.tipoPostagem' type="radio" class="btn-check me-3" name="btnradio"
-                    id="btnradio3" autocomplete="off" value="e">
-                  <label class="btn btn-outline-dark me-1" for="btnradio3">Elogio</label>
+                  <input [(ngModel)]="postagem.tipoPostagem" type="radio" class="btn-check me-3" name="btnradio"
+                    id="btnradio3" autocomplete="off" value="e" />
+                  <label class="btn btn-outline-dark btn-sm" for="btnradio3">Elogio</label>
                 </div>
 
                 <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                  <input [(ngModel)]='postagem.anonima' type="checkbox" class="btn-check" id="btncheck1"
-                    autocomplete="off" value="true">
-                  <label class="btn btn-outline-dark me-4" for="btncheck1">Anonimo</label>
+                  <input [(ngModel)]="postagem.anonima" type="checkbox" class="btn-check" id="btncheck1"
+                    autocomplete="off" value="true" />
+                  <label class="btn btn-outline-dark btn-sm ms-3" for="btncheck1">Anonimo</label>
                 </div>
 
+                <button type="button" class="btn btn-primary ms-5" (click)="publicar()">
+                  PUBLICAR
+                </button>
               </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-lg-12 d-flex justify-content-around">
-              <button type="button" class="btn btn-outline-dark" (click)='publicar()'>Postar</button>
             </div>
           </div>
         </div>
       </div>
 
-
       <!-- ALL POSTAGENS -->
       <div class="tab-content my-5" id="pills-tabContent">
         <div class="tab-pane fade show active" id="t-postagens" role="tabpanel" aria-labelledby="todaspostagens">
-          <div class="card h-100 p-1 mb-4 bg-body rounded" *ngFor='let i of listaPostagens | orderBy : key : reverse'>
+          <div class="card h-100 p-1 mb-4 bg-body rounded" *ngFor="let i of listaPostagens | orderBy: key:reverse">
             <div class="pt-4 card-body text-center d-flex">
               <div class="row">
                 <div class="col-lg-12 d-flex flex-start">
                   <div class="imgBox">
-
-                    <img *ngIf='i.anonima === false' src="{{i.usuario.foto}}" alt="imagem de perfil"
-                      class="img-fluid rounded-circle">
-                    <img *ngIf='i.anonima === true' src="../../assets/img/privado.png" alt="imagem de perfil"
-                      class="img-fluid rounded-circle">
-
+                    <img *ngIf="i.anonima === false" src="{{ i.usuario.foto }}" alt="imagem de perfil"
+                      class="img-fluid rounded-circle" />
+                    <img *ngIf="i.anonima === true" src="../../assets/img/privado.png" alt="imagem de perfil"
+                      class="img-fluid rounded-circle" />
                   </div>
                   <div class="pp">
-                    <p class="card-text mb-0"><small *ngIf='i.anonima === false'
-                        class="text-muted lead"><b>{{i.usuario.nome}}</b></small></p>
-                    <p class="card-text mb-0"><small *ngIf='i.anonima === true'
-                        class="text-muted lead"><b>Anônimo</b></small></p>
+                    <p class="card-text mb-0">
+                      <small *ngIf="i.anonima === false" class="text-muted lead"><b>{{ i.usuario.nome }}</b></small>
+                    </p>
+                    <p class="card-text mb-0">
+                      <small *ngIf="i.anonima === true" class="text-muted lead"><b>Anônimo</b></small>
+                    </p>
                     <p class="card-text mt-0">
                       <small class="text-muted">
                         {{ i.data | date: "dd/MM/yyyy" }}
@@ -207,16 +195,20 @@
                     </p>
                   </div>
                 </div>
-                <h5 class="card-title pt-3">{{i.titulo}}</h5>
-                <p class="card-text"><small class="text-muted">Tema: {{i.tema.nome}}</small></p>
-                <p class="card-text text-start mens">{{i.mensagem}}</p>
-
-                <img *ngIf='i.midia != null' src="{{i.midia}}" class="card-img-bottom" alt="imagem da postagem" />
-
-                <hr class="my-3">
+                <h5 class="card-title pt-3">{{ i.titulo }}</h5>
+                <p class="card-text">
+                  <small class="text-muted">Tema: {{ i.tema.nome }} | </small>
+                  <small *ngIf = 'i.tipoPostagem === "r"' class="text-danger"> <i class="text-danger bi bi-emoji-frown"></i> {{ i.empresa }}  </small>
+                  <small *ngIf = 'i.tipoPostagem === "e"' class="text-success"><i class="text-success bi bi-emoji-smile"></i> {{ i.empresa }}  </small>
+                  <small *ngIf = 'i.tipoPostagem != "r" && i.tipoPostagem != "e"' class="text-primary"><i class="text-primary bi bi-layout-text-sidebar-reverse"></i> {{ i.empresa }}  </small>
+                </p>
+                <p class="card-text text-start mens">{{ i.mensagem }}</p>
+                <img *ngIf="i.midia != null" src="{{ i.midia }}" class="card-img-bottom" alt="imagem da postagem"
+                  width="30px" />
+                <hr class="my-3" />
                 <div class="d-flex justify-content-around align-items-center">
-                  <a><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span>Gostei</span></a>
-                  <a><i class="fa fa-thumbs-down" aria-hidden="true"></i><span>Não Gostei</span></a>
+                  <a><i class="fa fa-thumbs-o-up g" aria-hidden="true"></i><span>Gostei</span></a>
+                  <a><i class="fa fa-thumbs-down gd" aria-hidden="true"></i><span>Não Gostei</span></a>
                 </div>
               </div>
             </div>
@@ -225,44 +217,57 @@
 
         <!-- MINHAS POSTAGENS -->
         <div class="tab-pane fade" id="m-postagens" role="tabpanel" aria-labelledby="minhaspostagens">
-          <div class="card-columns">
-            <div class="card h-100 my-2" *ngFor='let i of user.postagem | orderBy : key : reverse'>
-              <div class="pt-4 card-body text-center">
-
-                <img *ngIf='authService.semFoto() === false' src="{{foto}}" class="img img-responsive" alt="img"
-                  width="45px">
-                <img *ngIf='authService.semFoto() === true' src="../../assets/img/avatar-default2.png"
-                  class="img img-responsive" alt="img" width="45px">
-
-                <h5 class="card-title">{{i.titulo}}</h5>
-                <p class="card-text"><small class="text-muted">Tema: {{i.tema.nome}}</small></p>
-                <p class="card-text">{{i.mensagem}}</p>
-                <p class="card-text m-0">
-                  <small class="text-muted">
-                    {{ i.data | date: "dd/MM/yyyy" }}
-                    às {{ i.data | date: "HH:mm" }}
-                  </small>
-                </p>
-                <div class="row mt-2">
-                  <div class="col-md-12">
-                    <button class="bt1 me-4" [routerLink]="['/postagem-delete',i.id]">Apagar</button>
-                    <button class="bt1" [routerLink]="['/postagem-edit',i.id]">Editar</button>
+          <div class="card h-100 p-1 mb-4 bg-body rounded" *ngFor="let i of user.postagem | orderBy: key:reverse">
+            <div class="pt-4 card-body text-center d-flex">
+              <div class="row">
+                <div class="col-lg-12 d-flex flex-start">
+                  <div class="imgBox">
+                    <img src="{{foto}}" alt="imagem de perfil" class="img-fluid rounded-circle" />
                   </div>
+                  <div class="pp">
+                    <p class="card-text mb-0">
+                      <small class="text-muted lead"><b>{{nome }}</b></small>
+                    </p>
+                    <p class="card-text mt-0">
+                      <small class="text-muted">
+                        {{ i.data | date: "dd/MM/yyyy" }}
+                        às {{ i.data | date: "HH:mm" }}
+                      </small>
+                    </p>
+                  </div>
+                </div>
+                <h5 class="card-title pt-3">{{ i.titulo }}</h5>
+                <p class="card-text">
+                  <small class="text-muted">Tema: {{ i.tema.nome }} </small>
+                </p>
+                <p class="card-text text-start mens">{{ i.mensagem }}</p>
+                <img *ngIf="i.midia != null" src="{{ i.midia }}" class="card-img-bottom" alt="imagem da postagem" />
+                <hr class="my-3" />
+                <div class="d-flex justify-content-around align-items-center">
+                  <a><button class="btn btn-outline-dark btn-sm" [routerLink]="['/postagem-delete', i.id]">
+                      Apagar
+                    </button></a>
+                  <a><button class="btn btn-outline-dark btn-sm" [routerLink]="['/postagem-edit', i.id]">
+                      Editar
+                    </button></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
+
         <!-- POSTAGEM POR TEMA -->
         <div class="tab-pane fade" id="p-tema" role="tabpanel" aria-labelledby="postagensportema">
-          <div class="card-columns" *ngFor='let t of listasTemas | orderBy : key : reverse'>
-            <div class="card h-100 my-2" *ngFor='let i of t.postagem'>
+          <div class="card-columns" *ngFor="let t of listasTemas | orderBy: key:reverse">
+            <div class="card h-100 my-2" *ngFor="let i of t.postagem">
               <div class="pt-4 card-body text-center">
-                <img src="{{i.usuario.foto}}" alt="imagem de perfil" width="45px" class="img-fluid rounded-circle">
-                <p class="card-text"><small class="text-muted">Postado por: {{i.usuario.nome}}</small></p>
-                <h5 class="card-title">{{i.titulo}}</h5>
-                <p class="card-text">{{i.mensagem}}</p>
+                <img src="{{ i.usuario.foto }}" alt="imagem de perfil" width="45px" class="img-fluid rounded-circle" />
+                <p class="card-text">
+                  <small class="text-muted">Postado por: {{ i.usuario.nome }}</small>
+                </p>
+                <h5 class="card-title">{{ i.titulo }}</h5>
+                <p class="card-text">{{ i.mensagem }}</p>
                 <p class="card-text m-0">
                   <small class="text-muted">
                     {{ i.data | date: "dd/MM/yyyy" }}
@@ -278,20 +283,29 @@
 
     <!-- LATERAL DIREITA -->
     <div class="col-lg-3 card mev">
-
       <!-- EMPRESAS -->
-      <h5 class="fw-normal f-6 text-center my-4">Reclamações</h5>
-      <div class="my-0 bg-body rounded d-flex justify-content-center align-content-center">
+      <h6 class="fw-bold text-center my-4">Empresas com maior numero de reclamações</h6>
+  
+      <div class="
+          my-0
+          bg-body
+          rounded
+          d-flex
+          justify-content-center
+          align-content-center
+        ">
         <div class="py-2 card-body text-center d-flex">
           <div class="row w-100 my-1">
             <div *ngFor="let i of ListaReclamacao">
               <div *ngIf="i.tipo == 'pj' && i.qtdReclamacao > 0">
                 <div class="col-lg-12 d-flex flex-start">
                   <div class="imgBox-lateralDireita">
-                    <img src="{{i.foto}}" alt="imagem de perfil" class="img-fluid rounded-circle">
+                    <img src="{{ i.foto }}" alt="imagem de perfil" class="img-fluid rounded-circle" />
                   </div>
                   <div class="pp">
-                    <p class="card-text mb-0 lead fw-normal">{{i.nome}} - {{i.qtdReclamacao}}</p>
+                    <p class="card-text mb-0 lead fw-normal">
+                      {{ i.nome }}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -300,18 +314,28 @@
         </div>
       </div>
 
-      <h5 class="fw-normal f-6 text-center my-4">Elogios</h5>
-      <div class="my-0 bg-body rounded d-flex justify-content-center align-content-center">
-        <div class="py-2 card-body text-center d-flex">
+      <h6 class="fw-bold text-center my-3">Empresas com maior numero de elogios</h6>
+
+      <div class="
+          my-0
+          bg-body
+          rounded
+          d-flex
+          justify-content-center
+          align-content-center
+        ">
+        <div class="py-0 card-body text-center d-flex">
           <div class="row w-100 my-1">
             <div *ngFor="let i of ListaElogios">
               <div *ngIf="i.tipo == 'pj' && i.qtdElogio > 0">
                 <div class="col-lg-12 d-flex flex-start">
                   <div class="imgBox-lateralDireita">
-                    <img src="{{i.foto}}" alt="imagem de perfil" class="img-fluid rounded-circle">
+                    <img src="{{ i.foto }}" alt="imagem de perfil" class="img-fluid rounded-circle" />
                   </div>
                   <div class="pp">
-                    <p class="card-text mb-0 lead fw-normal">{{i.nome}} - {{i.qtdElogio}}</p>
+                    <p class="card-text mb-0 lead fw-normal">
+                      {{ i.nome }}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -341,87 +365,96 @@
         </div>
       </div>
     </div> -->
-  </div><!-- FECHAMENTO LATERAL DIREITA -->
-</div>
+    </div>
+    <!-- FECHAMENTO LATERAL DIREITA -->
+  </div>
 
-
-
-<!-- MODAL -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Nova Postagem</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <div class="modal-body ">
-        <div class="form-group mt-4">
-          <!-- <label for="titulo">Titulo</label> -->
-          <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="tituloModal"
-            placeholder="Digite o titulo da postagem">
+  <!-- MODAL -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Nova Postagem</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
 
-        <div class="form-group mt-4">
-          <!-- <label for="empresa">Empresa</label> -->
-          <input [(ngModel)]='postagem.empresa' type="text" class="form-control" id="empresa"
-            placeholder="Digite o nome da empresa">
-        </div>
+        <div class="modal-body">
+          <div class="form-group mt-4">
+            <!-- <label for="titulo">Titulo</label> -->
+            <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="tituloModal"
+              placeholder="Digite o titulo da postagem" />
+          </div>
 
-        <div class="form-group mt-4">
-          <!-- <label for="texto">Mensagem</label> -->
-          <textarea [(ngModel)]='postagem.mensagem' class="form-control" id="texto" name="texto" rows="3"
-            placeholder="Digite sua mensagem"></textarea>
-        </div>
+          <div class="form-group mt-4">
+            <!-- <label for="empresa">Empresa</label> -->
+            <input [(ngModel)]="postagem.empresa" type="text" class="form-control" id="empresa"
+              placeholder="Digite o nome da empresa" />
+          </div>
 
-        <div class="form-group mt-4">
-          <!-- <label for="texto">Escolha um tema ou <a routerLink='/tema' data-bs-dismiss="modal">Cadastre-se um novo:</a></label> -->
-          <select class="form-control" [(ngModel)]='idTema' name="tema" id="tema">
-            <option value="" disabled selected>Selecione o tipo de postagem</option>
-            <option *ngFor='let i of listasTemas' value="{{i.id}}">
-              {{i.nome}}
-            </option>
-          </select>
-        </div>
+          <div class="form-group mt-4">
+            <!-- <label for="texto">Mensagem</label> -->
+            <textarea [(ngModel)]="postagem.mensagem" class="form-control" id="texto" name="texto" rows="3"
+              placeholder="Digite sua mensagem"></textarea>
+          </div>
 
-        <div class="form-group mt-4">
-          <!-- <label for="texto">Selecione o tipo da postagem:</label> -->
-          <select class="form-control" name="tipoPostagem" id="tipoPostagem">
-            <option value="" disabled selected>Selecione o tipo de postagem</option>
-            <option value="reclamacao">Reclamação</option>
-            <option value="elogio">Elogiar</option>
-            <option value="postage">Mensagem</option>
-          </select>
-        </div>
+          <div class="form-group mt-4">
+            <!-- <label for="texto">Escolha um tema ou <a routerLink='/tema' data-bs-dismiss="modal">Cadastre-se um novo:</a></label> -->
+            <select class="form-control" [(ngModel)]="idTema" name="tema" id="tema">
+              <option value="" disabled selected>
+                Selecione o tipo de postagem
+              </option>
+              <option *ngFor="let i of listasTemas" value="{{ i.id }}">
+                {{ i.nome }}
+              </option>
+            </select>
+          </div>
 
-      </div>
-      <div class="modal-footer d-flex justify-content-center align-items-center">
-        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">CANCELAR</button>
-        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal" (click)='publicar()'>POSTAR</button>
+          <div class="form-group mt-4">
+            <!-- <label for="texto">Selecione o tipo da postagem:</label> -->
+            <select class="form-control" name="tipoPostagem" id="tipoPostagem">
+              <option value="" disabled selected>
+                Selecione o tipo de postagem
+              </option>
+              <option value="reclamacao">Reclamação</option>
+              <option value="elogio">Elogiar</option>
+              <option value="postage">Mensagem</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center align-items-center">
+          <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+            CANCELAR
+          </button>
+          <button type="button" class="btn btn-dark" data-bs-dismiss="modal" (click)="publicar()">
+            POSTAR <i class="bi bi-arrow-up-right"></i>
+          </button>
+        </div>
       </div>
     </div>
-
   </div>
-</div>
 
-<div class="modal fade" id="ModalPostagem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"> Insira o link da sua mídia </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <input (input)='midia($event)' type="text" class="form-control" id="midia"
-          placeholder="Digite o link da mídia" />
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">
-          Cancelar
-        </button>
-        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Salvar</button>
+  <div class="modal fade" id="ModalPostagem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Insira o link da sua mídia
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input (input)="midia($event)" type="text" class="form-control" id="midia"
+            placeholder="Digite o link da mídia" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+            Cancelar
+          </button>
+          <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+            Salvar
+          </button>
+        </div>
       </div>
     </div>
   </div>

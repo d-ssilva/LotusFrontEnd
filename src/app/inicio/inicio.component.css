@@ -3,6 +3,25 @@
   height: 7rem;
 }
 
+.tituloTopico {
+  width: 100%;
+  border: none;
+}
+
+.g {
+  color: green;
+}
+
+.gd {
+  color: red;
+}
+
+.r {
+  font-style: italic;
+  color: red;
+}
+
+
 ul li a {
   text-decoration: none;
 }
@@ -347,7 +366,7 @@ ul li a {
   bottom: 50px;
   left: 30px;
   color: #333;
-  font-size: 13px;
+  font-size: 16px;
   transition: all linear 0.25s;
 }
 
