@@ -170,7 +170,8 @@
       <!-- ALL POSTAGENS -->
       <div class="tab-content my-5" id="pills-tabContent">
         <div class="tab-pane fade show active" id="t-postagens" role="tabpanel" aria-labelledby="todaspostagens">
-          <div class="card h-100 p-1 mb-4 bg-body rounded" *ngFor="let i of listaPostagens | orderBy: key:reverse">
+          <div class="card h-100 p-1 mb-4 bg-body rounded" *ngFor="let i of listaPostagens | orderBy: key:reverse" data-aos="fade-up"
+          data-aos-duration="1500">
             <div class="pt-4 card-body text-center d-flex">
               <div class="row">
                 <div class="col-lg-12 d-flex flex-start">
@@ -217,7 +218,8 @@
 
         <!-- MINHAS POSTAGENS -->
         <div class="tab-pane fade" id="m-postagens" role="tabpanel" aria-labelledby="minhaspostagens">
-          <div class="card h-100 p-1 mb-4 bg-body rounded" *ngFor="let i of user.postagem | orderBy: key:reverse">
+          <div class="card h-100 p-1 mb-4 bg-body rounded" *ngFor="let i of user.postagem | orderBy: key:reverse" data-aos="fade-up"
+          data-aos-duration="1500">
             <div class="pt-4 card-body text-center d-flex">
               <div class="row">
                 <div class="col-lg-12 d-flex flex-start">
@@ -296,7 +298,8 @@
         ">
         <div class="py-2 card-body text-center d-flex">
           <div class="row w-100 my-1">
-            <div *ngFor="let i of ListaReclamacao">
+            <div *ngFor="let i of ListaReclamacao" data-aos="fade-up"
+            data-aos-duration="1500">
               <div *ngIf="i.tipo == 'pj' && i.qtdReclamacao > 0">
                 <div class="col-lg-12 d-flex flex-start">
                   <div class="imgBox-lateralDireita">
@@ -326,7 +329,8 @@
         ">
         <div class="py-0 card-body text-center d-flex">
           <div class="row w-100 my-1">
-            <div *ngFor="let i of ListaElogios">
+            <div *ngFor="let i of ListaElogios" data-aos="fade-up"
+            data-aos-duration="1500">
               <div *ngIf="i.tipo == 'pj' && i.qtdElogio > 0">
                 <div class="col-lg-12 d-flex flex-start">
                   <div class="imgBox-lateralDireita">
@@ -364,8 +368,8 @@
           </div>
         </div>
       </div>
-    </div> -->
-    </div>
+    </div> 
+    </div>-->
     <!-- FECHAMENTO LATERAL DIREITA -->
   </div>
 
