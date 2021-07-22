@@ -30,6 +30,7 @@ export class InicioComponent implements OnInit {
   foto = environment.foto
   nome = environment.nome
   usuariot = environment.user  
+  
   ListaReclamacao : User[]
   ListaElogios : User[]
 
@@ -53,11 +54,12 @@ export class InicioComponent implements OnInit {
       this.rota.navigate(['/login'])
     }
 
-    this.getAllReclamacao()
-    this.getAllElogios()    
+    
     this.temaService.refreshToken()
     this.postagemService.refreshToken()
     this.authService.semFoto()
+    this.getAllReclamacao()
+    this.getAllElogios()    
     this.findByIdUser()
     this.getAllUsuario()
     this.getAllTema()
@@ -65,22 +67,22 @@ export class InicioComponent implements OnInit {
     this.menuLateral()
     this.botaoLateral()
   }
-  
-  midia(event: any){
-    this.postagem.midia = event.target.value
-  }
-
-
+    
   getAllReclamacao() {
     this.authService.getAllReclamacoes().subscribe((resp: User[]) => {
       this.ListaReclamacao = resp
     })
   }
-
+  
   getAllElogios() {
     this.authService.getAllElogios().subscribe((resp: User[]) => {
       this.ListaElogios = resp
     })
+  }
+
+  
+  midia(event: any){
+    this.postagem.midia = event.target.value
   }
   
   menuLateral() {

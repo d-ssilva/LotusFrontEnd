@@ -1,5 +1,5 @@
 <div class="imgBox">
-    <img src="../../assets/img/img-fundo3.jpg" alt="">
+    <img src="https://wallpapercave.com/wp/wp2816770.jpg" alt="asasa">
 </div>
 <div class="container-fluid tud">
     <div class="container-fluidl">
@@ -23,7 +23,7 @@
                 <form>
                     <input [(ngModel)]="userLogin.usuario" type="text" name="usuario" id="usuario"
                         placeholder="Digite o seu usuario">
-                    <input [(ngModel)]="userLogin.senha" type="password" name="senha" id="senha"
+                    <input [(ngModel)]="userLogin.senha" type="password" name="senhaLogin" id="senhaLogin"
                         placeholder="Digite a sua senha">
                     <div class="d-flex justify-content-center">
                         <input class="loginBtn2" type="submit" value="Login" (click)='entrar()'>
@@ -39,11 +39,13 @@
                     <input [(ngModel)]="user.nome" type="text" name="nome" id="nome" placeholder="Digite o seu nome">
                     <input [(ngModel)]="user.usuario" type="text" name="nomeDeUsuaria" id="nomeDeUsuaria"
                         placeholder="Digite o nome de usuario">
+                        
                     <input [(ngModel)]="user.foto" type="text" name="foto" id="foto"
                         placeholder="Insira o link da sua foto">
-                    <input [(ngModel)]="user.email" type="text" name="email" id="email"
+
+                    <input [(ngModel)]="user.email" type="email" name="email" id="email"
                         placeholder="Digite a sua e-mail">
-                    <input (input)='confirmSenha($event)' type="password" name="senha" id="senha"
+                    <input (input)='confirmSenha($event)' type="password" name="senhaCadastro" id="senhaCadastro"
                         placeholder="Digite a sua senha">
                     <input [(ngModel)]="user.senha" type="password" name="confirmarSenha" id="confirmarSenha"
                         placeholder="Digite novamente sua senha">
