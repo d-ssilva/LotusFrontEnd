@@ -54,6 +54,7 @@ export class InicioComponent implements OnInit {
       this.rota.navigate(['/login'])
     }
 
+    
     this.temaService.refreshToken()
     this.postagemService.refreshToken()
     this.authService.semFoto()

@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
 
   confirmarSenha: string
   tipoUsuario: string
+  fotoPadrao = "https://imgur.com/ZNP9l16.png"
 
 
   constructor(
@@ -68,6 +69,11 @@ export class LoginComponent implements OnInit {
   
   cadastrar() {
     this.user.tipo = this.tipoUsuario
+
+    if(this.user.foto == null || this.user.foto == "" ) {
+      this.user.foto = this.fotoPadrao
+    }
+
     if (this.user.senha != this.confirmarSenha) {
       this.alert.showAlertDanger('As senhas estão incorretas')
     } else {

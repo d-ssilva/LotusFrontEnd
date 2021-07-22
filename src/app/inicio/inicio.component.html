@@ -7,8 +7,8 @@
         <div class="profile-card-2">
 
           <img *ngIf='authService.semFoto() === false' src="{{foto}}" class="img img-responsive" alt="img">
-          <img *ngIf='authService.semFoto() === true' src="../../assets/img/avatar-default2.png"
-            class="img img-responsive" alt="img">
+          <img *ngIf='authService.semFoto() === true' src="https://imgur.com/ZNP9l16.png" class="img img-responsive"
+            alt="img">
 
 
           <div class="profile-name fw-light">{{nome}}</div>
@@ -22,15 +22,11 @@
         </div>
 
         <ul class="nav nav-pills" id="pills-tab" role="tablist">
-          <!-- <div class="my-5 d-flex flex-column justify-content-center align-items-center rounded sticky-lg-top">
-            <img src="{{foto}}" class="rounded-circle p-2 border border-secondary tamanho-img" alt="img">
-            <h5 class="fw-bolder lead my-5">Olá, {{nome}}</h5>
-          </div> -->
 
           <li class="list active" role="presentation">
 
-            <a a href="" id="todaspostagens" data-bs-toggle="pill" data-bs-target="#t-postagens" type="button"
-              role="tab" aria-controls="t-postagens" aria-selected="true">
+            <a id="todaspostagens" data-bs-toggle="pill" data-bs-target="#t-postagens" type="button" role="tab"
+              aria-controls="t-postagens" aria-selected="true">
               <span class="icon"><i class="fa fa-home" aria-hidden="true"></i>
               </span>
               <span class="title">Feed</span>
@@ -42,20 +38,20 @@
             <a [routerLink]="['/user-edit', idUser]" href="">
               <span class="icon"><i class="fa fa-user" aria-hidden="true"></i>
               </span>
-              <span class="title">Profile</span>
+              <span class="title">Editar Perfil</span>
             </a>
           </li>
 
           <li class="list" role="presentation">
 
-            <a href="" id="minhaspostagens" data-bs-toggle="pill" data-bs-target="#m-postagens" type="button" role="tab"
+            <a id="minhaspostagens" data-bs-toggle="pill" data-bs-target="#m-postagens" type="button" role="tab"
               aria-controls="m-postagens" aria-selected="false">
               <span class="icon"><i class="fa fa-comments-o" aria-hidden="true"></i></span>
-              <span class="title">Messages</span>
+              <span class="title">Minhas postagens</span>
             </a>
           </li>
 
-          <li class="list" role="presentation">
+          <!-- <li class="list" role="presentation">
 
             <a href="" id="postagensportema" data-bs-toggle="pill" data-bs-target="#p-tema" type="button" role="tab"
               aria-controls="p-tema" aria-selected="false">
@@ -63,21 +59,21 @@
               </span>
               <span class="title">Empresa</span>
             </a>
-          </li>
+          </li> -->
 
           <li class="list" role="presentation">
 
-            <a href="">
+            <a routerLink='/central-de-ajuda'>
               <span class="icon"><i class="fa fa-info" aria-hidden="true"></i></span>
-              <span class="title">Help</span>
+              <span class="title">Central de Ajuda</span>
             </a>
           </li>
 
           <li class="list" role="presentation">
 
-            <a href="">
+            <a routerLink='/login'>
               <span class="icon"><i class="fa fa-external-link" aria-hidden="true"></i></span>
-              <span class="title">Exit</span>
+              <span class="title">Sair</span>
             </a>
           </li>
         </ul>
@@ -102,10 +98,8 @@
         </div> 
       </div>-->
 
-
       <div class="col-lg-12 card postagem d-flex">
         <div class="card-body">
-
 
           <!-- TITULO -->
           <div class="row">
@@ -150,32 +144,35 @@
             <div class="col-lg-12 d-flex justify-content-around">
               <div class="d-flex justify-content-start align-items-center">
 
-                <button type="button" class="btn btn-outline-primary me-4" data-bs-toggle="modal"
+                <button type="button" class="btn btn-outline-dark me-4" data-bs-toggle="modal"
                   data-bs-target="#ModalPostagem">
                   Inserir mídia
                 </button>
 
                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                    
-                  <input class="me-3" [(ngModel)]='postagem.tipoPostagem' type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                  <label class="btn btn-outline-primary " for="btnradio2" value="r">Reclamação</label>
-                
-                  <input type="radio" class="btn-check me-3" name="btnradio" id="btnradio3" autocomplete="off">
-                  <label [(ngModel)]='postagem.tipoPostagem' class="btn btn-outline-primary me-1" for="btnradio3" value="e">Elogio</label>
+
+                  <input class="me-3" [(ngModel)]='postagem.tipoPostagem' type="radio" class="btn-check" name="btnradio"
+                    id="btnradio2" autocomplete="off" value="r">
+                  <label class="btn btn-outline-dark " for="btnradio2">Reclamação</label>
+
+                  <input [(ngModel)]='postagem.tipoPostagem' type="radio" class="btn-check me-3" name="btnradio"
+                    id="btnradio3" autocomplete="off" value="e">
+                  <label class="btn btn-outline-dark me-1" for="btnradio3">Elogio</label>
                 </div>
 
                 <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                  <input [(ngModel)]='postagem.anonima' type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" value="true">
-                  <label class="btn btn-outline-primary me-4" for="btncheck1">Anonimo</label>
+                  <input [(ngModel)]='postagem.anonima' type="checkbox" class="btn-check" id="btncheck1"
+                    autocomplete="off" value="true">
+                  <label class="btn btn-outline-dark me-4" for="btncheck1">Anonimo</label>
                 </div>
-                
+
               </div>
             </div>
           </div>
 
           <div class="row">
             <div class="col-lg-12 d-flex justify-content-around">
-              <button type="button" class="btn btn-outline-primary" (click)='publicar()'>Postar</button>
+              <button type="button" class="btn btn-outline-dark" (click)='publicar()'>Postar</button>
             </div>
           </div>
         </div>
@@ -213,7 +210,9 @@
                 <h5 class="card-title pt-3">{{i.titulo}}</h5>
                 <p class="card-text"><small class="text-muted">Tema: {{i.tema.nome}}</small></p>
                 <p class="card-text text-start mens">{{i.mensagem}}</p>
-                <img src="{{i.midia}}" class="card-img-bottom" alt="..."/>
+
+                <img *ngIf='i.midia != null' src="{{i.midia}}" class="card-img-bottom" alt="imagem da postagem" />
+
                 <hr class="my-3">
                 <div class="d-flex justify-content-around align-items-center">
                   <a><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span>Gostei</span></a>
@@ -280,7 +279,7 @@
     <!-- LATERAL DIREITA -->
     <div class="col-lg-3 card mev">
 
-      <!-- EMPRESAS -->    
+      <!-- EMPRESAS -->
       <h5 class="fw-normal f-6 text-center my-4">Reclamações</h5>
       <div class="my-0 bg-body rounded d-flex justify-content-center align-content-center">
         <div class="py-2 card-body text-center d-flex">
@@ -322,7 +321,7 @@
       </div>
 
       <!-- USUARIAS -->
-      <h5 class="fw-normal f-6 text-center my-4">Usuarios</h5>
+      <!-- <h5 class="fw-normal f-6 text-center my-4">Usuarios</h5>
       <div class="my-0 bg-body rounded d-flex justify-content-center align-content-center">
         <div class="py-2 card-body text-center d-flex">
           <div class="row w-100 my-1">
@@ -330,11 +329,7 @@
               <div *ngIf="i.tipo == 'pf'">
                 <div class="col-lg-12 d-flex flex-start">
                   <div class="imgBox-lateralDireita">
-
-                    <img *ngIf='authService.semFoto() === false' src="{{i.foto}}" alt="imagem de perfil"
-                      class="img-fluid rounded-circle">
-                    <img *ngIf='authService.semFoto() === true' src="../../assets/img/avatar-default2.png"
-                      alt="imagem de perfil" class="img-fluid rounded-circle">
+                    <img src="{{i.foto}}" class="img img-responsive" alt="img">
                   </div>
                   <div class="pp">
                     <p class="card-text mb-0 lead fw-normal">{{i.nome}}</p>
@@ -345,7 +340,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div><!-- FECHAMENTO LATERAL DIREITA -->
 </div>
 
@@ -365,7 +360,7 @@
       <div class="modal-body ">
         <div class="form-group mt-4">
           <!-- <label for="titulo">Titulo</label> -->
-          <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo"
+          <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="tituloModal"
             placeholder="Digite o titulo da postagem">
         </div>
 
@@ -420,7 +415,7 @@
       </div>
       <div class="modal-body">
         <input (input)='midia($event)' type="text" class="form-control" id="midia"
-          placeholder="Digite o link da mídia"/>
+          placeholder="Digite o link da mídia" />
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">
