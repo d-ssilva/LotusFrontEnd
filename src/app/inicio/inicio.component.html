@@ -298,8 +298,7 @@
         ">
         <div class="py-2 card-body text-center d-flex">
           <div class="row w-100 my-1">
-            <div *ngFor="let i of ListaReclamacao" data-aos="fade-up"
-            data-aos-duration="1500">
+            <div *ngFor="let i of ListaReclamacao"  data-aos="fade-left">
               <div *ngIf="i.tipo == 'pj' && i.qtdReclamacao > 0">
                 <div class="col-lg-12 d-flex flex-start">
                   <div class="imgBox-lateralDireita">
@@ -329,8 +328,7 @@
         ">
         <div class="py-0 card-body text-center d-flex">
           <div class="row w-100 my-1">
-            <div *ngFor="let i of ListaElogios" data-aos="fade-up"
-            data-aos-duration="1500">
+            <div *ngFor="let i of ListaElogios"  data-aos="fade-left">
               <div *ngIf="i.tipo == 'pj' && i.qtdElogio > 0">
                 <div class="col-lg-12 d-flex flex-start">
                   <div class="imgBox-lateralDireita">
